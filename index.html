@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Vishal Yadav</title>
+    <link rel="icon" href="assets/images/vishal.webp" type="image/webp">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <script src="assets/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -13,6 +14,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 0, 0, 0);
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #555;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #888;
+        }
+
+
         .type {
             color: #0000;
             background:
@@ -84,7 +106,8 @@
     <!-- About Section -->
 
     <div class="p-5 text-bg-dark text-center">
-        <h2 class="animate__animated animate__bounceInDown animate__delay-1s">Full Stack Django Developer</h2>
+        <h2 class="animate__animated animate__bounceInDown animate__delay-1s">Full Stack Django Developer <i
+                class="fa-solid fa-code"></i></h2>
         <div class="text-center">
             <span class="type" style="--n:363">
                 Welcome to my portfolio website! I am a
@@ -97,7 +120,8 @@
     </div>
 
     <div class="p-5 text-bg-danger text-center fw-bold">
-        <h2 class="text-dark animate__animated animate__bounceInDown animate__delay-1s">Skills</h2>
+        <h2 class="text-dark animate__animated animate__bounceInDown animate__delay-1s">Skills <i
+                class="fa-solid fa-laptop-code"></i></h2>
         <p>
             <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 3s;">#Python</span>
             <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 3.5s;">#Django</span>
@@ -142,14 +166,206 @@
         </div>
     </div>
 
-    <footer class="bg-secondary text-white p-5">
-        <div class="container">
-          <p class="text-center">Made with <i class="fa-solid fa-heart text-danger"></i> by Vishal</p>
+
+    <div class="p-5 text-bg-danger text-center fw-bold">
+        <h2 class="text-dark animate__animated animate__bounceInDown animate__delay-1s">Projects</h2>
+        <div id="carouselExampleControls" class="carousel slide mt-3" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card bg-dark">
+                                <a href="https://jigyasa-csir.in/npl/n21-t6-m1/">
+                                    <img src="assets/images/web.jpg" alt="Project 1 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title text-danger">Time_and_Frequency_Game</h5>
+                                    <p class="card-text">This is a Web-Based Game built using Bootstrap, HTML, CSS,
+                                        JavaScript and JQuery for CSIR-JIGYASA (by Government of
+                                        India)</p>
+                                </div>
+                                <div class="card-footer bg-secondary">
+                                    <a href="https://jigyasa-csir.in/npl/n21-t6-m1/" class="btn btn-light">Learn
+                                        more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <a href="/projects/project-2">
+                                    <img src="assets/images/web.jpg" alt="Project 2 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title">Project 2</h5>
+                                    <p class="card-text">Brief summary of Project 2</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/projects/project-2" class="btn btn-secondary">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <a href="/projects/project-3">
+                                    <img src="assets/images/web.jpg" alt="Project 3 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title">Project 3</h5>
+                                    <p class="card-text">Brief summary of Project 3</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/projects/project-3" class="btn btn-secondary">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card bg-dark">
+                                <a href="https://jigyasa-csir.in/npl/n21-t6-m1/">
+                                    <img src="assets/images/web.jpg" alt="Project 1 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title text-danger">Time_and_Frequency_Game</h5>
+                                    <p class="card-text">This
+                                        India)</p>
+                                </div>
+                                <div class="card-footer bg-secondary">
+                                    <a href="https://jigyasa-csir.in/npl/n21-t6-m1/" class="btn btn-light">Learn
+                                        more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <a href="/projects/project-2">
+                                    <img src="assets/images/web.jpg" alt="Project 2 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title">Project 2</h5>
+                                    <p class="card-text">Brief summary of Project 2</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/projects/project-2" class="btn btn-secondary">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <a href="/projects/project-3">
+                                    <img src="assets/images/web.jpg" alt="Project 3 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title">Project 3</h5>
+                                    <p class="card-text">Brief summary of Project 3</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/projects/project-3" class="btn btn-secondary">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card bg-dark">
+                                <a href="https://jigyasa-csir.in/npl/n21-t6-m1/">
+                                    <img src="assets/images/web.jpg" alt="Project 1 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title text-danger">Time_and_Frequency_Game</h5>
+                                    <p class="card-text">This is
+                                        India)</p>
+                                </div>
+                                <div class="card-footer bg-secondary">
+                                    <a href="https://jigyasa-csir.in/npl/n21-t6-m1/" class="btn btn-light">Learn
+                                        more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <a href="/projects/project-2">
+                                    <img src="assets/images/web.jpg" alt="Project 2 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title">Project 2</h5>
+                                    <p class="card-text">Brief summary of Project 2</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/projects/project-2" class="btn btn-secondary">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <a href="/projects/project-3">
+                                    <img src="assets/images/web.jpg" alt="Project 3 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title">Project 3</h5>
+                                    <p class="card-text">Brief summary of Project 3</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/projects/project-3" class="btn btn-secondary">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-      </footer>
-      
+    </div>
+
+
+    <div class="p-5 text-bg-dark text-center fw-bold">
+        <h2 class=" animate__animated animate__bounceInDown animate__delay-1s">Contact Me <i
+                class="fa-solid fa-handshake-simple"></i></h2>
+        <div class="card col-md-6 mx-auto">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="fa-solid fa-envelope text-danger"></i> Email: <a
+                        href="mailto:06vishalyada@gmail.com">06vishalyadav@gmail.com</a></li>
+                <li class="list-group-item"><i class="fa-solid fa-mobile-screen-button text-danger"></i> Mobile: +91
+                    9582895161</li>
+                <li class="list-group-item"><i class="fa-brands fa-github text-danger"></i> GitHub: <a
+                        href="https://github.com/raovishalyadav">@raovishalyadav</a></li>
+                <li class="list-group-item"><i class="fa-brands fa-linkedin"></i> Linkedin: <a
+                        href="https://linkedin.com/in/raovishalyadav">@raovishalyadav</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <footer class="bg-secondary text-white p-3">
+        <div class="container">
+            <p class="text-center fw-bold">Made with <i class="fa-solid fa-heart text-danger"></i> by Vishal</p>
+        </div>
+    </footer>
+
 
     <script>
+
 
 
         var blur = 500;
