@@ -76,13 +76,17 @@
        max-width: 100% !important;
        overflow: hidden !important;
 } */
+.navbar-toggler .navbar-toggler-icon {
+  color: red !important;
+}
+
     </style>
 </head>
 
-<body class="blur"  data-bs-spy="scroll">
+<body class="blur">
 
-
-    <nav id="list-example"
+    <!-- navbar Section -->
+    <nav
         class="navbar sticky-top flex-column navbar-expand-lg bg-danger animate__animated animate__slideInDown animate__delay-1s">
         <div class="container-fluid">
             <div class="navbar-brand d-flex align-items-center my-auto mx-auto">
@@ -90,10 +94,11 @@
                     class="shadow-lg border border-3 border-dark rounded-circle">
                 <a class="nav-link fw-bold ps-2 text-light" href="#">Vishal Yadav</a>
             </div>
-            <p class="centernav d-md-block" id="center-nav-text"><i class="fa-solid fa-user-tie fa-4x icon"></i></p>
-            <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            <p class="centernav d-md-block" id="center-nav-text"></p>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon">       <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto text-center">
@@ -123,271 +128,354 @@
     </nav>
 
 
-        <!-- About Section -->
-        <div class="p-5 text-bg-dark text-center animate__animated animate__bounceInDown animate__delay-2s" id="about">
-            <h2 class="animate__animated animate__bounceInDown animate__delay-1s">Full Stack Django Developer <i
-                    class="fa-solid fa-code"></i></h2>
-            <div class="text-center">
-                <span class="type" style="--n:363">
-                    Welcome to my portfolio website! I am a
-                    full stack Django developer with experience in building
-                    scalable and secure web applications. I have more than 5 years of
-                    experience in Python. I am always learning and
-                    staying up to date with the latest technologies and best practices in web development.
-                </span>
+    <!-- About Section -->
+    <div class="p-5 text-bg-dark text-center animate__animated animate__bounceInDown animate__delay-2s" id="about">
+        <h2 class="animate__animated animate__bounceInDown animate__delay-1s">Full Stack Django Developer <i
+                class="fa-solid fa-code"></i></h2>
+        <div class="text-center">
+            <span class="type" style="--n:363">
+                Welcome to my portfolio website! I am a
+                full stack Django developer with experience in building
+                scalable and secure web applications. I have more than 5 years of
+                experience in Python. I am always learning and
+                staying up to date with the latest technologies and best practices in web development.
+            </span>
+        </div>
+
+
+        <div class="container text-center pt-3">
+            <div class="row">
+                <div class="col">
+                    <h2 class="countyears text-light d-inline">1</h2>
+                    <h2 class="text-danger d-inline fw-bold">+</h2>
+                    <h6>Years of Experience</h6>
+                </div>
+                <div class="col">
+                    <h2 class="countskills text-light d-inline">1</h2>
+                    <h2 class="text-danger d-inline fw-bold">+</h2>
+                    <h6>Skills</h6>
+                </div>
+                <div class="col">
+                    to be added soon
+                </div>
             </div>
         </div>
 
-        <!-- Skills Section -->
-        <div class="p-5 text-bg-danger text-center fw-bold animate__animated animate__bounceInDown animate__delay-3s">
-            <h2 class="text-dark animate__animated animate__bounceInDown animate__delay-1s">Skills <i
-                    class="fa-solid fa-laptop-code"></i></h2>
-            <p>
-                <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 3s;">#Python</span>
-                <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 3.3s;">#Django</span>
-                <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 3.6s;">#Django REST
-                    Framework</span>
-                <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 3.9s;">#Font
-                    Awesome</span>
-                <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 4.2s;">#Cron
-                    Jobs</span>
-                <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 4.5s;">#HTML</span>
-                <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 4.8s;">#CSS</span>
-                <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 5.1s;">#Selenium Web
-                    driver</span>
-                <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 5.4s;">#jQuery</span>
-                <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 5.7s;">#Vue.js</span>
-                <span class="text-dark animate__animated animate__fadeIn"
-                    style="animation-delay: 6s;">#Git/GitHub</span>
-                <span class="text-light animate__animated animate__fadeIn"
-                    style="animation-delay: 6.3s;">#Bootstrap</span>
-                <span class="text-dark animate__animated animate__fadeIn"
-                    style="animation-delay: 6.6s;">#JSONWebToken(JWT)</span>
-                <span class="text-light animate__animated animate__fadeIn"
-                    style="animation-delay: 6.9s;">#PostgreSQL</span>
-                <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 7.2s;">#Axios</span>
-                <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 7.5s;">#Continuous
-                    deployment</span>
-                <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 7.8s;">#Socket
-                    Programming</span>
-                <span class="text-light animate__animated animate__fadeIn"
-                    style="animation-delay: 8.1s;">#FTP/SCP</span>
-                <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 8.4s;">#SQLite</span>
-                <span class="text-light animate__animated animate__fadeIn"
-                    style="animation-delay: 8.7s;">#Elasticsearch</span>
 
-            </p>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="p-5 text-bg-danger text-center animate__animated animate__bounceInDown animate__delay-3s">
+        <h2 class="text-dark animate__animated animate__bounceInDown animate__delay-1s">Skills <i
+                class="fa-solid fa-laptop-code"></i></h2>
+        <p>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 3s;">#Python</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 3.3s;">#Django</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 3.6s;">#Django REST
+                Framework</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 3.9s;">#Font
+                Awesome</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 4.2s;">#Cron
+                Jobs</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 4.5s;">#HTML</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 4.8s;">#CSS</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 5.1s;">#Selenium Web
+                driver</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 5.4s;">#jQuery</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 5.7s;">#Vue.js</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 6s;">#Git/GitHub</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 6.3s;">#Bootstrap</span>
+            <span class="text-dark animate__animated animate__fadeIn"
+                style="animation-delay: 6.6s;">#JSONWebToken(JWT)</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 6.9s;">#PostgreSQL</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 7.2s;">#Axios</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 7.5s;">#Continuous
+                deployment</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 7.8s;">#Socket
+                Programming</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 8.1s;">#FTP/SCP</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 8.4s;">#SQLite</span>
+            <span class="text-light animate__animated animate__fadeIn"
+                style="animation-delay: 8.7s;">#Elasticsearch</span>
+
+        </p>
+    </div>
+
+    <!-- Resume Section -->
+    <div class="p-5 text-bg-dark text-center animate__animated animate__bounceInDown animate__delay-4s" id="resume">
+        <h2 class="animate__animated animate__bounceInDown animate__delay-1s">Resume</h2>
+        <div class="text-center">
+            <a href="assets/images/Vishal_Resume.pdf" class="btn btn-danger my-3">Download my resume</a>
         </div>
+    </div>
 
-        <!-- Resume Section -->
-        <div class="p-5 text-bg-dark text-center animate__animated animate__bounceInDown animate__delay-4s" id="resume">
-            <h2 class="animate__animated animate__bounceInDown animate__delay-1s">Resume</h2>
-            <div class="text-center">
-                <a href="assets/images/Vishal_Resume.pdf" class="btn btn-danger my-3">Download my resume</a>
-            </div>
-        </div>
-
-        <!-- Projects Section -->
-        <div class="p-5 text-bg-danger text-center fw-bold" id="projects">
-            <h2 class="text-dark animate__animated animate__bounceInDown animate__delay-1s">Projects</h2>
-            <div id="carouselExampleControls" class="carousel slide mt-3" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card sameheight bg-dark">
-                                    <a href="https://jigyasa-csir.in/npl/n21-t6-m1/">
-                                        <img src="assets/images/web.jpg" alt="Project 1 thumbnail" class="card-img-top">
-                                    </a>
-                                    <div class="card-body">
-                                        <h5 class="card-title text-danger">Time_and_Frequency_Game</h5>
-                                        <p class="card-text text-secondary">This is a Web-Based Game built using
-                                            Bootstrap,
-                                            HTML, CSS,
-                                            JavaScript and JQuery for CSIR-JIGYASA (by Government of
-                                            India)</p>
-                                    </div>
-                                    <div class="card-footer bg-secondary">
-                                        <a href="https://jigyasa-csir.in/npl/n21-t6-m1/" class="btn btn-light">Learn
-                                            more</a>
-                                    </div>
+    <!-- Projects Section -->
+    <div class="p-5 text-bg-danger text-center" id="projects">
+        <h2 class="text-dark animate__animated animate__bounceInDown animate__delay-1s">Projects</h2>
+        <div id="carouselExampleControls" class="carousel slide mt-3" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card sameheight bg-dark">
+                                <a href="https://jigyasa-csir.in/npl/n21-t6-m1/">
+                                    <img src="assets/images/web.jpg" alt="Project 1 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title text-light">Time_and_Frequency_Game</h6>
+                                    <p class="card-text text-secondary">This is a Web-Based Game built using
+                                        Bootstrap,
+                                        HTML, CSS,
+                                        JavaScript and JQuery for CSIR-JIGYASA (by Government of
+                                        India)</p>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card sameheight bg-dark">
-                                    <a href="/projects/project-2">
-                                        <img src="assets/images/web.jpg" alt="Project 2 thumbnail" class="card-img-top">
-                                    </a>
-                                    <div class="card-body">
-                                        <h5 class="card-title text-danger">DRF_VueJs_JWT_Authentication</h5>
-                                        <p class="card-text text-secondary">This is a REST API built using Django REST
-                                            framework (DRF), VUE
-                                            Js, HTML, CSS, Bootstrap & FontAwesome.
-                                            This API has been authenticated using JWT Authentication with Signup, Login
-                                            &
-                                            Logout functionalities.</p>
-                                    </div>
-                                    <div class="card-footer bg-secondary">
-                                        <a href="/projects/project-2" class="btn btn-light">Learn more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card sameheight bg-dark">
-                                    <a href="/projects/project-3">
-                                        <img src="assets/images/web.jpg" alt="Project 3 thumbnail" class="card-img-top">
-                                    </a>
-                                    <div class="card-body">
-                                        <h5 class="card-title text-danger">Fully_Responsive_Portfolio</h5>
-                                        <p class="card-text text-secondary">This is a fully responsive website built
-                                            using
-                                            HTML, CSS,
-                                            Javascript, Bootstrap & FontAwesome.</p>
-                                    </div>
-                                    <div class="card-footer bg-secondary">
-                                        <a href="/projects/project-3" class="btn btn-light">Learn more</a>
-                                    </div>
+                                <div class="card-footer bg-secondary">
+                                    <a href="https://jigyasa-csir.in/npl/n21-t6-m1/" class="btn btn-light">Learn
+                                        more</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card sameheight bg-dark">
-                                    <a href="/projects/project-3">
-                                        <img src="assets/images/web.jpg" alt="Project 3 thumbnail" class="card-img-top">
-                                    </a>
-                                    <div class="card-body">
-                                        <h5 class="card-title text-danger">Fully_Responsive_Portfolio</h5>
-                                        <p class="card-text">This is a fully responsive website built using HTML, CSS,
-                                            Javascript, Bootstrap & FontAwesome.</p>
-                                    </div>
-                                    <div class="card-footer bg-secondary">
-                                        <a href="/projects/project-3" class="btn btn-light">Learn more</a>
-                                    </div>
+                        <div class="col-md-3">
+                            <div class="card sameheight bg-dark">
+                                <a href="/projects/project-2">
+                                    <img src="assets/images/web.jpg" alt="Project 2 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title text-light">DRF_VueJs_JWT_Authentication</h6>
+                                    <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
+                                        using Django REST
+                                        framework (DRF), VUE
+                                        Js, HTML, CSS, Bootstrap & FontAwesome.
+                                        This API has been authenticated using JWT Authentication with Signup, Login
+                                        &
+                                        Logout functionalities.</p>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card sameheight bg-dark">
-                                    <a href="/projects/project-3">
-                                        <img src="assets/images/web.jpg" alt="Project 3 thumbnail" class="card-img-top">
-                                    </a>
-                                    <div class="card-body">
-                                        <h5 class="card-title text-danger">Fully_Responsive_Portfolio</h5>
-                                        <p class="card-text">This is a fully responsive website built using HTML, CSS,
-                                            Javascript, Bootstrap & FontAwesome.</p>
-                                    </div>
-                                    <div class="card-footer bg-secondary">
-                                        <a href="/projects/project-3" class="btn btn-light">Learn more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card sameheight bg-dark">
-                                    <a href="/projects/project-3">
-                                        <img src="assets/images/web.jpg" alt="Project 3 thumbnail" class="card-img-top">
-                                    </a>
-                                    <div class="card-body">
-                                        <h5 class="card-title text-danger">Fully_Responsive_Portfolio</h5>
-                                        <p class="card-text">This is a fully responsive website built using HTML, CSS,
-                                            Javascript, Bootstrap & FontAwesome.</p>
-                                    </div>
-                                    <div class="card-footer bg-secondary">
-                                        <a href="/projects/project-3" class="btn btn-light">Learn more</a>
-                                    </div>
+                                <div class="card-footer bg-secondary">
+                                    <a href="/projects/project-2" class="btn btn-light">Learn more</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card sameheight bg-dark">
-                                    <a href="https://jigyasa-csir.in/npl/n21-t6-m1/">
-                                        <img src="assets/images/web.jpg" alt="Project 1 thumbnail" class="card-img-top">
-                                    </a>
-                                    <div class="card-body">
-                                        <h5 class="card-title text-danger">Time_and_Frequency_Game</h5>
-                                        <p class="card-text">This is
-                                            India)</p>
-                                    </div>
-                                    <div class="card-footer bg-secondary">
-                                        <a href="https://jigyasa-csir.in/npl/n21-t6-m1/" class="btn btn-light">Learn
-                                            more</a>
-                                    </div>
+                        <div class="col-md-3">
+                            <div class="card sameheight bg-dark">
+                                <a href="/projects/project-3">
+                                    <img src="assets/images/web.jpg" alt="Project 3 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title text-light">Fully_Responsive_Portfolio</h6>
+                                    <p class="card-text text-secondary">This is a fully responsive website built
+                                        using
+                                        HTML, CSS,
+                                        Javascript, Bootstrap & FontAwesome.</p>
+                                </div>
+                                <div class="card-footer bg-secondary">
+                                    <a href="/projects/project-3" class="btn btn-light">Learn more</a>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="card sameheight">
-                                    <a href="/projects/project-2">
-                                        <img src="assets/images/web.jpg" alt="Project 2 thumbnail" class="card-img-top">
-                                    </a>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Project 2</h5>
-                                        <p class="card-text">Brief summary of Project 2</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <a href="/projects/project-2" class="btn btn-secondary">Learn more</a>
-                                    </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card sameheight bg-dark">
+                                <a href="/projects/project-3">
+                                    <img src="assets/images/web.jpg" alt="Project 3 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title text-light">Fully_Responsive_Portfolio</h6>
+                                    <p class="card-text">This is a fully responsive website built using HTML, CSS,
+                                        Javascript, Bootstrap & FontAwesome.</p>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card sameheight">
-                                    <a href="/projects/project-3">
-                                        <img src="assets/images/web.jpg" alt="Project 3 thumbnail" class="card-img-top">
-                                    </a>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Project 3</h5>
-                                        <p class="card-text">Brief summary of Project 3</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <a href="/projects/project-3" class="btn btn-secondary">Learn more</a>
-                                    </div>
+                                <div class="card-footer bg-secondary">
+                                    <a href="/projects/project-3" class="btn btn-light">Learn more</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only"></span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only"></span>
-                </a>
-            </div>
-        </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card sameheight bg-dark">
+                                <a href="https://jigyasa-csir.in/npl/n21-t6-m1/">
+                                    <img src="assets/images/web.jpg" alt="Project 1 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title text-light">Time_and_Frequency_Game</h6>
+                                    <p class="card-text">This is
+                                        India)</p>
+                                </div>
+                                <div class="card-footer bg-secondary">
+                                    <a href="https://jigyasa-csir.in/npl/n21-t6-m1/" class="btn btn-light">Learn
+                                        more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card sameheight bg-dark">
+                                <a href="/projects/project-3">
+                                    <img src="assets/images/web.jpg" alt="Project 3 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title text-light">Fully_Responsive_Portfolio</h6>
+                                    <p class="card-text">This is a fully responsive website built using HTML, CSS,
+                                        Javascript, Bootstrap & FontAwesome.</p>
+                                </div>
+                                <div class="card-footer bg-secondary">
+                                    <a href="/projects/project-3" class="btn btn-light">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card sameheight bg-dark">
+                                <a href="/projects/project-3">
+                                    <img src="assets/images/web.jpg" alt="Project 3 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title text-light">Fully_Responsive_Portfolio</h6>
+                                    <p class="card-text">This is a fully responsive website built using HTML, CSS,
+                                        Javascript, Bootstrap & FontAwesome.</p>
+                                </div>
+                                <div class="card-footer bg-secondary">
+                                    <a href="/projects/project-3" class="btn btn-light">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card sameheight bg-dark">
+                                <a href="https://jigyasa-csir.in/npl/n21-t6-m1/">
+                                    <img src="assets/images/web.jpg" alt="Project 1 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title text-light">Time_and_Frequency_Game</h6>
+                                    <p class="card-text">This is
+                                        India)</p>
+                                </div>
+                                <div class="card-footer bg-secondary">
+                                    <a href="https://jigyasa-csir.in/npl/n21-t6-m1/" class="btn btn-light">Learn
+                                        more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
 
-        <!-- Contact Section -->
-        <div class="p-5 text-bg-dark text-center fw-bold" id="contact">
-            <h2 class=" animate__animated animate__bounceInDown animate__delay-1s">Contact Me <i
-                    class="fa-solid fa-handshake-simple"></i></h2>
-            <div class="card col-md-6 mx-auto">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><i class="fa-solid fa-envelope text-danger"></i> Email: <a
-                            href="mailto:06vishalyada@gmail.com">06vishalyadav@gmail.com</a></li>
-                    <li class="list-group-item"><i class="fa-solid fa-mobile-screen-button text-danger"></i> Mobile: +91
-                        9582895161</li>
-                    <li class="list-group-item"><i class="fa-brands fa-github text-danger"></i> GitHub: <a
-                            href="https://github.com/raovishalyadav">@raovishalyadav</a></li>
-                    <li class="list-group-item"><i class="fa-brands fa-linkedin text-danger"></i> Linkedin: <a
-                            href="https://linkedin.com/in/raovishalyadav">@raovishalyadav</a></li>
-                </ul>
+                        <div class="col-md-3">
+                            <div class="card sameheight bg-dark">
+                                <a href="https://jigyasa-csir.in/npl/n21-t6-m1/">
+                                    <img src="assets/images/web.jpg" alt="Project 1 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title text-light">Time_and_Frequency_Game</h6>
+                                    <p class="card-text">This is
+                                        India)</p>
+                                </div>
+                                <div class="card-footer bg-secondary">
+                                    <a href="https://jigyasa-csir.in/npl/n21-t6-m1/" class="btn btn-light">Learn
+                                        more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card sameheight bg-dark">
+                                <a href="https://jigyasa-csir.in/npl/n21-t6-m1/">
+                                    <img src="assets/images/web.jpg" alt="Project 1 thumbnail" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title text-light">Time_and_Frequency_Game</h6>
+                                    <p class="card-text">This is
+                                        India)</p>
+                                </div>
+                                <div class="card-footer bg-secondary">
+                                    <a href="https://jigyasa-csir.in/npl/n21-t6-m1/" class="btn btn-light">Learn
+                                        more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
         </div>
-    
+    </div>
+
+    <!-- Contact Section -->
+    <div class="p-5 text-bg-dark text-center" id="contact">
+        <h2 class=" animate__animated animate__bounceInDown animate__delay-1s">Contact Me <i
+                class="fa-solid fa-handshake-simple"></i></h2>
+        <div class="card col-md-6 mx-auto">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="fa-solid fa-envelope text-danger"></i> Email: <a
+                        href="mailto:06vishalyada@gmail.com">06vishalyadav@gmail.com</a></li>
+                <li class="list-group-item"><i class="fa-solid fa-mobile-screen-button text-danger"></i> Mobile: +91
+                    9582895161</li>
+                <li class="list-group-item"><i class="fa-brands fa-github text-danger"></i> GitHub: <a
+                        href="https://github.com/raovishalyadav">@raovishalyadav</a></li>
+                <li class="list-group-item"><i class="fa-brands fa-linkedin text-danger"></i> Linkedin: <a
+                        href="https://linkedin.com/in/raovishalyadav">@raovishalyadav</a></li>
+            </ul>
+        </div>
+    </div>
+
 
 
     <footer class="bg-secondary text-white p-3">
         <div class="container">
-            <p class="text-center fw-bold">Made with <i class="fa-solid fa-heart text-danger"></i> by Vishal</p>
+            <p class="text-center fw-bold">Made with <i
+                    class="fa-solid fa-heart text-danger animate__animated animate__heartBeat animate__infinite"></i> by
+                Vishal</p>
         </div>
     </footer>
 
 
     <script>
+        // Select the count element
+        function runOnce() {
+            const countElement = document.querySelector('.countyears');
+
+            function increment() {
+                // Get the current count value
+                let countyears = parseInt(countElement.innerHTML);
+                countyears++;
+                // Update the count element with the new count value
+                countElement.innerHTML = countyears;
+
+                // If the count has reached 10, clear the interval
+                if (countyears === 5) {
+                    clearInterval(intervalId);
+                }
+            }
+            // Call the increment function every 100 milliseconds
+            const intervalId = setInterval(increment, 300);
+        }
+        setTimeout(runOnce, 3500);
+
+        function runOnce1() {
+            const countElement = document.querySelector('.countskills');
+
+            function increment1() {
+                // Get the current count value
+                let countskills = parseInt(countElement.innerHTML);
+                countskills++;
+                // Update the count element with the new count value
+                countElement.innerHTML = countskills;
+
+                // If the count has reached 10, clear the interval
+                if (countskills === 20) {
+                    clearInterval(intervalId1);
+                }
+            }
+            // Call the increment function every 100 milliseconds
+            const intervalId1 = setInterval(increment1, 100);
+        }
+        setTimeout(runOnce1, 5000);
+
+
         //To add particular clicked nav item's icon to the center of navbar
         document.addEventListener('DOMContentLoaded', function () {
             const navLinks = document.querySelectorAll('.nav-item');
@@ -395,6 +483,10 @@
             const navbarHeight = navbar.offsetHeight;
             var mq = window.matchMedia("(min-width: 768px)");
             let element = document.getElementById('center-nav-text');
+            if (mq.matches) {
+                element.innerHTML = '<i class="fa-solid fa-user-tie fa-4x icon"></i>';
+            }
+
             navLinks.forEach(link => {
                 link.addEventListener('click', e => {
                     e.preventDefault();
@@ -414,6 +506,7 @@
                 });
             });
         });
+
 
 
         //To give blur effect on initial page load
@@ -447,12 +540,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             setCardHeights();
         });
-
-
-        document.addEventListener('DOMContentLoaded', function() {
-            $('body').scrollspy({ target: '#list-example' });
-          });
-              </script>
+    </script>
 
 
 
