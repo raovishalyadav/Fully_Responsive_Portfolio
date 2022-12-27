@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <style>
+        /* for custom scroll bar */
         /* width */
         ::-webkit-scrollbar {
             width: 8px;
@@ -34,7 +35,7 @@
             background: #888;
         }
 
-
+        /* for typewriter effect */
         .type {
             color: #0000;
             background:
@@ -68,6 +69,13 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
+
+
+        /* body{
+       max-width: 100% !important;
+       overflow: hidden !important;
+} */
     </style>
 </head>
 
@@ -82,7 +90,7 @@
                     class="shadow-lg border border-3 border-dark rounded-circle">
                 <a class="nav-link fw-bold ps-2 text-light" href="#">Vishal Yadav</a>
             </div>
-            <p class="centernav" id="center-nav-text"></p>
+            <p class="centernav d-md-block" id="center-nav-text"></p>
             <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -116,7 +124,7 @@
 
 
     <!-- About Section -->
-    <div class="p-5 text-bg-dark text-center" id="about">
+    <div class="p-5 text-bg-dark text-center animate__animated animate__bounceInDown animate__delay-2s" id="about">
         <h2 class="animate__animated animate__bounceInDown animate__delay-1s">Full Stack Django Developer <i
                 class="fa-solid fa-code"></i></h2>
         <div class="text-center">
@@ -131,42 +139,43 @@
     </div>
 
     <!-- Skills Section -->
-    <div class="p-5 text-bg-danger text-center fw-bold">
+    <div class="p-5 text-bg-danger text-center fw-bold animate__animated animate__bounceInDown animate__delay-3s">
         <h2 class="text-dark animate__animated animate__bounceInDown animate__delay-1s">Skills <i
                 class="fa-solid fa-laptop-code"></i></h2>
         <p>
             <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 3s;">#Python</span>
-            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 3.5s;">#Django</span>
-            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 4s;">#Django REST
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 3.3s;">#Django</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 3.6s;">#Django REST
                 Framework</span>
-            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 4.5s;">#Font
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 3.9s;">#Font
                 Awesome</span>
-            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 5s;">#Cron Jobs</span>
-            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 5.5s;">#HTML</span>
-            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 6s;">#CSS</span>
-            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 6.5s;">#Selenium Web
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 4.2s;">#Cron Jobs</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 4.5s;">#HTML</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 4.8s;">#CSS</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 5.1s;">#Selenium Web
                 driver</span>
-            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 7s;">#jQuery</span>
-            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 7.5s;">#Vue.js</span>
-            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 8s;">#Git/GitHub</span>
-            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 8.5s;">#Bootstrap</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 5.4s;">#jQuery</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 5.7s;">#Vue.js</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 6s;">#Git/GitHub</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 6.3s;">#Bootstrap</span>
             <span class="text-dark animate__animated animate__fadeIn"
-                style="animation-delay: 9s;">#JSONWebToken(JWT)</span>
-            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 9.5s;">#PostgreSQL</span>
-            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 10s;">#Axios</span>
-            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 10.5s;">#Continuous
+                style="animation-delay: 6.6s;">#JSONWebToken(JWT)</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 6.9s;">#PostgreSQL</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 7.2s;">#Axios</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 7.5s;">#Continuous
                 deployment</span>
-            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 11s;">#Socket
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 7.8s;">#Socket
                 Programming</span>
-            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 11.5s;">#FTP/SCP</span>
-            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 12s;">#SQLite</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 8.1s;">#FTP/SCP</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 8.4s;">#SQLite</span>
             <span class="text-light animate__animated animate__fadeIn"
-                style="animation-delay: 12.5s;">#Elasticsearch</span>
+                style="animation-delay: 8.7s;">#Elasticsearch</span>
+
         </p>
     </div>
 
     <!-- Resume Section -->
-    <div class="p-5 text-bg-dark text-center" id="resume">
+    <div class="p-5 text-bg-dark text-center animate__animated animate__bounceInDown animate__delay-4s" id="resume">
         <h2 class="animate__animated animate__bounceInDown animate__delay-1s">Resume</h2>
         <div class="text-center">
             <a href="assets/images/Vishal_Resume.pdf" class="btn btn-danger my-3">Download my resume</a>
@@ -187,7 +196,7 @@
                                 </a>
                                 <div class="card-body">
                                     <h5 class="card-title text-danger">Time_and_Frequency_Game</h5>
-                                    <p class="card-text">This is a Web-Based Game built using Bootstrap, HTML, CSS,
+                                    <p class="card-text text-secondary">This is a Web-Based Game built using Bootstrap, HTML, CSS,
                                         JavaScript and JQuery for CSIR-JIGYASA (by Government of
                                         India)</p>
                                 </div>
@@ -204,7 +213,7 @@
                                 </a>
                                 <div class="card-body">
                                     <h5 class="card-title text-danger">DRF_VueJs_JWT_Authentication</h5>
-                                    <p class="card-text">This is a REST API built using Django REST framework (DRF), VUE
+                                    <p class="card-text text-secondary">This is a REST API built using Django REST framework (DRF), VUE
                                         Js, HTML, CSS, Bootstrap & FontAwesome.
                                         This API has been authenticated using JWT Authentication with Signup, Login &
                                         Logout functionalities.</p>
@@ -221,7 +230,7 @@
                                 </a>
                                 <div class="card-body">
                                     <h5 class="card-title text-danger">Fully_Responsive_Portfolio</h5>
-                                    <p class="card-text">This is a fully responsive website built using HTML, CSS,
+                                    <p class="card-text text-secondary">This is a fully responsive website built using HTML, CSS,
                                         Javascript, Bootstrap & FontAwesome.</p>
                                 </div>
                                 <div class="card-footer bg-secondary">
@@ -368,20 +377,22 @@
 
 
     <script>
-
         document.addEventListener('DOMContentLoaded', function () {
             const navLinks = document.querySelectorAll('.nav-item');
             const navbar = document.querySelector('.navbar');
             const navbarHeight = navbar.offsetHeight;
+            var mq = window.matchMedia("(min-width: 768px)");
             let element = document.getElementById('center-nav-text');
             navLinks.forEach(link => {
                 link.addEventListener('click', e => {
                     e.preventDefault();
                     const id = link.firstElementChild.getAttribute('href');
                     const targetElement = document.querySelector(id);
-                    const iconElement = link.querySelector('i');
-                    const iconName = iconElement.classList[1]; // The second class in the class list is the icon name
-                    element.innerHTML = '<i class="fa-solid ' + iconName + ' fa-4x icon"></i>';
+                    if (mq.matches) {
+                        const iconElement = link.querySelector('i');
+                        const iconName = iconElement.classList[1]; // The second class in the class list is the icon name
+                        element.innerHTML = '<i class="fa-solid ' + iconName + ' fa-4x icon"></i>';
+                    }
                     window.scrollTo({
                         top: targetElement.offsetTop - navbarHeight,
                         behavior: 'smooth',
