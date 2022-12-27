@@ -71,15 +71,22 @@
         }
 
 
+        .progress {
+            height: 5px;
+            border-radius: 0%;
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            background: #0E112B;
+        }
 
-        /* body{
-       max-width: 100% !important;
-       overflow: hidden !important;
-} */
-.navbar-toggler .navbar-toggler-icon {
-  color: red !important;
-}
-
+        .progress-bar {
+            border-radius: 0%;
+            height: 5px;
+            background: white;
+            width: 0%;
+        }
+        
     </style>
 </head>
 
@@ -97,7 +104,7 @@
             <p class="centernav d-md-block" id="center-nav-text"></p>
             <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">       <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                <span class="navbar-toggler-icon"> <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
                 </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -125,6 +132,10 @@
                 </ul>
             </div>
         </div>
+        <div class="progress">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+
     </nav>
 
 
@@ -223,7 +234,8 @@
                                 </a>
                                 <div class="card-body">
                                     <h6 class="card-title text-light">Time_and_Frequency_Game</h6>
-                                    <p class="card-text text-secondary">This is a Web-Based Game built using
+                                    <p class="card-text text-secondary" style="font-size: 80%;">This is a Web-Based Game
+                                        built using
                                         Bootstrap,
                                         HTML, CSS,
                                         JavaScript and JQuery for CSIR-JIGYASA (by Government of
@@ -262,7 +274,8 @@
                                 </a>
                                 <div class="card-body">
                                     <h6 class="card-title text-light">Fully_Responsive_Portfolio</h6>
-                                    <p class="card-text text-secondary">This is a fully responsive website built
+                                    <p class="card-text text-secondary" style="font-size: 80%;">This is a fully
+                                        responsive website built
                                         using
                                         HTML, CSS,
                                         Javascript, Bootstrap & FontAwesome.</p>
@@ -279,7 +292,8 @@
                                 </a>
                                 <div class="card-body">
                                     <h6 class="card-title text-light">Fully_Responsive_Portfolio</h6>
-                                    <p class="card-text">This is a fully responsive website built using HTML, CSS,
+                                    <p class="card-text text-secondary" style="font-size: 80%;">This is a fully
+                                        responsive website built using HTML, CSS,
                                         Javascript, Bootstrap & FontAwesome.</p>
                                 </div>
                                 <div class="card-footer bg-secondary">
@@ -298,7 +312,7 @@
                                 </a>
                                 <div class="card-body">
                                     <h6 class="card-title text-light">Time_and_Frequency_Game</h6>
-                                    <p class="card-text">This is
+                                    <p class="card-text text-secondary" style="font-size: 80%;">This is
                                         India)</p>
                                 </div>
                                 <div class="card-footer bg-secondary">
@@ -314,7 +328,8 @@
                                 </a>
                                 <div class="card-body">
                                     <h6 class="card-title text-light">Fully_Responsive_Portfolio</h6>
-                                    <p class="card-text">This is a fully responsive website built using HTML, CSS,
+                                    <p class="card-text text-secondary" style="font-size: 80%;">This is a fully
+                                        responsive website built using HTML, CSS,
                                         Javascript, Bootstrap & FontAwesome.</p>
                                 </div>
                                 <div class="card-footer bg-secondary">
@@ -329,7 +344,8 @@
                                 </a>
                                 <div class="card-body">
                                     <h6 class="card-title text-light">Fully_Responsive_Portfolio</h6>
-                                    <p class="card-text">This is a fully responsive website built using HTML, CSS,
+                                    <p class="card-text text-secondary" style="font-size: 80%;">This is a fully
+                                        responsive website built using HTML, CSS,
                                         Javascript, Bootstrap & FontAwesome.</p>
                                 </div>
                                 <div class="card-footer bg-secondary">
@@ -344,7 +360,7 @@
                                 </a>
                                 <div class="card-body">
                                     <h6 class="card-title text-light">Time_and_Frequency_Game</h6>
-                                    <p class="card-text">This is
+                                    <p class="card-text text-secondary" style="font-size: 80%;">This is
                                         India)</p>
                                 </div>
                                 <div class="card-footer bg-secondary">
@@ -365,7 +381,7 @@
                                 </a>
                                 <div class="card-body">
                                     <h6 class="card-title text-light">Time_and_Frequency_Game</h6>
-                                    <p class="card-text">This is
+                                    <p class="card-text text-secondary" style="font-size: 80%;">This is
                                         India)</p>
                                 </div>
                                 <div class="card-footer bg-secondary">
@@ -381,7 +397,7 @@
                                 </a>
                                 <div class="card-body">
                                     <h6 class="card-title text-light">Time_and_Frequency_Game</h6>
-                                    <p class="card-text">This is
+                                    <p class="card-text text-secondary" style="font-size: 80%;">This is
                                         India)</p>
                                 </div>
                                 <div class="card-footer bg-secondary">
@@ -434,6 +450,17 @@
 
 
     <script>
+
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+
+
         // Select the count element
         function runOnce() {
             const countElement = document.querySelector('.countyears');
