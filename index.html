@@ -88,9 +88,20 @@
         }
 
         .card {
-            box-shadow: 0 4px 8px 0 black;
+            box-shadow: 15px 15px 15px 0 black;
         }
-        
+
+        .downloadresume {
+            box-shadow: 0px 10px 10px 0 black;
+        }
+
+        .card:hover {
+            transform: skew(-10deg);
+        }
+
+        a {
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -102,7 +113,7 @@
         <div class="container-fluid">
             <div class="navbar-brand d-flex align-items-center my-auto mx-auto">
                 <img src="assets/images/vishal.webp" alt="Logo" width="60" height="60"
-                    class="shadow-lg border border-3 border-dark rounded-circle">
+                    class="border border-3 border-dark rounded-circle">
                 <a class="nav-link fw-bold ps-2 text-light" href="#">Vishal Yadav</a>
             </div>
             <p class="centernav d-md-block" id="center-nav-text"></p>
@@ -222,7 +233,7 @@
     <div class="p-5 text-bg-dark text-center animate__animated animate__bounceInDown animate__delay-4s" id="resume">
         <h2 class="animate__animated animate__bounceInDown animate__delay-1s">Resume</h2>
         <div class="text-center">
-            <a href="assets/images/Vishal_Resume.pdf" class="btn btn-danger my-3">Download my resume</a>
+            <a href="assets/images/Vishal_Resume.pdf" target="_blank" class="btn btn-danger my-3 downloadresume">Download my resume</a>
         </div>
     </div>
 
@@ -402,12 +413,12 @@
             <div class="col-auto mx-auto">
                 <h2 class="text-danger d-inline fw-bold"><i class="fab fa-github text-danger fa-2x"></i>
                 </h2>
-                <h6> <a href="https://github.com/raovishalyadav" style="color: gray">@raovishalyadav</a>
+                <h6> <a href="https://github.com/raovishalyadav" target="_blank" style="color: gray">@raovishalyadav</a>
                 </h6>
             </div>
             <div class="col-auto mx-auto">
                 <h2 class="text-danger d-inline fw-bold"><i class="fab fa-linkedin text-danger fa-2x"></i>
-                    <h6> <a href="https://linkedin.com/in/raovishalyadav" style="color: gray">@raovishalyadav</a>
+                    <h6> <a href="https://linkedin.com/in/raovishalyadav" target="_blank" style="color: gray">@raovishalyadav</a>
                     </h6>
             </div>
         </div>
