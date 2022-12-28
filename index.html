@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio | Vishal Yadav</title>
+    <link rel="icon" href="assets/images/vishal.webp" type="image/webp">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <script src="assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style>
+        /* for custom scroll bar */
+        /* width */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #333;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #666;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #888;
+        }
+
+        /* for typewriter effect */
+        .type {
+            color: #0000;
+            background:
+                linear-gradient(-90deg, red 5px, #0000 0) 10px 0,
+                linear-gradient(red 0 0) 0 0;
+            background-size: calc(var(--n)*1ch) 200%;
+            -webkit-background-clip: padding-box, text;
+            background-clip: padding-box, text;
+            background-repeat: no-repeat;
+            animation:
+                b .7s infinite steps(1),
+                t calc(var(--n)*.015s) steps(var(--n)) forwards;
+        }
+
+        @keyframes t {
+            from {
+                background-size: 0 200%
+            }
+        }
+
+        @keyframes b {
+            50% {
+                background-position: 0 -100%, 0 0
+            }
+        }
+
+        .centernav {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+        .progress {
+            height: 3px;
+            border-radius: 0%;
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            background: #0E112B;
+        }
+
+        .progress-bar {
+            border-radius: 0%;
+            height: 3px;
+            background: white;
+            width: 0%;
+        }
+
+        .card {
+            box-shadow: 15px 15px 15px 0 black;
+        }
+
+        .downloadresume {
+            box-shadow: 0px 10px 10px 0 black;
+        }
+
+        .card:hover {
+            transform: skew(-10deg);
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="blur">
+
+    <!-- navbar Section -->
+    <nav
+        class="navbar sticky-top flex-column navbar-expand-lg bg-danger animate__animated animate__slideInDown animate__delay-1s">
+        <div class="container-fluid">
+            <div class="navbar-brand d-flex align-items-center my-auto mx-auto">
+                <img src="assets/images/vishal.webp" alt="Logo" width="60" height="60"
+                    class="border border-3 border-dark rounded-circle">
+                <a class="nav-link fw-bold ps-2 text-light" href="#">Vishal Yadav</a>
+            </div>
+            <p class="centernav d-md-block" id="center-nav-text"></p>
+            <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"> <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item d-flex flex-column align-items-center">
+                        <a class="nav-link fw-bold" href="#about" id="about-link">About<br>
+                            <i class="fa-solid fa-user-tie fa-1x icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex flex-column align-items-center">
+                        <a class="nav-link fw-bold" href="#resume" id="resume-link">Resume<br>
+                            <i class="fa-solid fa-address-card fa-1x icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex flex-column align-items-center">
+                        <a class="nav-link fw-bold" href="#projects" id="projects-link">Projects<br>
+                            <i class="fa-solid fa-sitemap fa-1x icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex flex-column align-items-center">
+                        <a class="nav-link fw-bold" href="#contact" id="contact-link">Contact<br>
+                            <i class="fa-solid fa-person-chalkboard fa-1x icon"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+
+    </nav>
+
+
+    <!-- About Section -->
+    <div class="p-5 text-bg-dark text-center animate__animated animate__bounceInDown animate__delay-2s" id="about">
+        <h2 class="animate__animated animate__bounceInDown animate__delay-1s">Full Stack Django Developer <i
+                class="fa-solid fa-code"></i></h2>
+        <div class="text-center">
+            <span class="type" style="--n:363">
+                Welcome to my portfolio website! I am a
+                full stack Django developer with experience in building
+                scalable and secure web applications. I have more than 5 years of
+                experience in Python. I am always learning and
+                staying up to date with the latest technologies and best practices in web development.
+            </span>
+        </div>
+
+
+        <div class="container text-center pt-3">
+            <div class="row">
+                <div class="col">
+                    <h2 class="countyears text-light d-inline">1</h2>
+                    <h2 class="text-danger d-inline fw-bold">+</h2>
+                    <h6>Years of Experience</h6>
+                </div>
+                <div class="col">
+                    <h2 class="countskills text-light d-inline">1</h2>
+                    <h2 class="text-danger d-inline fw-bold">+</h2>
+                    <h6>Skills</h6>
+                </div>
+                <div class="col">
+                    <!-- <h2 class="countskills text-light d-inline"></h2> -->
+                    <h2 class="text-danger d-inline fw-bold"><i class="fa-solid fa-infinity"></i></h2>
+                    <h6>Tasks Completed</h6>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Skills Section -->
+    <div class="p-5 text-bg-danger text-center animate__animated animate__bounceInDown animate__delay-3s">
+        <h2 class="text-dark animate__animated animate__bounceInDown animate__delay-1s">Skills <i
+                class="fa-solid fa-laptop-code"></i></h2>
+        <p class="fw-bold">
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 3s;">#Python</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 3.3s;">#Django</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 3.6s;">#Django REST
+                Framework</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 3.9s;">#Font
+                Awesome</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 4.2s;">#Cron
+                Jobs</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 4.5s;">#HTML</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 4.8s;">#CSS</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 5.1s;">#Selenium Web
+                driver</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 5.4s;">#jQuery</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 5.7s;">#Vue.js</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 6s;">#Git/GitHub</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 6.3s;">#Bootstrap</span>
+            <span class="text-dark animate__animated animate__fadeIn"
+                style="animation-delay: 6.6s;">#JSONWebToken(JWT)</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 6.9s;">#PostgreSQL</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 7.2s;">#Axios</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 7.5s;">#Continuous
+                deployment</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 7.8s;">#Socket
+                Programming</span>
+            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 8.1s;">#FTP/SCP</span>
+            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 8.4s;">#SQLite</span>
+            <span class="text-light animate__animated animate__fadeIn"
+                style="animation-delay: 8.7s;">#Elasticsearch</span>
+
+        </p>
+    </div>
+
+    <!-- Resume Section -->
+    <div class="p-5 text-bg-dark text-center animate__animated animate__bounceInDown animate__delay-4s" id="resume">
+        <h2 class="animate__animated animate__bounceInDown animate__delay-1s">Resume</h2>
+        <div class="text-center">
+            <a href="assets/images/Vishal_Resume.pdf" target="_blank" class="btn btn-danger my-3 downloadresume">Download my resume</a>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="p-5 text-bg-danger text-center" id="projects">
+        <h2 class="text-dark animate__animated animate__bounceInDown animate__delay-1s mb-4">Projects</h2>
+
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+                <div class="card h-100 bg-dark rounded-5">
+                    <div class="card-body">
+                        <h6 class="card-title text-light">Time & Frequency Game</h6>
+                        <p class="card-text text-secondary" style="font-size: 80%;">This is a Web-Based Game
+                            built using
+                            Bootstrap,
+                            HTML, CSS,
+                            JavaScript and JQuery for CSIR-JIGYASA by Government of
+                            India.</p>
+                    </div>
+                    <div class="card-footer rounded-bottom-5">
+                        <a href="https://jigyasa-csir.in/npl/n21-t6-m1/" class="btn btn-light">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark rounded-5">
+                    <div class="card-body">
+                        <h6 class="card-title text-light">DRF VueJs JWT Authentication</h6>
+                        <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
+                            using DRF, VUE
+                            Js, HTML, CSS, Bootstrap & FontAwesome.
+                            This API has been authenticated using JWT Authentication with Signup, Login
+                            &
+                            Logout functionalities.</p>
+                    </div>
+                    <div class="card-footer rounded-bottom-5">
+                        <a href="https://github.com/raovishalyadav/DRF_VueJs_JWT_Authentication"
+                            class="btn btn-light">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark rounded-5">
+                    <div class="card-body">
+                        <h6 class="card-title text-light">Fully Responsive Portfolio</h6>
+                        <p class="card-text text-secondary" style="font-size: 80%;">This is a fully
+                            responsive website built
+                            using
+                            HTML, CSS,
+                            Javascript, Bootstrap & FontAwesome.</p>
+                    </div>
+                    <div class="card-footer rounded-bottom-5">
+                        <a href="https://github.com/raovishalyadav/Fully_Responsive_Portfolio"
+                            class="btn btn-light">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark rounded-5">
+                    <div class="card-body">
+                        <h6 class="card-title text-light">TWSTFT GUI</h6>
+                        <p class="card-text text-secondary" style="font-size: 80%;">This is a Python based
+                            GUI build using PYQt5 to show the Real-time as well as
+                            Static offset data plot of the Two-Way Satellite Time and Frequency Transfer
+                            (TWSTFT) having functionalities like Play/Pause, calculating Standard Deviation,
+                            Clear Graph, Lock % and many more.</p>
+                    </div>
+                    <div class="card-footer rounded-bottom-5">
+                        <a href="https://github.com/raovishalyadav/TWSTFT_GUI" class="btn btn-light">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark rounded-5">
+                    <div class="card-body">
+                        <h6 class="card-title text-light">DRF VueJs Elasticsearch</h6>
+                        <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
+                            using DRF, VUE Js, Elasticsearch, HTML, CSS, Bootstrap &
+                            FontAwesome.</p>
+                    </div>
+                    <div class="card-footer rounded-bottom-5">
+                        <a href="https://github.com/raovishalyadav/DRF_VueJs_Elasticsearch" class="btn btn-light">More
+                            Info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark rounded-5">
+                    <div class="card-body">
+                        <h6 class="card-title text-light">DRF VueJs DjoserAuthentication</h6>
+                        <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
+                            using DRF, VUE Js, HTML, CSS, Bootstrap & FontAwesome.
+                            This API has token based Authentication using Djoser with Signup, Login & Logout
+                            functionalities.</p>
+                    </div>
+                    <div class="card-footer rounded-bottom-5">
+                        <a href="https://github.com/raovishalyadav/DRF_VueJs_DjoserAuthentication"
+                            class="btn btn-light">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark rounded-5">
+                    <div class="card-body">
+                        <h6 class="card-title text-light">NavIC RECEIVER Automation</h6>
+                        <p class="card-text text-secondary" style="font-size: 80%;">This is a Linux based
+                            shell script to Automatically download files from NAVIC(Navigation with Indian
+                            Constellation) Receiver via SCP and upload it to server via TCP daily at a
+                            specific time.</p>
+                    </div>
+                    <div class="card-footer rounded-bottom-5">
+                        <a href="https://github.com/raovishalyadav/NavIC_RECEIVER_Automation" class="btn btn-light">More
+                            Info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark rounded-5">
+                    <div class="card-body">
+                        <h6 class="card-title text-light">SATRE MODEM Daily Offset</h6>
+                        <p class="card-text text-secondary" style="font-size: 80%;">This is a Python based
+                            program to calculate the daily offset of the SATRE MODEM.</p>
+                    </div>
+                    <div class="card-footer rounded-bottom-5">
+                        <a href="https://github.com/raovishalyadav/SATRE_MODEM_Daily_Offset" class="btn btn-light">More
+                            Info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark rounded-5">
+                    <div class="card-body">
+                        <h6 class="card-title text-light">NMEA Converter</h6>
+                        <p class="card-text text-secondary" style="font-size: 80%;">This is a Python based
+                            program to convert GPS Receiver data to NMEA format.</p>
+                    </div>
+                    <div class="card-footer rounded-bottom-5">
+                        <a href="https://github.com/raovishalyadav/NMEA_Converter" class="btn btn-light">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark rounded-5">
+                    <div class="card-body">
+                        <h6 class="card-title text-light">DRF TokenAuthentication</h6>
+                        <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
+                            using Django REST framework (DRF) with DRF's Token Authentication.</p>
+                    </div>
+                    <div class="card-footer rounded-bottom-5">
+                        <a href="https://github.com/raovishalyadav/DRF_TokenAuthentication" class="btn btn-light">More
+                            Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="p-5 text-light bg-dark text-center">
+        <h2 class="animate__animated animate__bounceInDown animate__delay-1s pb-3">
+            Contact Me <i class="fas fa-handshake"></i>
+        </h2>
+        <div class="row">
+            <div class="col-auto mx-auto">
+                <h2 class="text-danger d-inline fw-bold"><i class="fas fa-envelope text-danger fa-2x"></i></h2>
+                <h6> <a href="mailto:06vishalyada@gmail.com" style="color: gray">06vishalyadav@gmail.com</a>
+
+                </h6>
+            </div>
+            <div class="col-auto mx-auto">
+                <h2 class="text-danger d-inline fw-bold"><i class="fas fa-mobile-alt text-danger fa-2x"></i>
+                </h2>
+                <h6 style="color: gray"> +91 9582895161
+                </h6>
+            </div>
+            <div class="col-auto mx-auto">
+                <h2 class="text-danger d-inline fw-bold"><i class="fab fa-github text-danger fa-2x"></i>
+                </h2>
+                <h6> <a href="https://github.com/raovishalyadav" target="_blank" style="color: gray">@raovishalyadav</a>
+                </h6>
+            </div>
+            <div class="col-auto mx-auto">
+                <h2 class="text-danger d-inline fw-bold"><i class="fab fa-linkedin text-danger fa-2x"></i>
+                    <h6> <a href="https://linkedin.com/in/raovishalyadav" target="_blank" style="color: gray">@raovishalyadav</a>
+                    </h6>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer class="bg-secondary text-white p-3">
+        <div class="container">
+            <p class="text-center fw-bold">Made with <i
+                    class="fa-solid fa-heart text-danger animate__animated animate__heartBeat animate__infinite"></i>
+                by
+                Vishal</p>
+        </div>
+    </footer>
+
+
+    <script>
+        window.onscroll = function () {
+            myFunction()
+        };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+
+
+        // Select the count element
+        function runOnce() {
+            const countElement = document.querySelector('.countyears');
+
+            function increment() {
+                // Get the current count value
+                let countyears = parseInt(countElement.innerHTML);
+                countyears++;
+                // Update the count element with the new count value
+                countElement.innerHTML = countyears;
+
+                // If the count has reached 10, clear the interval
+                if (countyears === 5) {
+                    clearInterval(intervalId);
+                }
+            }
+            // Call the increment function every 100 milliseconds
+            const intervalId = setInterval(increment, 300);
+        }
+        setTimeout(runOnce, 3500);
+
+        function runOnce1() {
+            const countElement = document.querySelector('.countskills');
+
+            function increment1() {
+                // Get the current count value
+                let countskills = parseInt(countElement.innerHTML);
+                countskills++;
+                // Update the count element with the new count value
+                countElement.innerHTML = countskills;
+
+                // If the count has reached 10, clear the interval
+                if (countskills === 20) {
+                    clearInterval(intervalId1);
+                }
+            }
+            // Call the increment function every 100 milliseconds
+            const intervalId1 = setInterval(increment1, 100);
+        }
+        setTimeout(runOnce1, 5000);
+
+
+        //To add particular clicked nav item's icon to the center of navbar
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('.nav-item');
+            const navbar = document.querySelector('.navbar');
+            const navbarHeight = navbar.offsetHeight;
+            var mq = window.matchMedia("(min-width: 768px)");
+            let element = document.getElementById('center-nav-text');
+            if (mq.matches) {
+                element.innerHTML = '<i class="fa-solid fa-user-tie fa-4x icon"></i>';
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+                    const id = link.firstElementChild.getAttribute('href');
+                    const targetElement = document.querySelector(id);
+                    if (mq.matches) {
+                        const iconElement = link.querySelector('i');
+                        const iconName = iconElement.classList[
+                            1]; // The second class in the class list is the icon name
+                        element.innerHTML = '<i class="fa-solid ' + iconName +
+                            ' fa-4x icon"></i>';
+                    }
+                    window.scrollTo({
+                        top: targetElement.offsetTop - navbarHeight,
+                        behavior: 'smooth',
+                    });
+                });
+            });
+        });
+
+
+
+        //To give blur effect on initial page load
+        var blur = 500;
+
+        function animate() {
+            blur -= 10;
+            document.body.style.filter = 'blur(' + blur + 'px)';
+            if (blur > 0) {
+                requestAnimationFrame(animate);
+            }
+        }
+        requestAnimationFrame(animate);
+
+
+
+        //To make all cards of same height
+        function setCardHeights() {
+            const cards = document.querySelectorAll('.sameheight');
+            let maxHeight = 0;
+            for (let i = 0; i < cards.length; i++) {
+                if (cards[i].offsetHeight > maxHeight) {
+                    maxHeight = cards[i].offsetHeight;
+                }
+            }
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].style.height = maxHeight + 'px';
+            }
+        }
+        setCardHeights();
+        document.addEventListener('DOMContentLoaded', function () {
+            setCardHeights();
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>
+
+<style>
+
+</style>
