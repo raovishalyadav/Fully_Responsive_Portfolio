@@ -1,6 +1,4 @@
-# My_Portfolio
-
-<h1> UNDER CONSTRUCTION 🚧 </h1>
+# Fully_Responsive_Portfolio
 
 <b><i>This is a fully responsive portfolio website built using HTML, CSS, Javascript, Bootstrap & FontAwesome</b></i>.
 
