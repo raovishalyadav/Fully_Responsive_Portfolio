@@ -89,14 +89,21 @@
 
         .card {
             box-shadow: 15px 15px 15px 0 black;
+            transition: transform 0.5s;
+            /* Add a transition effect for the transform property */
         }
 
         .downloadresume {
             box-shadow: 0px 10px 10px 0 black;
         }
 
+        .shadowvishal {
+            box-shadow: 5px 5px 5px 0px black;
+        }
+
         .card:hover {
-            transform: skew(-10deg);
+            transform: scale(1.1);
+            /* Increase the size of the card on hover */
         }
 
         a {
@@ -113,8 +120,8 @@
         <div class="container-fluid">
             <div class="navbar-brand d-flex align-items-center my-auto mx-auto">
                 <img src="assets/images/vishal.webp" alt="Logo" width="60" height="60"
-                    class="border border-3 border-dark rounded-circle">
-                <a class="nav-link fw-bold ps-2 text-light" href="#">Vishal Yadav</a>
+                    class="shadowvishal rounded-circle">
+                <a class="nav-link fw-bold ps-3 text-light" href="#">Vishal Yadav</a>
             </div>
             <p class="centernav d-md-block" id="center-nav-text"></p>
             <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -130,8 +137,8 @@
                         </a>
                     </li>
                     <li class="nav-item d-flex flex-column align-items-center">
-                        <a class="nav-link fw-bold" href="#resume" id="resume-link">Resume<br>
-                            <i class="fa-solid fa-address-card fa-1x icon"></i>
+                        <a class="nav-link fw-bold" href="#experience" id="resume-link">Experience<br>
+                            <i class="fa-solid fa-briefcase fa-1x icon"></i>
                         </a>
                     </li>
                     <li class="nav-item d-flex flex-column align-items-center">
@@ -168,7 +175,6 @@
             </span>
         </div>
 
-
         <div class="container text-center pt-3">
             <div class="row">
                 <div class="col">
@@ -189,6 +195,10 @@
             </div>
         </div>
 
+        <div class="text-center pt-4">
+            <a href="assets/images/Vishal_Resume.pdf" target="_blank"
+                class="btn btn-danger btn-lg my-3 downloadresume"><i class="fa-regular fa-address-card text-dark"></i> Download my resume</a>
+        </div>
 
     </div>
 
@@ -229,11 +239,45 @@
         </p>
     </div>
 
-    <!-- Resume Section -->
-    <div class="p-5 text-bg-dark text-center animate__animated animate__bounceInDown animate__delay-4s" id="resume">
-        <h2 class="animate__animated animate__bounceInDown animate__delay-1s">Resume</h2>
-        <div class="text-center">
-            <a href="assets/images/Vishal_Resume.pdf" target="_blank" class="btn btn-danger my-3 downloadresume">Download my resume</a>
+    <!-- Experience Section -->
+    <div class="p-5 text-bg-dark text-center animate__animated animate__bounceInDown animate__delay-4s" id="experience">
+
+
+        <h2 class="text-light animate__animated animate__bounceInDown animate__delay-1s mb-4">Work Experience</h2>
+
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col-md-4 mx-auto">
+                <div class="card h-100 bg-danger rounded-5">
+                    <div class="card-body">
+                        <h6 class="card-title text-light fw-bold text-decoration-underline">PROJECT ASSISTANT</h6>
+                        <h6 class="card-title text-light font-monospace">CSIR-NPL</h6>
+                        <p class="card-title fst-italic" style="font-size: 80%;">August 2018 - Present</p>
+                        <p class="card-text text-dark" style="font-size: 90%;">Development of various softwares like Web
+                            based game(CSIR-JIGYASA by Government of India), Python- based GUI Application, Linux-based
+                            shell-script, Python-based data processing software, Python-based software using Socket
+                            Programming, etc.</p>
+                    </div>
+                    <div class="card-footer rounded-bottom-5">
+                        <a href="assets/images/Vishal_Resume.pdf" target="_blank" class="btn btn-dark">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mx-auto">
+                <div class="card h-100 bg-danger rounded-5">
+                    <div class="card-body">
+                        <h6 class="card-title text-light fw-bold text-decoration-underline">JUNIOR SOFTWARE ENGINEER
+                        </h6>
+                        <h6 class="card-title text-light font-monospace">Sheetal Enterprises</h6>
+                        <p class="card-title fst-italic" style="font-size: 80%;">August 2017 - August 2018</p>
+                        <p class="card-text text-dark" style="font-size: 90%;">Developed and maintained various software
+                            for the company using python. Improved overall efficiency by 13% of existing software by
+                            consistently optimizing it.</p>
+                    </div>
+                    <div class="card-footer rounded-bottom-5">
+                        <a href="assets/images/Vishal_Resume.pdf" target="_blank" class="btn btn-dark">More Info</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -418,7 +462,8 @@
             </div>
             <div class="col-auto mx-auto">
                 <h2 class="text-danger d-inline fw-bold"><i class="fab fa-linkedin text-danger fa-2x"></i>
-                    <h6> <a href="https://linkedin.com/in/raovishalyadav" target="_blank" style="color: gray">@raovishalyadav</a>
+                    <h6> <a href="https://linkedin.com/in/raovishalyadav" target="_blank"
+                            style="color: gray">@raovishalyadav</a>
                     </h6>
             </div>
         </div>
@@ -437,6 +482,41 @@
 
 
     <script>
+        //To dynamically add icon to cnter of the navbar on scroll
+        var mediumscreen = window.matchMedia("(min-width: 768px)");
+        if (mediumscreen.matches) {
+            const elements = ['about', 'experience', 'projects', 'contact'];
+            elements.forEach((id) => {
+                const element = document.querySelector(`#${id}`);
+                const centericon = document.querySelector('#center-nav-text');
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting && entries[0].intersectionRatio >= 0.7) {
+                        console.log(element.id)
+                        if (element.id == 'about') {
+                            centericon.innerHTML = '<i class="fa-solid fa-user-tie fa-4x icon"></i>'
+                        }
+                        if (element.id == 'experience') {
+                            centericon.innerHTML = '<i class="fa-solid fa-briefcase fa-4x icon"></i>'
+                        }
+                        if (element.id == 'projects') {
+                            centericon.innerHTML = '<i class="fa-solid fa-sitemap fa-4x icon"></i>'
+                        }
+                        if (element.id == 'contact') {
+                            centericon.innerHTML =
+                                '<i class="fa-solid fa-person-chalkboard fa-4x icon"></i>'
+                        }
+                    } else {}
+                }, {
+                    rootMargin: '0px',
+                    threshold: 0.7
+                });
+                observer.observe(element);
+            });
+        }
+
+
+
+        //For the progress bar under navbar
         window.onscroll = function () {
             myFunction()
         };
@@ -535,26 +615,6 @@
             }
         }
         requestAnimationFrame(animate);
-
-
-
-        //To make all cards of same height
-        function setCardHeights() {
-            const cards = document.querySelectorAll('.sameheight');
-            let maxHeight = 0;
-            for (let i = 0; i < cards.length; i++) {
-                if (cards[i].offsetHeight > maxHeight) {
-                    maxHeight = cards[i].offsetHeight;
-                }
-            }
-            for (let i = 0; i < cards.length; i++) {
-                cards[i].style.height = maxHeight + 'px';
-            }
-        }
-        setCardHeights();
-        document.addEventListener('DOMContentLoaded', function () {
-            setCardHeights();
-        });
     </script>
 
 
