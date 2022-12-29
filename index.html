@@ -87,12 +87,6 @@
             width: 0%;
         }
 
-        .card {
-            box-shadow: 15px 15px 15px 0 black;
-            transition: transform 0.5s;
-            /* Add a transition effect for the transform property */
-        }
-
         .downloadresume {
             box-shadow: 0px 10px 10px 0 black;
         }
@@ -104,12 +98,28 @@
         .shadowvishal {
             box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
         }
-
-        .card:hover {
+        .pcard {
+            box-shadow: 15px 15px 15px 0 black;
+            transition: transform 0.5s;
+            /* Add a transition effect for the transform property */
+        }
+        .pcard:hover {
+            /* border: linear-gradient(to left, white, #ea5358); */
+            /* box-shadow: 0px 1px 20px 0px red; */
+            transform: scale(1.1);
+        }
+        .ecard {
+            /* box-shadow: 15px 15px 15px 0 black; */
+            transition: transform 0.5s;
+            box-shadow: inset 15px 15px 30px black,
+              inset -15px -15px 30px rgba(0, 0, 0, 0.9);
+            /* Add a transition effect for the transform property */
+        }
+        .ecard:hover {
+            box-shadow: 0px 1px 20px 0px white;
             transform: scale(1.1);
             /* Increase the size of the card on hover */
         }
-
         a {
             text-decoration: none;
         }
@@ -121,6 +131,8 @@
         .fa-3dicon {
             filter: drop-shadow(5.5px 1px rgba(0, 0, 0, 1));
         }
+
+
     </style>
 </head>
 
@@ -219,37 +231,55 @@
     <div class="p-5 text-bg-danger text-center animate__animated animate__bounceInDown animate__delay-3s">
         <h2 class="text-dark animate__animated animate__bounceInDown animate__delay-1s">Skills <i
                 class="fa-solid fa-laptop-code"></i></h2>
-        <p class="fw-bold">
-            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 3s;">#Python</span>
-            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 3.3s;">#Django</span>
-            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 3.6s;">#Django REST
-                Framework</span>
-            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 3.9s;">#Font
-                Awesome</span>
-            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 4.2s;">#Cron
-                Jobs</span>
-            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 4.5s;">#HTML</span>
-            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 4.8s;">#CSS</span>
-            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 5.1s;">#Selenium Web
-                driver</span>
-            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 5.4s;">#jQuery</span>
-            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 5.7s;">#Vue.js</span>
-            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 6s;">#Git/GitHub</span>
-            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 6.3s;">#Bootstrap</span>
-            <span class="text-dark animate__animated animate__fadeIn"
-                style="animation-delay: 6.6s;">#JSONWebToken(JWT)</span>
-            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 6.9s;">#PostgreSQL</span>
-            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 7.2s;">#Axios</span>
-            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 7.5s;">#Continuous
-                deployment</span>
-            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 7.8s;">#Socket
-                Programming</span>
-            <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 8.1s;">#FTP/SCP</span>
-            <span class="text-dark animate__animated animate__fadeIn" style="animation-delay: 8.4s;">#SQLite</span>
-            <span class="text-light animate__animated animate__fadeIn"
-                style="animation-delay: 8.7s;">#Elasticsearch</span>
-
-        </p>
+        <div class="col-md-10 mx-auto">
+            <div class="card bg-dark rounded-5" style="box-shadow: 15px 15px 15px 0 black">
+                <div class="card-body fw-bold">
+                    <span class="text-danger animate__animated animate__fadeIn"
+                        style="animation-delay: 3s;">#Python</span>
+                    <span class="text-light animate__animated animate__fadeIn"
+                        style="animation-delay: 3.3s;">#Django</span>
+                    <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 3.6s;">#Django
+                        REST
+                        Framework</span>
+                    <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 3.9s;">#Font
+                        Awesome</span>
+                    <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 4.2s;">#Cron
+                        Jobs</span>
+                    <span class="text-light animate__animated animate__fadeIn"
+                        style="animation-delay: 4.5s;">#HTML</span>
+                    <span class="text-danger animate__animated animate__fadeIn"
+                        style="animation-delay: 4.8s;">#CSS</span>
+                    <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 5.1s;">#Selenium
+                        Web
+                        driver</span>
+                    <span class="text-danger animate__animated animate__fadeIn"
+                        style="animation-delay: 5.4s;">#jQuery</span>
+                    <span class="text-light animate__animated animate__fadeIn"
+                        style="animation-delay: 5.7s;">#Vue.js</span>
+                    <span class="text-danger animate__animated animate__fadeIn"
+                        style="animation-delay: 6s;">#Git/GitHub</span>
+                    <span class="text-light animate__animated animate__fadeIn"
+                        style="animation-delay: 6.3s;">#Bootstrap</span>
+                    <span class="text-danger animate__animated animate__fadeIn"
+                        style="animation-delay: 6.6s;">#JSONWebToken(JWT)</span>
+                    <span class="text-light animate__animated animate__fadeIn"
+                        style="animation-delay: 6.9s;">#PostgreSQL</span>
+                    <span class="text-danger animate__animated animate__fadeIn"
+                        style="animation-delay: 7.2s;">#Axios</span>
+                    <span class="text-light animate__animated animate__fadeIn"
+                        style="animation-delay: 7.5s;">#Continuous
+                        deployment</span>
+                    <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 7.8s;">#Socket
+                        Programming</span>
+                    <span class="text-light animate__animated animate__fadeIn"
+                        style="animation-delay: 8.1s;">#FTP/SCP</span>
+                    <span class="text-danger animate__animated animate__fadeIn"
+                        style="animation-delay: 8.4s;">#SQLite</span>
+                    <span class="text-light animate__animated animate__fadeIn"
+                        style="animation-delay: 8.7s;">#Elasticsearch</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Experience Section -->
@@ -260,7 +290,7 @@
 
         <div class="row row-cols-1 row-cols-md-2 g-4">
             <div class="col-md-4 mx-auto">
-                <div class="card h-100 bg-danger rounded-5">
+                <div class="card ecard h-100 bg-danger rounded-5">
                     <div class="card-body">
                         <h6 class="card-title text-light fw-bold text-decoration-underline">PROJECT ASSISTANT</h6>
                         <h6 class="card-title text-light font-monospace">CSIR-NPL</h6>
@@ -277,7 +307,7 @@
                 </div>
             </div>
             <div class="col-md-4 mx-auto">
-                <div class="card h-100 bg-danger rounded-5">
+                <div class="card ecard h-100 bg-danger rounded-5">
                     <div class="card-body">
                         <h6 class="card-title text-light fw-bold text-decoration-underline">JUNIOR SOFTWARE ENGINEER
                         </h6>
@@ -298,11 +328,12 @@
 
     <!-- Projects Section -->
     <div class="p-5 text-bg-danger text-center" id="projects">
-        <h2 class="text-dark animate__animated animate__bounceInDown animate__delay-1s mb-4">Projects</h2>
+        <h2 class="text-dark animate__animated animate__bounceInDown animate__delay-1s mb-4 submerged-text">Projects
+        </h2>
 
         <div class="row row-cols-1 row-cols-md-4 g-4">
             <div class="col">
-                <div class="card h-100 bg-dark rounded-5">
+                <div class="card pcard h-100 bg-dark rounded-5">
                     <div class="card-body">
                         <h6 class="card-title text-light">Time & Frequency Game</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a Web-Based Game
@@ -318,7 +349,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card h-100 bg-dark rounded-5">
+                <div class="card pcard h-100 bg-dark rounded-5">
                     <div class="card-body">
                         <h6 class="card-title text-light">DRF VueJs JWT Authentication</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
@@ -335,7 +366,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card h-100 bg-dark rounded-5">
+                <div class="card pcard h-100 bg-dark rounded-5">
                     <div class="card-body">
                         <h6 class="card-title text-light">Fully Responsive Portfolio</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a fully
@@ -351,7 +382,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card h-100 bg-dark rounded-5">
+                <div class="card pcard h-100 bg-dark rounded-5">
                     <div class="card-body">
                         <h6 class="card-title text-light">TWSTFT GUI</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a Python based
@@ -367,7 +398,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card h-100 bg-dark rounded-5">
+                <div class="card pcard h-100 bg-dark rounded-5">
                     <div class="card-body">
                         <h6 class="card-title text-light">DRF VueJs Elasticsearch</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
@@ -382,7 +413,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card h-100 bg-dark rounded-5">
+                <div class="card pcard h-100 bg-dark rounded-5">
                     <div class="card-body">
                         <h6 class="card-title text-light">DRF VueJs DjoserAuthentication</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
@@ -397,7 +428,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card h-100 bg-dark rounded-5">
+                <div class="card pcard h-100 bg-dark rounded-5">
                     <div class="card-body">
                         <h6 class="card-title text-light">NavIC RECEIVER Automation</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a Linux based
@@ -413,7 +444,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card h-100 bg-dark rounded-5">
+                <div class="card pcard h-100 bg-dark rounded-5">
                     <div class="card-body">
                         <h6 class="card-title text-light">SATRE MODEM Daily Offset</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a Python based
@@ -427,7 +458,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card h-100 bg-dark rounded-5">
+                <div class="card pcard h-100 bg-dark rounded-5">
                     <div class="card-body">
                         <h6 class="card-title text-light">NMEA Converter</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a Python based
@@ -440,7 +471,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card h-100 bg-dark rounded-5">
+                <div class="card pcard h-100 bg-dark rounded-5">
                     <div class="card-body">
                         <h6 class="card-title text-light">DRF TokenAuthentication</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
@@ -513,19 +544,19 @@
                 const observer = new IntersectionObserver((entries) => {
                     if (entries[0].isIntersecting && entries[0].intersectionRatio >= 0.7) {
                         if (element.id == 'about') {
-                            centericon.innerHTML = '<i class="fa-solid fa-user-tie fa-4x"></i>'
+                            centericon.innerHTML = '<i class="fa-solid fa-user-tie fa-4x fa-3dicon"></i>'
                         }
                         if (element.id == 'experience') {
-                            centericon.innerHTML = '<i class="fa-solid fa-briefcase fa-4x"></i>'
+                            centericon.innerHTML = '<i class="fa-solid fa-briefcase fa-4x fa-3dicon"></i>'
                         }
                         if (element.id == 'projects') {
-                            centericon.innerHTML = '<i class="fa-solid fa-sitemap fa-4x"></i>'
+                            centericon.innerHTML = '<i class="fa-solid fa-sitemap fa-4x fa-3dicon"></i>'
                         }
                         if (element.id == 'contact') {
                             centericon.innerHTML =
-                                '<i class="fa-solid fa-person-chalkboard fa-4x"></i>'
+                                '<i class="fa-solid fa-person-chalkboard fa-4x fa-3dicon"></i>'
                         }
-                    } else {}
+                    } else { }
                 }, {
                     rootMargin: '0px',
                     threshold: 0.7
