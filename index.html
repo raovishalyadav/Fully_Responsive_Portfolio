@@ -109,6 +109,14 @@
         a {
             text-decoration: none;
         }
+
+        .navbar {
+            box-shadow: 0 15px 15px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .fa-3dicon {
+            filter:drop-shadow( 5.5px 1px rgba(0, 0, 0, 1));
+        }
     </style>
 </head>
 
@@ -133,22 +141,22 @@
                 <ul class="navbar-nav ms-auto text-center">
                     <li class="nav-item d-flex flex-column align-items-center">
                         <a class="nav-link fw-bold" href="#about" id="about-link">About<br>
-                            <i class="fa-solid fa-user-tie fa-1x icon"></i>
+                            <i class="fa-solid fa-user-tie fa-1x"></i>
                         </a>
                     </li>
                     <li class="nav-item d-flex flex-column align-items-center">
                         <a class="nav-link fw-bold" href="#experience" id="resume-link">Experience<br>
-                            <i class="fa-solid fa-briefcase fa-1x icon"></i>
+                            <i class="fa-solid fa-briefcase fa-1x"></i>
                         </a>
                     </li>
                     <li class="nav-item d-flex flex-column align-items-center">
                         <a class="nav-link fw-bold" href="#projects" id="projects-link">Projects<br>
-                            <i class="fa-solid fa-sitemap fa-1x icon"></i>
+                            <i class="fa-solid fa-sitemap fa-1x"></i>
                         </a>
                     </li>
                     <li class="nav-item d-flex flex-column align-items-center">
                         <a class="nav-link fw-bold" href="#contact" id="contact-link">Contact<br>
-                            <i class="fa-solid fa-person-chalkboard fa-1x icon"></i>
+                            <i class="fa-solid fa-person-chalkboard fa-1x"></i>
                         </a>
                     </li>
                 </ul>
@@ -197,7 +205,8 @@
 
         <div class="text-center pt-4">
             <a href="assets/images/Vishal_Resume.pdf" target="_blank"
-                class="btn btn-danger btn-lg my-3 downloadresume"><i class="fa-regular fa-address-card text-dark"></i> Download my resume</a>
+                class="btn btn-danger btn-lg my-3 downloadresume"><i class="fa-regular fa-address-card text-dark"></i>
+                Download my resume</a>
         </div>
 
     </div>
@@ -443,25 +452,25 @@
         </h2>
         <div class="row">
             <div class="col-auto mx-auto">
-                <h2 class="text-danger d-inline fw-bold"><i class="fas fa-envelope text-danger fa-2x"></i></h2>
+                <h2 class="d-inline"><i class="fas fa-envelope text-danger fa-2x fa-3dicon"></i></h2>
                 <h6> <a href="mailto:06vishalyada@gmail.com" style="color: gray">06vishalyadav@gmail.com</a>
 
                 </h6>
             </div>
             <div class="col-auto mx-auto">
-                <h2 class="text-danger d-inline fw-bold"><i class="fas fa-mobile-alt text-danger fa-2x"></i>
+                <h2 class="d-inline"><i class="fas fa-mobile-alt text-danger fa-2x fa-3dicon"></i>
                 </h2>
                 <h6 style="color: gray"> +91 9582895161
                 </h6>
             </div>
             <div class="col-auto mx-auto">
-                <h2 class="text-danger d-inline fw-bold"><i class="fab fa-github text-danger fa-2x"></i>
+                <h2 class="d-inline"><i class="fab fa-github text-danger fa-2x fa-3dicon"></i>
                 </h2>
                 <h6> <a href="https://github.com/raovishalyadav" target="_blank" style="color: gray">@raovishalyadav</a>
                 </h6>
             </div>
             <div class="col-auto mx-auto">
-                <h2 class="text-danger d-inline fw-bold"><i class="fab fa-linkedin text-danger fa-2x"></i>
+                <h2 class="d-inline"><i class="fab fa-linkedin text-danger fa-2x fa-3dicon"></i>
                     <h6> <a href="https://linkedin.com/in/raovishalyadav" target="_blank"
                             style="color: gray">@raovishalyadav</a>
                     </h6>
@@ -482,7 +491,7 @@
 
 
     <script>
-        //To dynamically add icon to cnter of the navbar on scroll
+        //To dynamically add icon to center of the navbar on scroll
         var mediumscreen = window.matchMedia("(min-width: 768px)");
         if (mediumscreen.matches) {
             const elements = ['about', 'experience', 'projects', 'contact'];
@@ -491,19 +500,18 @@
                 const centericon = document.querySelector('#center-nav-text');
                 const observer = new IntersectionObserver((entries) => {
                     if (entries[0].isIntersecting && entries[0].intersectionRatio >= 0.7) {
-                        console.log(element.id)
                         if (element.id == 'about') {
-                            centericon.innerHTML = '<i class="fa-solid fa-user-tie fa-4x icon"></i>'
+                            centericon.innerHTML = '<i class="fa-solid fa-user-tie fa-4x"></i>'
                         }
                         if (element.id == 'experience') {
-                            centericon.innerHTML = '<i class="fa-solid fa-briefcase fa-4x icon"></i>'
+                            centericon.innerHTML = '<i class="fa-solid fa-briefcase fa-4x"></i>'
                         }
                         if (element.id == 'projects') {
-                            centericon.innerHTML = '<i class="fa-solid fa-sitemap fa-4x icon"></i>'
+                            centericon.innerHTML = '<i class="fa-solid fa-sitemap fa-4x"></i>'
                         }
                         if (element.id == 'contact') {
                             centericon.innerHTML =
-                                '<i class="fa-solid fa-person-chalkboard fa-4x icon"></i>'
+                                '<i class="fa-solid fa-person-chalkboard fa-4x"></i>'
                         }
                     } else {}
                 }, {
@@ -579,7 +587,7 @@
             var mq = window.matchMedia("(min-width: 768px)");
             let element = document.getElementById('center-nav-text');
             if (mq.matches) {
-                element.innerHTML = '<i class="fa-solid fa-user-tie fa-4x icon"></i>';
+                element.innerHTML = '<i class="fa-solid fa-user-tie fa-4x"></i>';
             }
 
             navLinks.forEach(link => {
@@ -592,7 +600,7 @@
                         const iconName = iconElement.classList[
                             1]; // The second class in the class list is the icon name
                         element.innerHTML = '<i class="fa-solid ' + iconName +
-                            ' fa-4x icon"></i>';
+                            ' fa-4x"></i>';
                     }
                     window.scrollTo({
                         top: targetElement.offsetTop - navbarHeight,
