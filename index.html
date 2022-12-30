@@ -39,20 +39,22 @@
         .type {
             color: #0000;
             background:
-                linear-gradient(-90deg, red 5px, #0000 0) 10px 0,
-                linear-gradient(red 0 0) 0 0;
-            background-size: calc(var(--n)*1ch) 200%;
+                linear-gradient(-90deg, #dc3545 5px, #0000 0) 10px 0,
+                linear-gradient(#dc3545 0 0) 0 0;
+            background-size: calc(var(--n)*1ch) 100%;
             -webkit-background-clip: padding-box, text;
             background-clip: padding-box, text;
             background-repeat: no-repeat;
             animation:
                 b .7s infinite steps(1),
                 t calc(var(--n)*.015s) steps(var(--n)) forwards;
+            animation-delay: 700ms;
+            animation-duration: 5s;
         }
 
         @keyframes t {
             from {
-                background-size: 0 200%
+                background-size: 0 100%
             }
         }
 
@@ -143,6 +145,12 @@
                 inset 8px 8px 12px black;
             outline: none;
         }
+
+        body {
+            background-color: #212529;
+            transition: 0.5s ease-out;
+
+        }
     </style>
 </head>
 
@@ -196,15 +204,13 @@
 
 
     <!-- About Section -->
-    <div class="p-5 text-bg-dark text-center animate__animated animate__bounceInDown animate__delay-2s" id="about">
-        <h2 class="animate__animated animate__bounceInDown animate__delay-1s display-5">Full Stack Django Developer <i
-                class="fa-solid fa-code"></i></h2>
+    <div class="p-5 text-bg-dark text-center" id="about">
+        <h2 class="display-5">Full Stack Django Developer <i class="fa-solid fa-code"></i></h2>
+
         <div class="text-center">
-            <span class="type lead" style="--n:363">
-                Welcome to my portfolio website! I am a
-                full stack Django developer with experience in building
-                scalable and secure web applications. I have more than 5 years of
-                experience in Python. I am always learning and
+            <span class="type" style="--n:295">
+                Welcome to my portfolio website! I am a full stack Django developer with experience in building scalable
+                and secure web applications. I have more than 5 years of experience in Python. I am always learning and
                 staying up to date with the latest technologies and best practices in web development.
             </span>
         </div>
@@ -238,65 +244,65 @@
     </div>
 
     <!-- Skills Section -->
-    <div class="p-5 text-bg-danger text-center animate__animated animate__bounceInDown animate__delay-3s">
-        <h2 class="text-dark animate__animated animate__bounceInDown animate__delay-1s" style="font-family: Arial Black, Arial, sans-serif;
+    <div class="p-5 text-bg-danger text-center">
+        <h2 class="text-dark" style="font-family: Arial Black, Arial, sans-serif;
         ">Skills <i class="fa-solid fa-laptop-code"></i></h2>
         <div class="col-md-10 mx-auto">
             <div class="card bg-dark rounded-5" style="box-shadow: 15px 15px 15px 0 black">
                 <div class="card-body fw-bold">
                     <span class="text-danger animate__animated animate__fadeIn"
-                        style="animation-delay: 3s;">#Python</span>
+                        style="animation-delay: 8.5s;">#Python</span>
                     <span class="text-light animate__animated animate__fadeIn"
-                        style="animation-delay: 3.3s;">#Django</span>
-                    <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 3.6s;">#Django
+                        style="animation-delay: 8.8s;">#Django</span>
+                    <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 9.1s;">#Django
                         REST
                         Framework</span>
-                    <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 3.9s;">#Font
+                    <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 9.4s;">#Font
                         Awesome</span>
-                    <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 4.2s;">#Cron
+                    <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 9.7s;">#Cron
                         Jobs</span>
                     <span class="text-light animate__animated animate__fadeIn"
-                        style="animation-delay: 4.5s;">#HTML</span>
+                        style="animation-delay: 10s;">#HTML</span>
                     <span class="text-danger animate__animated animate__fadeIn"
-                        style="animation-delay: 4.8s;">#CSS</span>
-                    <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 5.1s;">#Selenium
+                        style="animation-delay: 10.3s;">#CSS</span>
+                    <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 10.6s;">#Selenium
                         Web
                         driver</span>
                     <span class="text-danger animate__animated animate__fadeIn"
-                        style="animation-delay: 5.4s;">#jQuery</span>
+                        style="animation-delay: 10.9s;">#jQuery</span>
                     <span class="text-light animate__animated animate__fadeIn"
-                        style="animation-delay: 5.7s;">#Vue.js</span>
+                        style="animation-delay: 11.2s;">#Vue.js</span>
                     <span class="text-danger animate__animated animate__fadeIn"
-                        style="animation-delay: 6s;">#Git/GitHub</span>
+                        style="animation-delay: 11.5s;">#Git/GitHub</span>
                     <span class="text-light animate__animated animate__fadeIn"
-                        style="animation-delay: 6.3s;">#Bootstrap</span>
+                        style="animation-delay: 11.8s;">#Bootstrap</span>
                     <span class="text-danger animate__animated animate__fadeIn"
-                        style="animation-delay: 6.6s;">#JSONWebToken(JWT)</span>
+                        style="animation-delay: 12.1s;">#JSONWebToken(JWT)</span>
                     <span class="text-light animate__animated animate__fadeIn"
-                        style="animation-delay: 6.9s;">#PostgreSQL</span>
+                        style="animation-delay: 12.4s;">#PostgreSQL</span>
                     <span class="text-danger animate__animated animate__fadeIn"
-                        style="animation-delay: 7.2s;">#Axios</span>
+                        style="animation-delay: 12.7s;">#Axios</span>
                     <span class="text-light animate__animated animate__fadeIn"
-                        style="animation-delay: 7.5s;">#Continuous
+                        style="animation-delay: 13s;">#Continuous
                         deployment</span>
-                    <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 7.8s;">#Socket
+                    <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 13.3s;">#Socket
                         Programming</span>
                     <span class="text-light animate__animated animate__fadeIn"
-                        style="animation-delay: 8.1s;">#FTP/SCP</span>
+                        style="animation-delay: 13.6s;">#FTP/SCP</span>
                     <span class="text-danger animate__animated animate__fadeIn"
-                        style="animation-delay: 8.4s;">#SQLite</span>
+                        style="animation-delay: 13.9s;">#SQLite</span>
                     <span class="text-light animate__animated animate__fadeIn"
-                        style="animation-delay: 8.7s;">#Elasticsearch</span>
+                        style="animation-delay: 14.2s;">#Elasticsearch</span>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Experience Section -->
-    <div class="p-5 text-bg-dark text-center animate__animated animate__bounceInDown animate__delay-4s" id="experience">
+    <div class="p-5 text-bg-dark text-center" id="experience">
 
 
-        <h2 class="text-light animate__animated animate__bounceInDown animate__delay-1s mb-4">Experience</h2>
+        <h2 class="text-light mb-4">Experience</h2>
 
         <div class="row row-cols-1 row-cols-md-2 g-4">
             <div class="col-md-4 mx-auto">
@@ -339,7 +345,7 @@
 
     <!-- Projects Section -->
     <div class="p-5 text-bg-danger text-center" id="projects">
-        <h2 class="text-dark animate__animated animate__bounceInDown animate__delay-1s mb-4 submerged" style="font-family: Arial Black, Arial, sans-serif;
+        <h2 class="text-dark mb-4 submerged" style="font-family: Arial Black, Arial, sans-serif;
         ">Projects
         </h2>
 
@@ -502,7 +508,7 @@
 
     <!-- Contact Section -->
     <div id="contact" class="p-5 text-light bg-dark text-center">
-        <h2 class="animate__animated animate__bounceInDown animate__delay-1s pb-3">
+        <h2 class="pb-3">
             Contact <i class="fas fa-handshake"></i>
         </h2>
         <div class="row">
@@ -569,7 +575,7 @@
                             centericon.innerHTML =
                                 '<i class="fa-solid fa-person-chalkboard fa-4x"></i>'
                         }
-                    } else {}
+                    } else { }
                 }, {
                     rootMargin: '0px',
                     threshold: 0.7
@@ -612,7 +618,7 @@
             // Call the increment function every 100 milliseconds
             const intervalId = setInterval(increment, 200);
         }
-        setTimeout(runOnce, 3500);
+        setTimeout(runOnce, 5000);
 
         function runOnce1() {
             const countElement = document.querySelector('.countskills');
@@ -632,7 +638,7 @@
             // Call the increment function every 100 milliseconds
             const intervalId1 = setInterval(increment1, 100);
         }
-        setTimeout(runOnce1, 5000);
+        setTimeout(runOnce1, 6500);
 
 
         //To add particular clicked nav item's icon to the center of navbar
@@ -669,7 +675,7 @@
 
 
         //To give blur effect on initial page load
-        var blur = 500;
+        var blur = 300;
 
         function animate() {
             blur -= 10;
