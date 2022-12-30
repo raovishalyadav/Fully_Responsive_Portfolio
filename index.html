@@ -98,28 +98,32 @@
         .shadowvishal {
             box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
         }
+
         .pcard {
             box-shadow: 15px 15px 15px 0 black;
             transition: transform 0.5s;
-            /* Add a transition effect for the transform property */
         }
+
         .pcard:hover {
-            /* border: linear-gradient(to left, white, #ea5358); */
-            /* box-shadow: 0px 1px 20px 0px red; */
             transform: scale(1.1);
         }
+
+        .einfo {
+            box-shadow: 0px 5px 10px 0 black;
+        }
+
         .ecard {
-            /* box-shadow: 15px 15px 15px 0 black; */
+            --bs-card-border-width: 0;
             transition: transform 0.5s;
-            box-shadow: inset 15px 15px 30px black,
-              inset -15px -15px 30px rgba(0, 0, 0, 0.9);
-            /* Add a transition effect for the transform property */
+            box-shadow: inset 15px 15px 30px 0 rgba(0, 0, 0, 1),
+                inset -12px -12px 24px 0 rgba(0, 0, 0, 0.667);
         }
+
         .ecard:hover {
-            box-shadow: 0px 1px 20px 0px white;
+            box-shadow: 15px 15px 15px 0 black;
             transform: scale(1.1);
-            /* Increase the size of the card on hover */
         }
+
         a {
             text-decoration: none;
         }
@@ -133,6 +137,12 @@
         }
 
 
+        .submerged {
+            text-shadow:
+                inset -8px -8px 12px white,
+                inset 8px 8px 12px black;
+            outline: none;
+        }
     </style>
 </head>
 
@@ -301,7 +311,7 @@
                             Programming, etc.</p>
                     </div>
                     <div class="card-footer rounded-bottom-5">
-                        <a href="assets/images/Vishal_Resume.pdf" target="_blank" class="btn btn-dark moreinfo">More
+                        <a href="assets/images/Vishal_Resume.pdf" target="_blank" class="btn btn-dark einfo">More
                             Info</a>
                     </div>
                 </div>
@@ -318,7 +328,7 @@
                             consistently optimizing it.</p>
                     </div>
                     <div class="card-footer rounded-bottom-5">
-                        <a href="assets/images/Vishal_Resume.pdf" target="_blank" class="btn btn-dark moreinfo">More
+                        <a href="assets/images/Vishal_Resume.pdf" target="_blank" class="btn btn-dark einfo">More
                             Info</a>
                     </div>
                 </div>
@@ -328,7 +338,7 @@
 
     <!-- Projects Section -->
     <div class="p-5 text-bg-danger text-center" id="projects">
-        <h2 class="text-dark animate__animated animate__bounceInDown animate__delay-1s mb-4 submerged-text">Projects
+        <h2 class="text-dark animate__animated animate__bounceInDown animate__delay-1s mb-4 submerged">Projects
         </h2>
 
         <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -415,7 +425,7 @@
             <div class="col">
                 <div class="card pcard h-100 bg-dark rounded-5">
                     <div class="card-body">
-                        <h6 class="card-title text-light">DRF VueJs DjoserAuthentication</h6>
+                        <h6 class="card-title text-light">DRF VueJs Djoser Authentication</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
                             using DRF, VUE Js, HTML, CSS, Bootstrap & FontAwesome.
                             This API has token based Authentication using Djoser with Signup, Login & Logout
@@ -473,7 +483,7 @@
             <div class="col">
                 <div class="card pcard h-100 bg-dark rounded-5">
                     <div class="card-body">
-                        <h6 class="card-title text-light">DRF TokenAuthentication</h6>
+                        <h6 class="card-title text-light">DRF Token Authentication</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
                             using Django REST framework (DRF) with DRF's Token Authentication.</p>
                     </div>
@@ -526,7 +536,8 @@
     <footer class="bg-secondary text-white p-3">
         <div class="container">
             <p class="text-center fw-bold">Made with <i
-                    class="fa-solid fa-heart text-danger animate__animated animate__heartBeat animate__infinite"></i>
+                    class="fa-solid fa-heart text-danger animate__animated animate__heartBeat animate__infinite"
+                    aria-labelledby="something" title="love"></i>
                 by
                 Vishal</p>
         </div>
@@ -544,19 +555,19 @@
                 const observer = new IntersectionObserver((entries) => {
                     if (entries[0].isIntersecting && entries[0].intersectionRatio >= 0.7) {
                         if (element.id == 'about') {
-                            centericon.innerHTML = '<i class="fa-solid fa-user-tie fa-4x fa-3dicon"></i>'
+                            centericon.innerHTML = '<i class="fa-solid fa-user-tie fa-4x"></i>'
                         }
                         if (element.id == 'experience') {
-                            centericon.innerHTML = '<i class="fa-solid fa-briefcase fa-4x fa-3dicon"></i>'
+                            centericon.innerHTML = '<i class="fa-solid fa-briefcase fa-4x"></i>'
                         }
                         if (element.id == 'projects') {
-                            centericon.innerHTML = '<i class="fa-solid fa-sitemap fa-4x fa-3dicon"></i>'
+                            centericon.innerHTML = '<i class="fa-solid fa-sitemap fa-4x"></i>'
                         }
                         if (element.id == 'contact') {
                             centericon.innerHTML =
-                                '<i class="fa-solid fa-person-chalkboard fa-4x fa-3dicon"></i>'
+                                '<i class="fa-solid fa-person-chalkboard fa-4x"></i>'
                         }
-                    } else { }
+                    } else {}
                 }, {
                     rootMargin: '0px',
                     threshold: 0.7
@@ -597,7 +608,7 @@
                 }
             }
             // Call the increment function every 100 milliseconds
-            const intervalId = setInterval(increment, 300);
+            const intervalId = setInterval(increment, 200);
         }
         setTimeout(runOnce, 3500);
 
