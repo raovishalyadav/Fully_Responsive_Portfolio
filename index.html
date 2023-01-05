@@ -7,7 +7,7 @@
     <title>Portfolio | Vishal Yadav</title>
     <link rel="icon" href="assets/images/vishal.webp" type="image/webp">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -35,22 +35,6 @@
             background: #888;
         }
 
-        /* for typewriter effect */
-        .type {
-            color: #0000;
-            background:
-                linear-gradient(-90deg, #dc3545 5px, #0000 0) 10px 0,
-                linear-gradient(#dc3545 0 0) 0 0;
-            background-size: calc(var(--n)*1ch) 100%;
-            -webkit-background-clip: padding-box, text;
-            background-clip: padding-box, text;
-            background-repeat: no-repeat;
-            animation:
-                b .7s infinite steps(1),
-                t calc(var(--n)*.015s) steps(var(--n)) forwards;
-            animation-delay: 700ms;
-            animation-duration: 5s;
-        }
 
         @keyframes t {
             from {
@@ -101,6 +85,10 @@
             box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
         }
 
+        .card-footer {
+            background-color: transparent;
+        }
+
         .pcard {
             box-shadow: 15px 15px 15px 0 black;
             transition: transform 0.5s;
@@ -123,7 +111,7 @@
 
         .ecard:hover {
             box-shadow: 15px 15px 15px 0 black;
-            transform: scale(1.1);
+            transform: scale(1.03);
         }
 
         a {
@@ -151,6 +139,24 @@
             transition: 0.5s ease-out;
 
         }
+
+
+        /* for typewriter effect */
+        .type {
+            color: #0000;
+            background:
+                linear-gradient(-90deg, white 5px, #0000 0) 10px 0,
+                linear-gradient(white 0 0) 0 0;
+            background-size: calc(var(--n)*1ch) 100%;
+            -webkit-background-clip: padding-box, text;
+            background-clip: padding-box, text;
+            background-repeat: no-repeat;
+            animation:
+                b .7s infinite steps(1),
+                t calc(var(--n)*.015s) steps(var(--n)) forwards;
+            animation-delay: 700ms;
+            animation-duration: 5s;
+        }
     </style>
 </head>
 
@@ -173,6 +179,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto text-center">
+                    <div class="dropdown d-flex flex-column align-items-center">
+                        <a class="text-light my-auto fw-bold me-md-2 dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false"><br><i
+                                class="fa-solid fa-brush fa-2x"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-center">
+                            <li><a class="dropdown-item" id="convert-danger">red</a></li>
+                            <li><a class="dropdown-item" id="convert-info">cyan</a></li>
+                            <li><a class="dropdown-item" id="convert-warning">yellow</a></li>
+                            <li><a class="dropdown-item" id="convert-success">green</a></li>
+                            <li><a class="dropdown-item" id="convert-primary">blue</a></li>
+                        </ul>
+                    </div>
                     <li class="nav-item d-flex flex-column align-items-center">
                         <a class="nav-link fw-bold" href="#about" id="about-link">About<br>
                             <i class="fa-solid fa-user-tie fa-1x"></i>
@@ -207,7 +226,7 @@
     <div class="p-5 text-bg-dark text-center" id="about">
         <h2 class="display-5">Full Stack Django Developer <i class="fa-solid fa-code"></i></h2>
 
-        <div class="text-center">
+        <div class="text-center qqq">
             <span class="type" style="--n:295">
                 Welcome to my portfolio website! I am a full stack Django developer with experience in building scalable
                 and secure web applications. I have more than 5 years of experience in Python. I am always learning and
@@ -240,6 +259,8 @@
                 class="btn btn-danger btn-lg my-3 downloadresume"><i class="fa-regular fa-address-card text-dark"></i>
                 Download my resume</a>
         </div>
+
+
 
     </div>
 
@@ -587,7 +608,6 @@
         }
 
 
-
         //For the progress bar under navbar
         window.onscroll = function () {
             myFunction()
@@ -601,43 +621,35 @@
         }
 
 
-        // Select the count element
+        // To animate the experience counter
         function runOnce() {
             const countElement = document.querySelector('.countyears');
 
             function increment() {
-                // Get the current count value
                 let countyears = parseInt(countElement.innerHTML);
                 countyears++;
-                // Update the count element with the new count value
                 countElement.innerHTML = countyears;
-
-                // If the count has reached 10, clear the interval
                 if (countyears === 5) {
                     clearInterval(intervalId);
                 }
             }
-            // Call the increment function every 100 milliseconds
             const intervalId = setInterval(increment, 200);
         }
         setTimeout(runOnce, 5000);
 
+
+        // To animate the experience counter
         function runOnce1() {
             const countElement = document.querySelector('.countskills');
 
             function increment1() {
-                // Get the current count value
                 let countskills = parseInt(countElement.innerHTML);
                 countskills++;
-                // Update the count element with the new count value
                 countElement.innerHTML = countskills;
-
-                // If the count has reached 10, clear the interval
                 if (countskills === 20) {
                     clearInterval(intervalId1);
                 }
             }
-            // Call the increment function every 100 milliseconds
             const intervalId1 = setInterval(increment1, 100);
         }
         setTimeout(runOnce1, 6500);
@@ -653,7 +665,6 @@
             if (mq.matches) {
                 element.innerHTML = '<i class="fa-solid fa-user-tie fa-4x"></i>';
             }
-
             navLinks.forEach(link => {
                 link.addEventListener('click', e => {
                     e.preventDefault();
@@ -675,10 +686,8 @@
         });
 
 
-
         //To give blur effect on initial page load
         var blur = 300;
-
         function animate() {
             blur -= 10;
             document.body.style.filter = 'blur(' + blur + 'px)';
@@ -687,8 +696,58 @@
             }
         }
         requestAnimationFrame(animate);
-    </script>
 
+
+        // To change color on theme selected
+        const findclass = document.querySelectorAll(
+            '.text-danger,.bg-danger,.text-bg-danger,.btn-danger');
+        findclass.forEach(element => {
+            if (element.classList.contains('text-danger')) {
+                element.classList.add('textclass');
+            }
+            if (element.classList.contains('bg-danger')) {
+                element.classList.add('bgclass');
+            }
+            if (element.classList.contains('text-bg-danger')) {
+                element.classList.add('textbgclass');
+            }
+            if (element.classList.contains('btn-danger')) {
+                element.classList.add('btnclass');
+            }
+        });
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', event => {
+                colors = event.target.id.split('-')[1];
+
+                const addclass = document.querySelectorAll(
+                    '.textclass,.bgclass,.textbgclass,.btnclass');
+                addclass.forEach(function (currentElement) {
+                    if (currentElement.classList.contains('textclass')) {
+                        let className = currentElement.className;
+                        let textClass = className.substring(className.indexOf('text-') + 5).split(' ')[0];
+                        currentElement.classList.replace('text-' + textClass, 'text-' + colors);
+                    }
+                    if (currentElement.classList.contains('bgclass')) {
+                        let className = currentElement.className;
+                        let textClass = className.substring(className.indexOf('bg-') + 3).split(' ')[0];
+                        currentElement.classList.replace('bg-' + textClass, 'bg-' + colors);
+                    }
+                    if (currentElement.classList.contains('textbgclass')) {
+                        let className = currentElement.className;
+                        let textClass = className.substring(className.indexOf('text-bg-') + 8).split(' ')[0];
+                        currentElement.classList.replace('text-bg-' + textClass, 'text-bg-' + colors);
+                    }
+                    if (currentElement.classList.contains('btnclass')) {
+                        let className = currentElement.className;
+                        let textClass = className.substring(className.indexOf('btn-') + 4).split(' ')[0];
+                        currentElement.classList.replace('btn-' + textClass, 'btn-' + colors);
+                    }
+                });
+            });
+        });
+
+
+    </script>
 
 
 
