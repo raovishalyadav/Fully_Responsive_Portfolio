@@ -798,23 +798,34 @@
             });
         });
 
-        const cursora = document.querySelector(".cursor1");
-        const cursorb = document.querySelector(".cursor2");
-        document.addEventListener("mousemove", e => {
-            cursora.style.top = e.pageY + "px";
-            cursora.style.left = e.pageX + "px";
+        // Check if the device is a mobile device.
+        if (/Mobi/.test(navigator.userAgent)) {
+          // Mobile device. Set the cursor to the default style.
+          document.body.style.cursor = 'default';
+          document.querySelector(".cursor1").style.display = "none";
+        document.querySelector(".cursor2").style.display = "none";
 
-            cursorb.style.top = e.pageY + "px";
-            cursorb.style.left = e.pageX + "px";
-        })
 
-        document.addEventListener("mousedown", () => {
-            cursorb.classList.add("click");
-        });
+        } else {
+          // Non-mobile device.
+          const cursora = document.querySelector(".cursor1");
+          const cursorb = document.querySelector(".cursor2");
+          document.addEventListener("mousemove", e => {
+              cursora.style.top = e.pageY + "px";
+              cursora.style.left = e.pageX + "px";
 
-        document.addEventListener("mouseup", () => {
-            cursorb.classList.remove("click");
-        });
+              cursorb.style.top = e.pageY + "px";
+              cursorb.style.left = e.pageX + "px";
+          })
+
+          document.addEventListener("mousedown", () => {
+              cursorb.classList.add("click");
+          });
+
+          document.addEventListener("mouseup", () => {
+              cursorb.classList.remove("click");
+          });
+        }
 
     </script>
 
