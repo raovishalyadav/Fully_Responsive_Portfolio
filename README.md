@@ -4,6 +4,7 @@
 
 
 New Features:  
- ⭐ Added custom scroll bar  
+ ⭐ Added custom scroll bar   
+ ⭐ Added custom Cursor     
  ⭐ Added themes option, now you can change color of the site by selecting from many available options.  
 https://raovishalyadav.github.io/Fully_Responsive_Portfolio/
