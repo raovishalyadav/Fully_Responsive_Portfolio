@@ -127,13 +127,6 @@
         }
 
 
-        .submerged {
-            text-shadow:
-                inset -8px -8px 12px white,
-                inset 8px 8px 12px black;
-            outline: none;
-        }
-
         body {
             background-color: #212529;
             transition: 0.5s ease-out;
@@ -157,10 +150,11 @@
             animation-delay: 700ms;
             animation-duration: 5s;
         }
-        
+
         nav ul li a {
             position: relative;
         }
+
         nav ul li a::after {
             content: "";
             width: 0;
@@ -171,14 +165,55 @@
             left: 0;
             transition: all 500ms;
         }
+
         nav ul li a:hover::after {
             width: 100%;
+        }
+
+
+        /*Custom Cursor*/
+        [class^="cursor"] {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .cursor2 {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(300deg,black, white);
+            transition: .3s ease-out;
+            opacity: 0.7;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .cursor1 {
+            width: 15px;
+            height: 15px;
+            background: rgba(0, 0, 0, 0.75);
+        }
+
+        .click {
+            opacity: 0.3;
+        }
+
+        * {
+            cursor: none;
+        }
+
+        a {
+            cursor: none !important;
         }
     </style>
 </head>
 
 <body class="blur">
-
+    <div class="cursor2"></div>
+    <div class="cursor1"></div>
     <!-- navbar Section -->
     <nav
         class="navbar sticky-top flex-column navbar-expand-lg bg-danger animate__animated animate__slideInDown animate__delay-1s">
@@ -198,8 +233,7 @@
                 <ul class="navbar-nav ms-auto text-center">
                     <div class="dropdown d-flex flex-column align-items-center">
                         <a class="text-light my-auto fw-bold me-md-2 dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false"><br><i
-                                class="fa-solid fa-brush fa-2x"></i>
+                            data-bs-toggle="dropdown" aria-expanded="false"><br><i class="fa-solid fa-brush fa-2x"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-center">
                             <li><a class="dropdown-item" id="convert-danger">red</a></li>
@@ -385,7 +419,7 @@
 
     <!-- Projects Section -->
     <div class="p-5 text-bg-danger text-center" id="projects">
-        <h2 class="text-dark mb-4 submerged" style="font-family: Arial Black, Arial, sans-serif;
+        <h2 class="text-dark mb-4" style="font-family: Arial Black, Arial, sans-serif;
         ">Projects
         </h2>
 
@@ -588,7 +622,7 @@
                     aria-labelledby="something" title="love" style="color: red;"></i>
                 by
                 Vishal</p>
-                <p class="fw-lighter" style="font-size: 80%;">Copyright (C) 2023 Vishal Yadav</p>
+            <p class="fw-lighter" style="font-size: 80%;">Copyright (C) 2023 Vishal Yadav</p>
         </div>
     </footer>
 
@@ -764,6 +798,23 @@
             });
         });
 
+        const cursora = document.querySelector(".cursor1");
+        const cursorb = document.querySelector(".cursor2");
+        document.addEventListener("mousemove", e => {
+            cursora.style.top = e.pageY + "px";
+            cursora.style.left = e.pageX + "px";
+
+            cursorb.style.top = e.pageY + "px";
+            cursorb.style.left = e.pageX + "px";
+        })
+
+        document.addEventListener("mousedown", () => {
+            cursorb.classList.add("click");
+        });
+
+        document.addEventListener("mouseup", () => {
+            cursorb.classList.remove("click");
+        });
 
     </script>
 
@@ -772,5 +823,3 @@
 </body>
 
 </html>
-
-
