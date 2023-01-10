@@ -78,14 +78,52 @@
             box-shadow: 0px 10px 10px 0 black;
             --bs-btn-border-width: 0;
         }
+        
         .downloadresume:hover {
             transform: translate(0, 0.07em);
             transition: all 0.45s ease-in-out;
             box-shadow: inset 3px 3px 6px 0 rgba(0, 0, 0, 1),
                 inset -2px -2px 4px 0 rgba(0, 0, 0, 0.667);
-                --bs-btn-border-width: 0;
-
+            --bs-btn-border-width: 0;
+            animation-name: shine;
+            animation-duration: 260ms;
         }
+
+        @keyframes shine {
+            0% {
+                background: linear-gradient(30deg,
+                        hsl(260, 85%, 95%) 0%,
+                        hsl(354, 70%, 54%) 25%);
+            }
+
+            25% {
+                background: linear-gradient(30deg,
+                        hsl(354, 70%, 54%) 0%,
+                        hsl(260, 85%, 95%) 25%,
+                        hsl(354, 70%, 54%) 50%);
+            }
+
+            50% {
+                background: linear-gradient(30deg,
+                        hsl(354, 70%, 54%) 0%,
+                        hsl(260, 85%, 95%) 50%,
+                        hsl(354, 70%, 54%) 75%);
+            }
+
+            75% {
+                background: linear-gradient(30deg,
+                        hsl(354, 70%, 54%) 0%,
+                        hsl(260, 85%, 95%) 75%,
+                        hsl(354, 70%, 54%) 100%);
+            }
+
+            100% {
+                background: linear-gradient(30deg,
+                        hsl(354, 70%, 54%) 0%,
+                        hsl(260, 85%, 95%) 100%);
+            }
+        }
+
 
         .moreinfo {
             box-shadow: 0px 5px 10px 0 black;
