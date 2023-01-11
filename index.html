@@ -77,16 +77,21 @@
         .downloadresume {
             box-shadow: 0px 10px 10px 0 black;
             --bs-btn-border-width: 0;
-            -webkit-animation: mover 1.85s infinite  alternate ease-in-out;
-            animation: mover 1.85s infinite  alternate ease-in-out;
+            -webkit-animation: mover 1.85s infinite alternate ease-in-out;
+            animation: mover 1.85s infinite alternate ease-in-out;
             color: white;
         }
-        
+
         @keyframes mover {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-15px); }
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-15px);
+            }
         }
-        
+
         .downloadresume:hover {
             transform: translate(0, 0.07em);
             transition: all 0.45s ease-in-out;
@@ -242,7 +247,7 @@
         .cursor2 {
             width: 50px;
             height: 50px;
-            background: linear-gradient(300deg,black, white);
+            background: linear-gradient(300deg, black, white);
             transition: .3s ease-out;
             opacity: 0.7;
             box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
@@ -264,6 +269,58 @@
 
         a {
             cursor: none !important;
+        }
+
+        .ribbon {
+            position: absolute;
+            left: -6px;
+            top: -6px;
+            z-index: 1;
+            overflow: hidden;
+            width: 75px;
+            height: 75px;
+
+        }
+
+        .ribbon span {
+            font-size: 9.5px;
+            font-weight: bold;
+            color: black;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 20px;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            width: 100px;
+            display: block;
+            background: white;
+            position: absolute;
+            top: 19px;
+            left: -21px;
+        }
+
+        .ribbon span::before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: 100%;
+            z-index: -1;
+            border-left: 3px solid grey;
+            border-right: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+            border-top: 3px solid grey;
+        }
+
+        .ribbon span::after {
+            content: "";
+            position: absolute;
+            right: 0px;
+            top: 100%;
+            z-index: -1;
+            border-left: 3px solid transparent;
+            border-right: 3px solid grey;
+            border-bottom: 3px solid transparent;
+            border-top: 3px solid grey;
         }
     </style>
 </head>
@@ -485,6 +542,7 @@
         <div class="row row-cols-1 row-cols-md-4 g-4">
             <div class="col">
                 <div class="card pcard h-100 bg-dark rounded-5">
+                    <div class="ribbon"><span>Professional</span></div>
                     <div class="card-body">
                         <h6 class="card-title text-light">Time & Frequency Game</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a Web-Based Game
@@ -501,6 +559,7 @@
             </div>
             <div class="col">
                 <div class="card pcard h-100 bg-dark rounded-5">
+                    <div class="ribbon"><span>Professional</span></div>
                     <div class="card-body">
                         <h6 class="card-title text-light">DRF VueJs JWT Authentication</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
@@ -518,6 +577,7 @@
             </div>
             <div class="col">
                 <div class="card pcard h-100 bg-dark rounded-5">
+                    <div class="ribbon"><span>Personal</span></div>
                     <div class="card-body">
                         <h6 class="card-title text-light">Fully Responsive Portfolio</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a fully
@@ -534,6 +594,7 @@
             </div>
             <div class="col">
                 <div class="card pcard h-100 bg-dark rounded-5">
+                    <div class="ribbon"><span>Professional</span></div>
                     <div class="card-body">
                         <h6 class="card-title text-light">TWSTFT GUI</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a Python based
@@ -550,6 +611,7 @@
             </div>
             <div class="col">
                 <div class="card pcard h-100 bg-dark rounded-5">
+                    <div class="ribbon"><span>Personal</span></div>
                     <div class="card-body">
                         <h6 class="card-title text-light">DRF VueJs Elasticsearch</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
@@ -565,6 +627,7 @@
             </div>
             <div class="col">
                 <div class="card pcard h-100 bg-dark rounded-5">
+                    <div class="ribbon"><span>Personal</span></div>
                     <div class="card-body">
                         <h6 class="card-title text-light">DRF VueJs Djoser Authentication</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
@@ -580,6 +643,7 @@
             </div>
             <div class="col">
                 <div class="card pcard h-100 bg-dark rounded-5">
+                    <div class="ribbon"><span>Professional</span></div>
                     <div class="card-body">
                         <h6 class="card-title text-light">NavIC RECEIVER Automation</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a Linux based
@@ -596,6 +660,7 @@
             </div>
             <div class="col">
                 <div class="card pcard h-100 bg-dark rounded-5">
+                    <div class="ribbon"><span>Professional</span></div>
                     <div class="card-body">
                         <h6 class="card-title text-light">SATRE MODEM Daily Offset</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a Python based
@@ -610,6 +675,7 @@
             </div>
             <div class="col">
                 <div class="card pcard h-100 bg-dark rounded-5">
+                    <div class="ribbon"><span>Professional</span></div>
                     <div class="card-body">
                         <h6 class="card-title text-light">NMEA Converter</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a Python based
@@ -623,6 +689,7 @@
             </div>
             <div class="col">
                 <div class="card pcard h-100 bg-dark rounded-5">
+                    <div class="ribbon"><span>Personal</span></div>
                     <div class="card-body">
                         <h6 class="card-title text-light">DRF Token Authentication</h6>
                         <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
@@ -709,7 +776,7 @@
                             centericon.innerHTML =
                                 '<i class="fa-solid fa-person-chalkboard fa-4x"></i>'
                         }
-                    } else { }
+                    } else {}
                 }, {
                     rootMargin: '0px',
                     threshold: 0.7
@@ -799,6 +866,7 @@
 
         //To give blur effect on initial page load
         var blur = 300;
+
         function animate() {
             blur -= 10;
             document.body.style.filter = 'blur(' + blur + 'px)';
@@ -835,22 +903,27 @@
                 addclass.forEach(function (currentElement) {
                     if (currentElement.classList.contains('textclass')) {
                         let className = currentElement.className;
-                        let textClass = className.substring(className.indexOf('text-') + 5).split(' ')[0];
+                        let textClass = className.substring(className.indexOf('text-') + 5)
+                            .split(' ')[0];
                         currentElement.classList.replace('text-' + textClass, 'text-' + colors);
                     }
                     if (currentElement.classList.contains('bgclass')) {
                         let className = currentElement.className;
-                        let textClass = className.substring(className.indexOf('bg-') + 3).split(' ')[0];
+                        let textClass = className.substring(className.indexOf('bg-') + 3).split(
+                            ' ')[0];
                         currentElement.classList.replace('bg-' + textClass, 'bg-' + colors);
                     }
                     if (currentElement.classList.contains('textbgclass')) {
                         let className = currentElement.className;
-                        let textClass = className.substring(className.indexOf('text-bg-') + 8).split(' ')[0];
-                        currentElement.classList.replace('text-bg-' + textClass, 'text-bg-' + colors);
+                        let textClass = className.substring(className.indexOf('text-bg-') + 8)
+                            .split(' ')[0];
+                        currentElement.classList.replace('text-bg-' + textClass, 'text-bg-' +
+                            colors);
                     }
                     if (currentElement.classList.contains('btnclass')) {
                         let className = currentElement.className;
-                        let textClass = className.substring(className.indexOf('btn-') + 4).split(' ')[0];
+                        let textClass = className.substring(className.indexOf('btn-') + 4)
+                            .split(' ')[0];
                         currentElement.classList.replace('btn-' + textClass, 'btn-' + colors);
                     }
                 });
@@ -859,33 +932,32 @@
 
         // Check if the device is a mobile device.
         if (/Mobi/.test(navigator.userAgent)) {
-          // Mobile device. Set the cursor to the default style.
-          document.body.style.cursor = 'default';
-          document.querySelector(".cursor1").style.display = "none";
-        document.querySelector(".cursor2").style.display = "none";
+            // Mobile device. Set the cursor to the default style.
+            document.body.style.cursor = 'default';
+            document.querySelector(".cursor1").style.display = "none";
+            document.querySelector(".cursor2").style.display = "none";
 
 
         } else {
-          // Non-mobile device.
-          const cursora = document.querySelector(".cursor1");
-          const cursorb = document.querySelector(".cursor2");
-          document.addEventListener("mousemove", e => {
-              cursora.style.top = e.pageY + "px";
-              cursora.style.left = e.pageX + "px";
+            // Non-mobile device.
+            const cursora = document.querySelector(".cursor1");
+            const cursorb = document.querySelector(".cursor2");
+            document.addEventListener("mousemove", e => {
+                cursora.style.top = e.pageY + "px";
+                cursora.style.left = e.pageX + "px";
 
-              cursorb.style.top = e.pageY + "px";
-              cursorb.style.left = e.pageX + "px";
-          })
+                cursorb.style.top = e.pageY + "px";
+                cursorb.style.left = e.pageX + "px";
+            })
 
-          document.addEventListener("mousedown", () => {
-              cursorb.classList.add("click");
-          });
+            document.addEventListener("mousedown", () => {
+                cursorb.classList.add("click");
+            });
 
-          document.addEventListener("mouseup", () => {
-              cursorb.classList.remove("click");
-          });
+            document.addEventListener("mouseup", () => {
+                cursorb.classList.remove("click");
+            });
         }
-
     </script>
 
 
