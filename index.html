@@ -138,9 +138,36 @@
             }
         }
 
-
         .moreinfo {
             box-shadow: 0px 5px 10px 0 black;
+            position: relative;
+            z-index: 1;
+            transition: .8s;
+            overflow: hidden;
+        }
+
+        .moreinfo:hover {
+            color: #fff !important;
+            border-color: black;
+        }
+
+        .moreinfo:before {
+            background: black;
+            content: "";
+            height: 100%;
+            left: 50%;
+            opacity: 1;
+            position: absolute;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%) rotate(180deg);
+            transition: .8s;
+            width: 0;
+            z-index: -1;
+        }
+
+        .moreinfo:hover:before {
+            opacity: 1;
+            width: 100%;
         }
 
         .shadowvishal {
