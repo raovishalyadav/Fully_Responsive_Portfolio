@@ -219,11 +219,11 @@
             animation-duration: 5s;
         }
 
-        nav ul li a {
+        .navline {
             position: relative;
         }
 
-        nav ul li a::after {
+        .navline::after {
             content: "";
             width: 0;
             height: 5px;
@@ -234,7 +234,7 @@
             transition: all 500ms;
         }
 
-        nav ul li a:hover::after {
+        .navline:hover::after {
             width: 100%;
         }
 
@@ -367,22 +367,22 @@
                         </ul>
                     </div>
                     <li class="nav-item d-flex flex-column align-items-center">
-                        <a class="nav-link fw-bold" href="#about" id="about-link">About<br>
+                        <a class="nav-link fw-bold navline" href="#about" id="about-link">About<br>
                             <i class="fa-solid fa-user-tie fa-1x"></i>
                         </a>
                     </li>
                     <li class="nav-item d-flex flex-column align-items-center">
-                        <a class="nav-link fw-bold" href="#experience" id="resume-link">Experience<br>
+                        <a class="nav-link fw-bold navline" href="#experience" id="resume-link">Experience<br>
                             <i class="fa-solid fa-briefcase fa-1x"></i>
                         </a>
                     </li>
                     <li class="nav-item d-flex flex-column align-items-center">
-                        <a class="nav-link fw-bold" href="#projects" id="projects-link">Projects<br>
+                        <a class="nav-link fw-bold navline" href="#projects" id="projects-link">Projects<br>
                             <i class="fa-solid fa-sitemap fa-1x"></i>
                         </a>
                     </li>
                     <li class="nav-item d-flex flex-column align-items-center">
-                        <a class="nav-link fw-bold" href="#contact" id="contact-link">Contact<br>
+                        <a class="nav-link fw-bold navline" href="#contact" id="contact-link">Contact<br>
                             <i class="fa-solid fa-person-chalkboard fa-1x"></i>
                         </a>
                     </li>
