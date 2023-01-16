@@ -361,6 +361,23 @@
         .dropdown-menu {
         --bs-dropdown-min-width: 0rem;
         }
+        
+        @media screen and (min-width: 768px) {
+            .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown {
+                display: flex;
+                align-items: center;
+            }
+
+            .dropdown-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+            }
+        }
     </style>
 </head>
 
