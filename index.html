@@ -265,11 +265,9 @@
         .navline:hover {
             color: #fff;
         }
-        
         .navline:hover::after {
             width: 100%;
         }
-
 
         /*Custom Cursor*/
         [class^="cursor"] {
@@ -360,7 +358,9 @@
             border-bottom: 3px solid transparent;
             border-top: 3px solid grey;
         }
-
+        .dropdown-menu {
+        --bs-dropdown-min-width: 0rem;
+        }
     </style>
 </head>
 
@@ -389,11 +389,11 @@
                             data-bs-toggle="dropdown" aria-expanded="false"><br><i class="fa-solid fa-brush fa-2x"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-center">
-                            <li><a class="dropdown-item" id="convert-danger">red</a></li>
-                            <li><a class="dropdown-item" id="convert-info">cyan</a></li>
-                            <li><a class="dropdown-item" id="convert-warning">yellow</a></li>
-                            <li><a class="dropdown-item" id="convert-success">green</a></li>
-                            <li><a class="dropdown-item" id="convert-primary">blue</a></li>
+                            <li><a class="dropdown-item bg-danger" id="convert-danger">red</a></li>
+                            <li><a class="dropdown-item bg-info" id="convert-info">cyan</a></li>
+                            <li><a class="dropdown-item bg-warning" id="convert-warning">yellow</a></li>
+                            <li><a class="dropdown-item bg-success" id="convert-success">green</a></li>
+                            <li><a class="dropdown-item bg-primary" id="convert-primary">blue</a></li>
                         </ul>
                     </div>
                     <li class="nav-item d-flex flex-column align-items-center">
