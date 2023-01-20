@@ -222,11 +222,6 @@
         }
 
 
-        body {
-            background-color: #212529;
-            transition: 0.5s ease-out;
-
-        }
 
 
         /* for typewriter effect */
@@ -378,10 +373,21 @@
                 left: 0;
             }
         }
+
+        body {
+            filter: blur(300px);
+            animation: blur-animation 1s linear forwards;
+            background-color: #212529;
+        }
+        @keyframes blur-animation {
+            from { filter: blur(300px); }
+            to { filter: blur(0px); }
+        }
+        
     </style>
 </head>
 
-<body class="blur">
+<body >
     <div class="cursor2"></div>
     <div class="cursor1"></div>
     <!-- navbar Section -->
@@ -921,16 +927,7 @@
 
 
         //To give blur effect on initial page load
-        var blur = 300;
 
-        function animate() {
-            blur -= 10;
-            document.body.style.filter = 'blur(' + blur + 'px)';
-            if (blur > 0) {
-                requestAnimationFrame(animate);
-            }
-        }
-        requestAnimationFrame(animate);
 
 
         // To change color on theme selected
