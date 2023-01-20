@@ -59,9 +59,9 @@
 
         .navbar {
             box-shadow: 0 15px 15px 15px rgba(0, 0, 0, 0.4);
-        --bs-navbar-toggler-icon-bg:none
+            --bs-navbar-toggler-icon-bg: none
         }
-        
+
         .progress {
             height: 3px;
             border-radius: 0%;
@@ -221,9 +221,6 @@
             filter: drop-shadow(5.5px 1px rgba(0, 0, 0, 1));
         }
 
-
-
-
         /* for typewriter effect */
         .type {
             color: #0000;
@@ -260,6 +257,7 @@
         .navline:hover {
             color: #fff;
         }
+
         .navline:hover::after {
             width: 100%;
         }
@@ -353,10 +351,11 @@
             border-bottom: 3px solid transparent;
             border-top: 3px solid grey;
         }
+
         .dropdown-menu {
-        --bs-dropdown-min-width: 0rem;
+            --bs-dropdown-min-width: 0rem;
         }
-        
+
         @media screen and (min-width: 768px) {
             .dropdown:hover .dropdown-menu {
                 display: block;
@@ -374,447 +373,499 @@
             }
         }
 
-        body {
+        .blurme {
             filter: blur(300px);
             animation: blur-animation 1s linear forwards;
+        }
+
+        @keyframes blur-animation {
+            from {
+                filter: blur(300px);
+            }
+
+            to {
+                filter: blur(0px);
+            }
+        }
+
+        .scrollToTopBtn {
+            border: none;
+            position: fixed;
+            bottom: 2vh;
+            right: 0.75vw;
+            z-index: 100;
+            opacity: 0;
+            transform: translateY(5vh);
+            transition: all .5s ease;
+            cursor: none !important;
+            background: transparent;
+            color: white;
+        }
+        .scrollToTopBtn:hover {
+            color: black;
+            transform: translateY(-5px)
+        }
+        .showBtn {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .fa-3d {
+            filter: drop-shadow(3px 1px rgba(0, 0, 0, 0.3));
+        }
+
+        body {
             background-color: #212529;
         }
-        @keyframes blur-animation {
-            from { filter: blur(300px); }
-            to { filter: blur(0px); }
-        }
-        
     </style>
 </head>
 
-<body >
-    <div class="cursor2"></div>
-    <div class="cursor1"></div>
-    <!-- navbar Section -->
-    <nav
-        class="navbar sticky-top flex-column navbar-expand-lg bg-danger animate__animated animate__slideInDown animate__delay-1s">
-        <div class="container-fluid">
-            <div class="navbar-brand d-flex align-items-center my-auto mx-auto">
-                <img src="assets/images/vishal.webp" alt="Logo" width="60" height="60"
-                    class="shadowvishal rounded-circle">
-                <a class="nav-link fw-bold ps-3 text-light font-monospace" href="#">Vishal Yadav</a>
+<body>
+    <button class="scrollToTopBtn"><i class="fa-solid fa-plane-up fa-2x fa-3d"></i></button>
+    <div class="container-fluid blurme p-0">
+        <div class="cursor2"></div>
+        <div class="cursor1"></div>
+        <!-- navbar Section -->
+        <nav
+            class="navbar sticky-top flex-column navbar-expand-lg bg-danger animate__animated animate__slideInDown animate__delay-1s">
+            <div class="container-fluid">
+                <div class="navbar-brand d-flex align-items-center my-auto mx-auto">
+                    <img src="assets/images/vishal.webp" alt="Logo" width="60" height="60"
+                        class="shadowvishal rounded-circle">
+                    <a class="nav-link fw-bold ps-3 text-light font-monospace" href="#">Vishal Yadav</a>
+                </div>
+                <p class="centernav d-md-block" id="center-nav-text"></p>
+                <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon toggler"><i class="fas fa-bars"
+                            style="color:#fff; font-size:28px;"></i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto text-center">
+                        <div class="dropdown d-flex flex-column align-items-center">
+                            <a class="text-light my-auto fw-bold me-md-2 dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><br><i
+                                    class="fa-solid fa-brush fa-2x"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark text-center">
+                                <li><a class="dropdown-item" style="background-color: #dc3545;"
+                                        id="convert-danger">red</a>
+                                </li>
+                                <li><a class="dropdown-item bg-info" id="convert-info">cyan</a></li>
+                                <li><a class="dropdown-item bg-warning" id="convert-warning">yellow</a></li>
+                                <li><a class="dropdown-item bg-success" id="convert-success">green</a></li>
+                                <li><a class="dropdown-item bg-primary" id="convert-primary">blue</a></li>
+                            </ul>
+                        </div>
+                        <li class="nav-item d-flex flex-column align-items-center">
+                            <a class="nav-link fw-bold navline" href="#about" id="about-link">About<br>
+                                <i class="fa-solid fa-user-tie fa-1x"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item d-flex flex-column align-items-center">
+                            <a class="nav-link fw-bold navline" href="#experience" id="resume-link">Experience<br>
+                                <i class="fa-solid fa-briefcase fa-1x"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item d-flex flex-column align-items-center">
+                            <a class="nav-link fw-bold navline" href="#projects" id="projects-link">Projects<br>
+                                <i class="fa-solid fa-sitemap fa-1x"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item d-flex flex-column align-items-center">
+                            <a class="nav-link fw-bold navline" href="#contact" id="contact-link">Contact<br>
+                                <i class="fa-solid fa-person-chalkboard fa-1x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <p class="centernav d-md-block" id="center-nav-text"></p>
-            <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon toggler"><i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+            <div class="progress">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+
+        </nav>
+
+
+        <!-- About Section -->
+        <div class="p-5 text-bg-dark text-center" id="about">
+            <h2 class="display-5">Full Stack Django Developer <i class="fa-solid fa-code"></i></h2>
+
+            <div class="text-center qqq">
+                <span class="type" style="--n:295">
+                    👋 Welcome to my portfolio website! I am a full stack Django developer with experience in building
+                    scalable
+                    and secure web applications. I have more than 5 years of experience in Python. I am always learning
+                    and
+                    staying up to date with the latest technologies and best practices in web development.
                 </span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto text-center">
-                    <div class="dropdown d-flex flex-column align-items-center">
-                        <a class="text-light my-auto fw-bold me-md-2 dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false"><br><i class="fa-solid fa-brush fa-2x"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark text-center">
-                            <li><a class="dropdown-item" style="background-color: #dc3545;" id="convert-danger">red</a></li>
-                            <li><a class="dropdown-item bg-info" id="convert-info">cyan</a></li>
-                            <li><a class="dropdown-item bg-warning" id="convert-warning">yellow</a></li>
-                            <li><a class="dropdown-item bg-success" id="convert-success">green</a></li>
-                            <li><a class="dropdown-item bg-primary" id="convert-primary">blue</a></li>
-                        </ul>
+            </div>
+
+            <div class="container text-center pt-3">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="countyears text-light d-inline">1</h2>
+                        <h2 class="text-danger d-inline fw-bold">+</h2>
+                        <h6>Years of Experience</h6>
                     </div>
-                    <li class="nav-item d-flex flex-column align-items-center">
-                        <a class="nav-link fw-bold navline" href="#about" id="about-link">About<br>
-                            <i class="fa-solid fa-user-tie fa-1x"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item d-flex flex-column align-items-center">
-                        <a class="nav-link fw-bold navline" href="#experience" id="resume-link">Experience<br>
-                            <i class="fa-solid fa-briefcase fa-1x"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item d-flex flex-column align-items-center">
-                        <a class="nav-link fw-bold navline" href="#projects" id="projects-link">Projects<br>
-                            <i class="fa-solid fa-sitemap fa-1x"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item d-flex flex-column align-items-center">
-                        <a class="nav-link fw-bold navline" href="#contact" id="contact-link">Contact<br>
-                            <i class="fa-solid fa-person-chalkboard fa-1x"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="progress">
-            <div class="progress-bar" id="myBar"></div>
-        </div>
-
-    </nav>
-
-
-    <!-- About Section -->
-    <div class="p-5 text-bg-dark text-center" id="about">
-        <h2 class="display-5">Full Stack Django Developer <i class="fa-solid fa-code"></i></h2>
-
-        <div class="text-center qqq">
-            <span class="type" style="--n:295">
-                👋 Welcome to my portfolio website! I am a full stack Django developer with experience in building scalable
-                and secure web applications. I have more than 5 years of experience in Python. I am always learning and
-                staying up to date with the latest technologies and best practices in web development.
-            </span>
-        </div>
-
-        <div class="container text-center pt-3">
-            <div class="row">
-                <div class="col">
-                    <h2 class="countyears text-light d-inline">1</h2>
-                    <h2 class="text-danger d-inline fw-bold">+</h2>
-                    <h6>Years of Experience</h6>
-                </div>
-                <div class="col">
-                    <h2 class="countskills text-light d-inline">1</h2>
-                    <h2 class="text-danger d-inline fw-bold">+</h2>
-                    <h6>Skills</h6>
-                </div>
-                <div class="col">
-                    <!-- <h2 class="countskills text-light d-inline"></h2> -->
-                    <h2 class="text-danger d-inline fw-bold"><i class="fa-solid fa-infinity"></i></h2>
-                    <h6>Tasks Completed</h6>
+                    <div class="col">
+                        <h2 class="countskills text-light d-inline">1</h2>
+                        <h2 class="text-danger d-inline fw-bold">+</h2>
+                        <h6>Skills</h6>
+                    </div>
+                    <div class="col">
+                        <!-- <h2 class="countskills text-light d-inline"></h2> -->
+                        <h2 class="text-danger d-inline fw-bold"><i class="fa-solid fa-infinity"></i></h2>
+                        <h6>Tasks Completed</h6>
+                    </div>
                 </div>
             </div>
+
+            <div class="text-center pt-4">
+                <a href="assets/images/Vishal_Resume.pdf" target="_blank"
+                    class="btn btn-danger btn-lg my-3 downloadresume"><i class="fa-regular fa-address-card"></i>
+                    Download my resume</a>
+            </div>
+
+
+
         </div>
 
-        <div class="text-center pt-4">
-            <a href="assets/images/Vishal_Resume.pdf" target="_blank"
-                class="btn btn-danger btn-lg my-3 downloadresume"><i class="fa-regular fa-address-card"></i>
-                Download my resume</a>
-        </div>
-
-
-
-    </div>
-
-    <!-- Skills Section -->
-    <div class="p-5 text-bg-danger text-center">
-        <h2 class="text-dark" style="font-family: Arial Black, Arial, sans-serif;
+        <!-- Skills Section -->
+        <div class="p-5 text-bg-danger text-center">
+            <h2 class="text-dark" style="font-family: Arial Black, Arial, sans-serif;
         ">Skills <i class="fa-solid fa-laptop-code"></i></h2>
-        <div class="col-md-10 mx-auto">
-            <div class="card bg-dark rounded-5" style="box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5), inset -10px -10px 5px rgba(0, 0, 0, 0.3), inset 10px 10px 5px rgba(80, 80, 80, 0.3) ;
+            <div class="col-md-10 mx-auto">
+                <div class="card bg-dark rounded-5" style="box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5), inset -10px -10px 5px rgba(0, 0, 0, 0.3), inset 10px 10px 5px rgba(80, 80, 80, 0.3) ;
             ">
-                <div class="card-body fw-bold">
-                    <span class="text-danger animate__animated animate__fadeIn"
-                        style="animation-delay: 8.5s;">#Python</span>
-                    <span class="text-light animate__animated animate__fadeIn"
-                        style="animation-delay: 8.8s;">#Django</span>
-                    <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 9.1s;">#Django
-                        REST
-                        Framework</span>
-                    <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 9.4s;">#Font
-                        Awesome</span>
-                    <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 9.7s;">#Cron
-                        Jobs</span>
-                    <span class="text-light animate__animated animate__fadeIn"
-                        style="animation-delay: 10s;">#HTML</span>
-                    <span class="text-danger animate__animated animate__fadeIn"
-                        style="animation-delay: 10.3s;">#CSS</span>
-                    <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 10.6s;">#Selenium
-                        Web
-                        driver</span>
-                    <span class="text-danger animate__animated animate__fadeIn"
-                        style="animation-delay: 10.9s;">#jQuery</span>
-                    <span class="text-light animate__animated animate__fadeIn"
-                        style="animation-delay: 11.2s;">#Vue.js</span>
-                    <span class="text-danger animate__animated animate__fadeIn"
-                        style="animation-delay: 11.5s;">#Git/GitHub</span>
-                    <span class="text-light animate__animated animate__fadeIn"
-                        style="animation-delay: 11.8s;">#Bootstrap</span>
-                    <span class="text-danger animate__animated animate__fadeIn"
-                        style="animation-delay: 12.1s;">#JSONWebToken(JWT)</span>
-                    <span class="text-light animate__animated animate__fadeIn"
-                        style="animation-delay: 12.4s;">#PostgreSQL</span>
-                    <span class="text-danger animate__animated animate__fadeIn"
-                        style="animation-delay: 12.7s;">#Axios</span>
-                    <span class="text-light animate__animated animate__fadeIn"
-                        style="animation-delay: 13s;">#Djoser</span>
-                    <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 13.3s;">#Socket
-                        Programming</span>
-                    <span class="text-light animate__animated animate__fadeIn"
-                        style="animation-delay: 13.6s;">#FTP/SCP</span>
-                    <span class="text-danger animate__animated animate__fadeIn"
-                        style="animation-delay: 13.9s;">#SQLite</span>
-                    <span class="text-light animate__animated animate__fadeIn"
-                        style="animation-delay: 14.2s;">#Elasticsearch</span>
-                    <span class="text-danger animate__animated animate__fadeIn"
-                        style="animation-delay: 14.5s;">#Docker</span>
-                    <span class="text-light animate__animated animate__fadeIn"
-                        style="animation-delay: 14.8s;">#Firebase</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Experience Section -->
-    <div class="p-5 text-bg-dark text-center" id="experience">
-
-
-        <h2 class="text-light mb-4">Experience</h2>
-
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col-md-4 mx-auto">
-                <div class="card ecard py-4 h-100 bg-danger rounded-5">
-                    <div class="card-body">
-                        <h6 class="card-title text-light fw-bold text-decoration-underline">PROJECT ASSISTANT</h6>
-                        <h6 class="card-title text-light font-monospace">CSIR-NPL</h6>
-                        <p class="card-title fst-italic" style="font-size: 80%;">August 2018 - Present</p>
-                        <p class="card-text text-dark" style="font-size: 90%;">Development of various softwares like Web
-                            based game for CSIR-JIGYASA by <b>Government of India</b>, Python- based GUI Application,
-                            Linux-based
-                            shell-script, Python-based data processing software, Python-based software using Socket
-                            Programming, etc.</p>
-                    </div>
-                    <div class="card-footer rounded-bottom-5">
-                        <a href="assets/images/Vishal_Resume.pdf" target="_blank" class="btn btn-dark einfo">More
-                            Info</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mx-auto">
-                <div class="card ecard py-4 h-100 bg-danger rounded-5">
-                    <div class="card-body">
-                        <h6 class="card-title text-light fw-bold text-decoration-underline">JUNIOR SOFTWARE ENGINEER
-                        </h6>
-                        <h6 class="card-title text-light font-monospace">Sheetal Enterprises</h6>
-                        <p class="card-title fst-italic" style="font-size: 80%;">August 2017 - August 2018</p>
-                        <p class="card-text text-dark" style="font-size: 90%;">Developed and maintained various software
-                            for the company using python. Improved overall efficiency by 13% of existing software by
-                            consistently optimizing it.</p>
-                    </div>
-                    <div class="card-footer rounded-bottom-5">
-                        <a href="assets/images/Vishal_Resume.pdf" target="_blank" class="btn btn-dark einfo">More
-                            Info</a>
+                    <div class="card-body fw-bold">
+                        <span class="text-danger animate__animated animate__fadeIn"
+                            style="animation-delay: 8.5s;">#Python</span>
+                        <span class="text-light animate__animated animate__fadeIn"
+                            style="animation-delay: 8.8s;">#Django</span>
+                        <span class="text-danger animate__animated animate__fadeIn"
+                            style="animation-delay: 9.1s;">#Django
+                            REST
+                            Framework</span>
+                        <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 9.4s;">#Font
+                            Awesome</span>
+                        <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 9.7s;">#Cron
+                            Jobs</span>
+                        <span class="text-light animate__animated animate__fadeIn"
+                            style="animation-delay: 10s;">#HTML</span>
+                        <span class="text-danger animate__animated animate__fadeIn"
+                            style="animation-delay: 10.3s;">#CSS</span>
+                        <span class="text-light animate__animated animate__fadeIn"
+                            style="animation-delay: 10.6s;">#Selenium
+                            Web
+                            driver</span>
+                        <span class="text-danger animate__animated animate__fadeIn"
+                            style="animation-delay: 10.9s;">#jQuery</span>
+                        <span class="text-light animate__animated animate__fadeIn"
+                            style="animation-delay: 11.2s;">#Vue.js</span>
+                        <span class="text-danger animate__animated animate__fadeIn"
+                            style="animation-delay: 11.5s;">#Git/GitHub</span>
+                        <span class="text-light animate__animated animate__fadeIn"
+                            style="animation-delay: 11.8s;">#Bootstrap</span>
+                        <span class="text-danger animate__animated animate__fadeIn"
+                            style="animation-delay: 12.1s;">#JSONWebToken(JWT)</span>
+                        <span class="text-light animate__animated animate__fadeIn"
+                            style="animation-delay: 12.4s;">#PostgreSQL</span>
+                        <span class="text-danger animate__animated animate__fadeIn"
+                            style="animation-delay: 12.7s;">#Axios</span>
+                        <span class="text-light animate__animated animate__fadeIn"
+                            style="animation-delay: 13s;">#Djoser</span>
+                        <span class="text-danger animate__animated animate__fadeIn"
+                            style="animation-delay: 13.3s;">#Socket
+                            Programming</span>
+                        <span class="text-light animate__animated animate__fadeIn"
+                            style="animation-delay: 13.6s;">#FTP/SCP</span>
+                        <span class="text-danger animate__animated animate__fadeIn"
+                            style="animation-delay: 13.9s;">#SQLite</span>
+                        <span class="text-light animate__animated animate__fadeIn"
+                            style="animation-delay: 14.2s;">#Elasticsearch</span>
+                        <span class="text-danger animate__animated animate__fadeIn"
+                            style="animation-delay: 14.5s;">#Docker</span>
+                        <span class="text-light animate__animated animate__fadeIn"
+                            style="animation-delay: 14.8s;">#Firebase</span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Projects Section -->
-    <div class="p-5 text-bg-danger text-center" id="projects">
-        <h2 class="text-dark mb-4" style="font-family: Arial Black, Arial, sans-serif;
+        <!-- Experience Section -->
+        <div class="p-5 text-bg-dark text-center" id="experience">
+
+
+            <h2 class="text-light mb-4">Experience</h2>
+
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col-md-4 mx-auto">
+                    <div class="card ecard py-4 h-100 bg-danger rounded-5">
+                        <div class="card-body">
+                            <h6 class="card-title text-light fw-bold text-decoration-underline">PROJECT ASSISTANT</h6>
+                            <h6 class="card-title text-light font-monospace">CSIR-NPL</h6>
+                            <p class="card-title fst-italic" style="font-size: 80%;">August 2018 - Present</p>
+                            <p class="card-text text-dark" style="font-size: 90%;">Development of various softwares like
+                                Web
+                                based game for CSIR-JIGYASA by <b>Government of India</b>, Python- based GUI
+                                Application,
+                                Linux-based
+                                shell-script, Python-based data processing software, Python-based software using Socket
+                                Programming, etc.</p>
+                        </div>
+                        <div class="card-footer rounded-bottom-5">
+                            <a href="assets/images/Vishal_Resume.pdf" target="_blank" class="btn btn-dark einfo">More
+                                Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mx-auto">
+                    <div class="card ecard py-4 h-100 bg-danger rounded-5">
+                        <div class="card-body">
+                            <h6 class="card-title text-light fw-bold text-decoration-underline">JUNIOR SOFTWARE ENGINEER
+                            </h6>
+                            <h6 class="card-title text-light font-monospace">Sheetal Enterprises</h6>
+                            <p class="card-title fst-italic" style="font-size: 80%;">August 2017 - August 2018</p>
+                            <p class="card-text text-dark" style="font-size: 90%;">Developed and maintained various
+                                software
+                                for the company using python. Improved overall efficiency by 13% of existing software by
+                                consistently optimizing it.</p>
+                        </div>
+                        <div class="card-footer rounded-bottom-5">
+                            <a href="assets/images/Vishal_Resume.pdf" target="_blank" class="btn btn-dark einfo">More
+                                Info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="p-5 text-bg-danger text-center" id="projects">
+            <h2 class="text-dark mb-4" style="font-family: Arial Black, Arial, sans-serif;
         ">Projects
-        </h2>
+            </h2>
 
-        <div class="row row-cols-1 row-cols-md-4 g-4">
-            <div class="col">
-                <div class="card pcard h-100 bg-dark rounded-5">
-                    <div class="ribbon"><span>Professional</span></div>
-                    <div class="card-body">
-                        <h6 class="card-title text-light">Time & Frequency Game</h6>
-                        <p class="card-text text-secondary" style="font-size: 80%;">This is a Web-Based Game
-                            built using
-                            Bootstrap,
-                            HTML, CSS,
-                            JavaScript and JQuery for CSIR-JIGYASA by Government of
-                            India.</p>
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="col">
+                    <div class="card pcard h-100 bg-dark rounded-5">
+                        <div class="ribbon"><span>Professional</span></div>
+                        <div class="card-body">
+                            <h6 class="card-title text-light">Time & Frequency Game</h6>
+                            <p class="card-text text-secondary" style="font-size: 80%;">This is a Web-Based Game
+                                built using
+                                Bootstrap,
+                                HTML, CSS,
+                                JavaScript and JQuery for CSIR-JIGYASA by Government of
+                                India.</p>
+                        </div>
+                        <div class="card-footer rounded-bottom-5">
+                            <a href="https://jigyasa-csir.in/npl/n21-t6-m1/" class="btn btn-light moreinfo">More
+                                Info</a>
+                        </div>
                     </div>
-                    <div class="card-footer rounded-bottom-5">
-                        <a href="https://jigyasa-csir.in/npl/n21-t6-m1/" class="btn btn-light moreinfo">More Info</a>
+                </div>
+                <div class="col">
+                    <div class="card pcard h-100 bg-dark rounded-5">
+                        <div class="ribbon"><span>Professional</span></div>
+                        <div class="card-body">
+                            <h6 class="card-title text-light">DRF VueJs JWT Authentication</h6>
+                            <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
+                                using DRF, VUE
+                                Js, HTML, CSS, Bootstrap & FontAwesome.
+                                This API has been authenticated using JWT Authentication with Signup, Login
+                                &
+                                Logout functionalities.</p>
+                        </div>
+                        <div class="card-footer rounded-bottom-5">
+                            <a href="https://github.com/raovishalyadav/DRF_VueJs_JWT_Authentication"
+                                class="btn btn-light moreinfo">More Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pcard h-100 bg-dark rounded-5">
+                        <div class="ribbon"><span>Personal</span></div>
+                        <div class="card-body">
+                            <h6 class="card-title text-light">Fully Responsive Portfolio</h6>
+                            <p class="card-text text-secondary" style="font-size: 80%;">This is a fully
+                                responsive website built
+                                using
+                                HTML, CSS,
+                                Javascript, Bootstrap & FontAwesome.</p>
+                        </div>
+                        <div class="card-footer rounded-bottom-5">
+                            <a href="https://github.com/raovishalyadav/Fully_Responsive_Portfolio"
+                                class="btn btn-light moreinfo">More Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pcard h-100 bg-dark rounded-5">
+                        <div class="ribbon"><span>Professional</span></div>
+                        <div class="card-body">
+                            <h6 class="card-title text-light">TWSTFT GUI</h6>
+                            <p class="card-text text-secondary" style="font-size: 80%;">This is a Python based
+                                GUI build using PYQt5 to show the Real-time as well as
+                                Static offset data plot of the Two-Way Satellite Time and Frequency Transfer
+                                (TWSTFT) having functionalities like Play/Pause, calculating Standard Deviation,
+                                Clear Graph, Lock % and many more.</p>
+                        </div>
+                        <div class="card-footer rounded-bottom-5">
+                            <a href="https://github.com/raovishalyadav/TWSTFT_GUI" class="btn btn-light moreinfo">More
+                                Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pcard h-100 bg-dark rounded-5">
+                        <div class="ribbon"><span>Personal</span></div>
+                        <div class="card-body">
+                            <h6 class="card-title text-light">DRF VueJs Elasticsearch</h6>
+                            <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
+                                using DRF, VUE Js, Elasticsearch, HTML, CSS, Bootstrap &
+                                FontAwesome.</p>
+                        </div>
+                        <div class="card-footer rounded-bottom-5">
+                            <a href="https://github.com/raovishalyadav/DRF_VueJs_Elasticsearch"
+                                class="btn btn-light moreinfo">More
+                                Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pcard h-100 bg-dark rounded-5">
+                        <div class="ribbon"><span>Personal</span></div>
+                        <div class="card-body">
+                            <h6 class="card-title text-light">DRF VueJs Djoser Authentication</h6>
+                            <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
+                                using DRF, VUE Js, HTML, CSS, Bootstrap & FontAwesome.
+                                This API has token based Authentication using Djoser with Signup, Login & Logout
+                                functionalities.</p>
+                        </div>
+                        <div class="card-footer rounded-bottom-5">
+                            <a href="https://github.com/raovishalyadav/DRF_VueJs_DjoserAuthentication"
+                                class="btn btn-light moreinfo">More Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pcard h-100 bg-dark rounded-5">
+                        <div class="ribbon"><span>Professional</span></div>
+                        <div class="card-body">
+                            <h6 class="card-title text-light">NavIC RECEIVER Automation</h6>
+                            <p class="card-text text-secondary" style="font-size: 80%;">This is a Linux based
+                                shell script to Automatically download files from NAVIC(Navigation with Indian
+                                Constellation) Receiver via SCP and upload it to server via TCP daily at a
+                                specific time.</p>
+                        </div>
+                        <div class="card-footer rounded-bottom-5">
+                            <a href="https://github.com/raovishalyadav/NavIC_RECEIVER_Automation"
+                                class="btn btn-light moreinfo">More
+                                Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pcard h-100 bg-dark rounded-5">
+                        <div class="ribbon"><span>Professional</span></div>
+                        <div class="card-body">
+                            <h6 class="card-title text-light">SATRE MODEM Daily Offset</h6>
+                            <p class="card-text text-secondary" style="font-size: 80%;">This is a Python based
+                                program to calculate the daily offset of the SATRE MODEM.</p>
+                        </div>
+                        <div class="card-footer rounded-bottom-5">
+                            <a href="https://github.com/raovishalyadav/SATRE_MODEM_Daily_Offset"
+                                class="btn btn-light moreinfo">More
+                                Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pcard h-100 bg-dark rounded-5">
+                        <div class="ribbon"><span>Professional</span></div>
+                        <div class="card-body">
+                            <h6 class="card-title text-light">NMEA Converter</h6>
+                            <p class="card-text text-secondary" style="font-size: 80%;">This is a Python based
+                                program to convert GPS Receiver data to NMEA format.</p>
+                        </div>
+                        <div class="card-footer rounded-bottom-5">
+                            <a href="https://github.com/raovishalyadav/NMEA_Converter"
+                                class="btn btn-light moreinfo">More
+                                Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pcard h-100 bg-dark rounded-5">
+                        <div class="ribbon"><span>Personal</span></div>
+                        <div class="card-body">
+                            <h6 class="card-title text-light">DRF Token Authentication</h6>
+                            <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
+                                using Django REST framework (DRF) with DRF's Token Authentication.</p>
+                        </div>
+                        <div class="card-footer rounded-bottom-5">
+                            <a href="https://github.com/raovishalyadav/DRF_TokenAuthentication"
+                                class="btn btn-light moreinfo">More
+                                Info</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card pcard h-100 bg-dark rounded-5">
-                    <div class="ribbon"><span>Professional</span></div>
-                    <div class="card-body">
-                        <h6 class="card-title text-light">DRF VueJs JWT Authentication</h6>
-                        <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
-                            using DRF, VUE
-                            Js, HTML, CSS, Bootstrap & FontAwesome.
-                            This API has been authenticated using JWT Authentication with Signup, Login
-                            &
-                            Logout functionalities.</p>
-                    </div>
-                    <div class="card-footer rounded-bottom-5">
-                        <a href="https://github.com/raovishalyadav/DRF_VueJs_JWT_Authentication"
-                            class="btn btn-light moreinfo">More Info</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card pcard h-100 bg-dark rounded-5">
-                    <div class="ribbon"><span>Personal</span></div>
-                    <div class="card-body">
-                        <h6 class="card-title text-light">Fully Responsive Portfolio</h6>
-                        <p class="card-text text-secondary" style="font-size: 80%;">This is a fully
-                            responsive website built
-                            using
-                            HTML, CSS,
-                            Javascript, Bootstrap & FontAwesome.</p>
-                    </div>
-                    <div class="card-footer rounded-bottom-5">
-                        <a href="https://github.com/raovishalyadav/Fully_Responsive_Portfolio"
-                            class="btn btn-light moreinfo">More Info</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card pcard h-100 bg-dark rounded-5">
-                    <div class="ribbon"><span>Professional</span></div>
-                    <div class="card-body">
-                        <h6 class="card-title text-light">TWSTFT GUI</h6>
-                        <p class="card-text text-secondary" style="font-size: 80%;">This is a Python based
-                            GUI build using PYQt5 to show the Real-time as well as
-                            Static offset data plot of the Two-Way Satellite Time and Frequency Transfer
-                            (TWSTFT) having functionalities like Play/Pause, calculating Standard Deviation,
-                            Clear Graph, Lock % and many more.</p>
-                    </div>
-                    <div class="card-footer rounded-bottom-5">
-                        <a href="https://github.com/raovishalyadav/TWSTFT_GUI" class="btn btn-light moreinfo">More
-                            Info</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card pcard h-100 bg-dark rounded-5">
-                    <div class="ribbon"><span>Personal</span></div>
-                    <div class="card-body">
-                        <h6 class="card-title text-light">DRF VueJs Elasticsearch</h6>
-                        <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
-                            using DRF, VUE Js, Elasticsearch, HTML, CSS, Bootstrap &
-                            FontAwesome.</p>
-                    </div>
-                    <div class="card-footer rounded-bottom-5">
-                        <a href="https://github.com/raovishalyadav/DRF_VueJs_Elasticsearch"
-                            class="btn btn-light moreinfo">More
-                            Info</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card pcard h-100 bg-dark rounded-5">
-                    <div class="ribbon"><span>Personal</span></div>
-                    <div class="card-body">
-                        <h6 class="card-title text-light">DRF VueJs Djoser Authentication</h6>
-                        <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
-                            using DRF, VUE Js, HTML, CSS, Bootstrap & FontAwesome.
-                            This API has token based Authentication using Djoser with Signup, Login & Logout
-                            functionalities.</p>
-                    </div>
-                    <div class="card-footer rounded-bottom-5">
-                        <a href="https://github.com/raovishalyadav/DRF_VueJs_DjoserAuthentication"
-                            class="btn btn-light moreinfo">More Info</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card pcard h-100 bg-dark rounded-5">
-                    <div class="ribbon"><span>Professional</span></div>
-                    <div class="card-body">
-                        <h6 class="card-title text-light">NavIC RECEIVER Automation</h6>
-                        <p class="card-text text-secondary" style="font-size: 80%;">This is a Linux based
-                            shell script to Automatically download files from NAVIC(Navigation with Indian
-                            Constellation) Receiver via SCP and upload it to server via TCP daily at a
-                            specific time.</p>
-                    </div>
-                    <div class="card-footer rounded-bottom-5">
-                        <a href="https://github.com/raovishalyadav/NavIC_RECEIVER_Automation"
-                            class="btn btn-light moreinfo">More
-                            Info</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card pcard h-100 bg-dark rounded-5">
-                    <div class="ribbon"><span>Professional</span></div>
-                    <div class="card-body">
-                        <h6 class="card-title text-light">SATRE MODEM Daily Offset</h6>
-                        <p class="card-text text-secondary" style="font-size: 80%;">This is a Python based
-                            program to calculate the daily offset of the SATRE MODEM.</p>
-                    </div>
-                    <div class="card-footer rounded-bottom-5">
-                        <a href="https://github.com/raovishalyadav/SATRE_MODEM_Daily_Offset"
-                            class="btn btn-light moreinfo">More
-                            Info</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card pcard h-100 bg-dark rounded-5">
-                    <div class="ribbon"><span>Professional</span></div>
-                    <div class="card-body">
-                        <h6 class="card-title text-light">NMEA Converter</h6>
-                        <p class="card-text text-secondary" style="font-size: 80%;">This is a Python based
-                            program to convert GPS Receiver data to NMEA format.</p>
-                    </div>
-                    <div class="card-footer rounded-bottom-5">
-                        <a href="https://github.com/raovishalyadav/NMEA_Converter" class="btn btn-light moreinfo">More
-                            Info</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card pcard h-100 bg-dark rounded-5">
-                    <div class="ribbon"><span>Personal</span></div>
-                    <div class="card-body">
-                        <h6 class="card-title text-light">DRF Token Authentication</h6>
-                        <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
-                            using Django REST framework (DRF) with DRF's Token Authentication.</p>
-                    </div>
-                    <div class="card-footer rounded-bottom-5">
-                        <a href="https://github.com/raovishalyadav/DRF_TokenAuthentication"
-                            class="btn btn-light moreinfo">More
-                            Info</a>
-                    </div>
-                </div>
-            </div>
+
         </div>
 
-    </div>
+        <!-- Contact Section -->
+        <div id="contact" class="p-5 text-light bg-dark text-center">
+            <h2 class="pb-3">
+                Contact <i class="fas fa-handshake"></i>
+            </h2>
+            <div class="row">
+                <div class="col-auto mx-auto">
+                    <h2 class="d-inline"><i class="fas fa-envelope text-danger fa-2x fa-3dicon"></i></h2>
+                    <h6> <a href="mailto:06vishalyada@gmail.com" style="color: gray">06vishalyadav@gmail.com</a>
 
-    <!-- Contact Section -->
-    <div id="contact" class="p-5 text-light bg-dark text-center">
-        <h2 class="pb-3">
-            Contact <i class="fas fa-handshake"></i>
-        </h2>
-        <div class="row">
-            <div class="col-auto mx-auto">
-                <h2 class="d-inline"><i class="fas fa-envelope text-danger fa-2x fa-3dicon"></i></h2>
-                <h6> <a href="mailto:06vishalyada@gmail.com" style="color: gray">06vishalyadav@gmail.com</a>
-
-                </h6>
-            </div>
-            <div class="col-auto mx-auto">
-                <h2 class="d-inline"><i class="fas fa-mobile-alt text-danger fa-2x fa-3dicon"></i>
-                </h2>
-                <h6 style="color: gray"> +91 9582895161
-                </h6>
-            </div>
-            <div class="col-auto mx-auto">
-                <h2 class="d-inline"><i class="fab fa-github text-danger fa-2x fa-3dicon"></i>
-                </h2>
-                <h6> <a href="https://github.com/raovishalyadav" target="_blank" style="color: gray">@raovishalyadav</a>
-                </h6>
-            </div>
-            <div class="col-auto mx-auto">
-                <h2 class="d-inline"><i class="fab fa-linkedin text-danger fa-2x fa-3dicon"></i>
-                    <h6> <a href="https://linkedin.com/in/raovishalyadav" target="_blank"
+                    </h6>
+                </div>
+                <div class="col-auto mx-auto">
+                    <h2 class="d-inline"><i class="fas fa-mobile-alt text-danger fa-2x fa-3dicon"></i>
+                    </h2>
+                    <h6 style="color: gray"> +91 9582895161
+                    </h6>
+                </div>
+                <div class="col-auto mx-auto">
+                    <h2 class="d-inline"><i class="fab fa-github text-danger fa-2x fa-3dicon"></i>
+                    </h2>
+                    <h6> <a href="https://github.com/raovishalyadav" target="_blank"
                             style="color: gray">@raovishalyadav</a>
                     </h6>
+                </div>
+                <div class="col-auto mx-auto">
+                    <h2 class="d-inline"><i class="fab fa-linkedin text-danger fa-2x fa-3dicon"></i>
+                        <h6> <a href="https://linkedin.com/in/raovishalyadav" target="_blank"
+                                style="color: gray">@raovishalyadav</a>
+                        </h6>
+                </div>
             </div>
         </div>
+
+
+
+        <footer class="bg-secondary text-white p-3">
+            <div class="container text-center lh-1">
+                <p class="fw-bold">Made with <i
+                        class="fa-solid fa-heart animate__animated animate__heartBeat animate__infinite"
+                        aria-labelledby="something" title="love" style="color: red;"></i>
+                    by
+                    Vishal</p>
+                <p class="fw-lighter" style="font-size: 80%;">Copyright (C) 2023 Vishal Yadav</p>
+            </div>
+        </footer>
+
     </div>
-
-
-
-    <footer class="bg-secondary text-white p-3">
-        <div class="container text-center lh-1">
-            <p class="fw-bold">Made with <i
-                    class="fa-solid fa-heart animate__animated animate__heartBeat animate__infinite"
-                    aria-labelledby="something" title="love" style="color: red;"></i>
-                by
-                Vishal</p>
-            <p class="fw-lighter" style="font-size: 80%;">Copyright (C) 2023 Vishal Yadav</p>
-        </div>
-    </footer>
-
-
     <script>
         //To dynamically add icon to center of the navbar on scroll
         var mediumscreen = window.matchMedia("(min-width: 768px)");
@@ -1023,7 +1074,29 @@
                 icon.classList.add('fa-bars');
             }
         });
-        
+
+
+         // Scroll to top button
+        var scrollToTopBtn = document.querySelector(".scrollToTopBtn")
+        var rootElement = document.documentElement
+
+        function handleScroll() {
+            var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight
+            if ((rootElement.scrollTop / scrollTotal) > 0.15) {
+                scrollToTopBtn.classList.add("showBtn")
+            } else {
+                scrollToTopBtn.classList.remove("showBtn")
+            }
+        }
+
+        function scrollToTop() {
+            rootElement.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+        }
+        scrollToTopBtn.addEventListener("click", scrollToTop)
+        document.addEventListener("scroll", handleScroll)
     </script>
 
 
