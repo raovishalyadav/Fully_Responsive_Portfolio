@@ -401,9 +401,11 @@
             background: transparent;
             color: white;
         }
+
         .scrollToTopBtn:hover {
             transform: translateY(-5px)
         }
+
         .showBtn {
             opacity: 1;
             transform: translateY(0)
@@ -415,6 +417,15 @@
 
         body {
             background-color: #212529;
+        }
+
+        #about {
+            background-image:
+                repeating-linear-gradient(-45deg, rgb(0, 0, 0) 10px, rgb(52, 52, 52) 30px, transparent 100px),
+                repeating-linear-gradient(45deg, rgb(0, 0, 0) 10px, rgb(52, 52, 52) 30px, transparent 100px);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
         }
     </style>
 </head>
@@ -492,7 +503,7 @@
         <div class="p-5 text-bg-dark text-center" id="about">
             <h2 class="display-5">Full Stack Django Developer <i class="fa-solid fa-code"></i></h2>
 
-            <div class="text-center qqq">
+            <div class="text-center">
                 <span class="type" style="--n:295">
                     👋 Welcome to my portfolio website! I am a full stack Django developer with experience in building
                     scalable
@@ -888,7 +899,7 @@
                             centericon.innerHTML =
                                 '<i class="fa-solid fa-person-chalkboard fa-4x"></i>'
                         }
-                    } else {}
+                    } else { }
                 }, {
                     rootMargin: '0px',
                     threshold: 0.7
@@ -1075,7 +1086,7 @@
         });
 
 
-         // Scroll to top button
+        // Scroll to top button
         var scrollToTopBtn = document.querySelector(".scrollToTopBtn")
         var rootElement = document.documentElement
 
