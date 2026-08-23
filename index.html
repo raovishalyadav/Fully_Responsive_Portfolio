@@ -1,1050 +1,343 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio | Vishal Yadav</title>
-    <link rel="icon" href="assets/images/vishal.webp" type="image/webp">
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <script src="assets/js/bootstrap.bundle.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vishal Yadav — Senior Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+<style>
+  :root{
+    --bg:#0A0D10;
+    --panel:#0F1418;
+    --panel2:#141A20;
+    --text:#D7DEE2;
+    --muted:#5C6B72;
+    --cyan:#4FD8E0;
+    --amber:#FFB454;
+    --red:#FF5C5C;
+    --hair:#1E272D;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:'IBM Plex Sans', sans-serif; line-height:1.65;
+    position:relative;
+  }
+  /* faint circuit grid */
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+    background-image:
+      linear-gradient(var(--hair) 1px, transparent 1px),
+      linear-gradient(90deg, var(--hair) 1px, transparent 1px);
+    background-size:48px 48px; opacity:0.22;
+  }
+  .mono{font-family:'JetBrains Mono', monospace;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:900px; margin:0 auto; padding:0 28px; position:relative; z-index:1;}
 
-    <style>
-        /* for custom scroll bar */
-        /* width */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
+  ::selection{background:var(--cyan); color:#0A0D10;}
 
-        /* Track */
-        ::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 8px #333;
-        }
+  /* NAV */
+  nav{position:sticky; top:0; z-index:50; background:rgba(10,13,16,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--hair);}
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 28px;}
+  .brand{font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--muted); display:flex; align-items:center;}
+  .brand b{color:var(--cyan); font-weight:600;}
+  .brand .pid{color:var(--hair); margin-left:14px; font-size:11px;}
+  .brand .run-pill{
+    display:inline-flex; align-items:center; gap:6px; margin-left:14px;
+    font-size:10.5px; color:#28C840; letter-spacing:0.06em; padding:3px 9px;
+    border:1px solid var(--hair); border-radius:3px;
+  }
+  .brand .pulse-dot{width:6px; height:6px; border-radius:50%; background:#28C840; animation:pulse 1.6s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:0.35;}}
+  .navlinks{display:flex; gap:26px; font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--muted);}
+  .navlinks a::before{content:"./"; color:var(--hair);}
+  .navlinks a:hover{color:var(--cyan);}
 
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: #666;
-            border-radius: 5px;
-        }
+  /* HERO — TERMINAL WINDOW */
+  header.hero{padding:80px 0 60px;}
+  .termwin{
+    background:var(--panel); border:1px solid var(--hair); border-radius:6px; overflow:hidden;
+  }
+  .termbar{
+    background:var(--bg); display:flex; align-items:stretch; border-bottom:1px solid var(--hair); height:46px;
+  }
+  .wt-tab{
+    display:flex; align-items:center; gap:10px; background:var(--panel2);
+    padding:0 16px;
+  }
+  .wt-tab .ticon{color:var(--cyan); font-size:13px;}
+  .wt-tab .ttitle{font-family:'IBM Plex Sans', sans-serif; font-size:13.5px; font-weight:600; color:var(--text);}
+  .wt-tab .tclose{width:20px; height:20px; display:flex; align-items:center; justify-content:center; font-size:13px; color:var(--muted); border-radius:4px; margin-left:2px;}
+  .wt-tab .tclose:hover{background:var(--hair); color:var(--text);}
+  .wt-tabactions{display:flex; align-items:center;}
+  .wt-tabactions span{width:34px; height:100%; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:12px;}
+  .wt-tabactions span:hover{background:var(--panel2); color:var(--text);}
+  .wt-tabactions .wt-div{width:1px; height:18px; background:var(--hair); flex-shrink:0;}
+  .wt-winctrls{display:flex; align-items:stretch; margin-left:auto;}
+  .wt-winctrls span{
+    width:44px; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:11px; transition:background .15s, color .15s;
+  }
+  .wt-winctrls span:hover{background:var(--hair); color:var(--text);}
+  .wt-winctrls span.wclose:hover{background:#E81123; color:#fff;}
+  .termbody{padding:18px 32px 40px;}
+  .cmdboot{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--muted); margin-bottom:24px; line-height:1.7;}
+  .prompt{font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--cyan); margin-bottom:6px;}
+  .prompt .sym{color:var(--muted);}
+  h1.headline{
+    font-family:'JetBrains Mono', monospace; font-weight:600;
+    font-size:clamp(22px, 3.6vw, 32px); color:var(--text); margin:14px 0 18px; line-height:1.5;
+  }
+  h1.headline .k{color:var(--amber);}
+  h1.headline .s{color:var(--cyan);}
+  h1.headline .cursor{display:inline-block; width:9px; height:1.1em; background:var(--cyan); vertical-align:text-bottom; animation:blink 1s step-end infinite;}
+  @keyframes blink{50%{opacity:0;}}
+  p.sub{font-size:15px; color:var(--muted); max-width:64ch; margin-bottom:30px; font-family:'IBM Plex Sans';}
+  .status-row{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:30px;}
+  .status{font-family:'JetBrains Mono', monospace; font-size:11px; padding:5px 10px; border:1px solid var(--hair); border-radius:3px; color:var(--muted); display:flex; align-items:center; gap:6px;}
+  .status .pip{width:6px; height:6px; border-radius:50%; background:var(--cyan);}
+  .status.open .pip{background:#28C840;}
+  .cta-row{display:flex; gap:12px; flex-wrap:wrap;}
+  .btn{font-family:'JetBrains Mono', monospace; font-size:12.5px; padding:11px 18px; border:1px solid var(--hair); border-radius:3px; transition:all .2s;}
+  .btn-primary{background:var(--cyan); color:#0A0D10; border-color:var(--cyan); font-weight:600;}
+  .btn-primary:hover{background:#7ee6ec;}
+  .btn-ghost{color:var(--text);}
+  .btn-ghost:hover{border-color:var(--amber); color:var(--amber);}
 
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #888;
-        }
+  /* SECTIONS */
+  section{padding:64px 0;}
+  section.alt{background:var(--panel);}
+  .sechead{margin-bottom:30px;}
+  .sechead .prompt{margin-bottom:4px;}
+  .sechead h2{font-family:'JetBrains Mono', monospace; font-size:19px; color:var(--text); font-weight:600;}
 
+  /* STACK — PYTHON IMPORT BLOCK */
+  .codeblock{
+    background:var(--panel2); border:1px solid var(--hair); border-radius:6px;
+    padding:26px 30px; font-family:'JetBrains Mono', monospace; font-size:13.5px; line-height:2.05;
+    overflow-x:auto;
+  }
+  .codeblock .c-kw{color:var(--red);}      /* from / import */
+  .codeblock .c-mod{color:var(--amber);}   /* module name */
+  .codeblock .c-cls{color:var(--cyan);}    /* imported names */
+  .codeblock .c-cmt{color:var(--muted);}   /* comments */
 
-        @keyframes t {
-            from {
-                background-size: 0 100%
-            }
-        }
+  /* EXPERIENCE — ACCESS LOG */
+  .logentry{border-top:1px solid var(--hair); padding:26px 0;}
+  .logentry:last-child{border-bottom:1px solid var(--hair);}
+  .logline{font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--muted); margin-bottom:10px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+  .logline .grant{color:#28C840;}
+  .logline .live{background:var(--cyan); color:#0A0D10; padding:2px 7px; border-radius:2px; font-weight:700; letter-spacing:0.04em;}
+  .logentry h3{font-size:18px; color:var(--text); font-weight:600; margin-bottom:2px; font-family:'IBM Plex Sans';}
+  .logentry .org{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--cyan); display:block; margin-bottom:12px;}
+  .logentry ul{list-style:none; color:var(--muted); font-size:14px;}
+  .logentry li{position:relative; padding-left:20px; margin-bottom:8px;}
+  .logentry li::before{content:">"; position:absolute; left:0; color:var(--amber); font-family:'JetBrains Mono', monospace;}
 
-        @keyframes b {
-            50% {
-                background-position: 0 -100%, 0 0
-            }
-        }
+  /* PROJECTS — CASE FILES */
+  .files{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px;}
+  .file{background:var(--panel2); border:1px solid var(--hair); border-radius:6px; padding:22px; transition:border-color .2s;}
+  .file:hover{border-color:var(--cyan);}
+  .file .fname{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--amber); margin-bottom:10px; display:flex; align-items:center; gap:8px;}
+  .file h3{font-size:16.5px; color:var(--text); margin-bottom:8px; font-weight:600; font-family:'IBM Plex Sans';}
+  .file p{font-size:13.5px; color:var(--muted); margin-bottom:14px;}
+  .file a.more{font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--cyan);}
+  .minifiles{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px;}
+  .minifile{border:1px solid var(--hair); border-radius:6px; padding:16px; transition:border-color .2s;}
+  .minifile:hover{border-color:var(--amber);}
+  .minifile .fname{font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--amber); margin-bottom:8px;}
+  .minifile p{font-size:12px; color:var(--muted);}
 
-        .centernav {
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+  /* CONTACT */
+  footer{padding:70px 0 40px; text-align:center;}
+  footer .prompt{justify-content:center; display:flex;}
+  footer h2{font-family:'JetBrains Mono', monospace; font-size:22px; margin:14px 0 12px; color:var(--text);}
+  footer p.sub{margin:0 auto 32px;}
+  .contact-links{display:flex; justify-content:center; gap:28px; flex-wrap:wrap; margin-bottom:44px;}
+  .contact-links a{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--muted); display:flex; align-items:center; gap:8px;}
+  .contact-links a:hover{color:var(--cyan);}
+  .copyright{font-family:'JetBrains Mono', monospace; font-size:10.5px; color:var(--muted); opacity:0.6;}
 
-        .navbar {
-            box-shadow: 0 15px 15px 15px rgba(0, 0, 0, 0.4);
-            --bs-navbar-toggler-icon-bg: none
-        }
-
-        .progress {
-            height: 3px;
-            border-radius: 0%;
-            position: fixed;
-            bottom: 0px;
-            width: 100%;
-            background: #0E112B;
-        }
-
-        .progress-bar {
-            border-radius: 0%;
-            height: 3px;
-            background: white;
-            width: 0%;
-        }
-
-        .downloadresume {
-            box-shadow: 0px 10px 10px 0 black;
-            --bs-btn-border-width: 0;
-            -webkit-animation: mover 1.85s infinite alternate ease-in-out;
-            animation: mover 1.85s infinite alternate ease-in-out;
-            color: white;
-        }
-
-        @keyframes mover {
-            0% {
-                transform: translateY(0);
-            }
-
-            100% {
-                transform: translateY(-15px);
-            }
-        }
-
-        .downloadresume:hover {
-            transform: translate(0, 0.07em);
-            transition: all 0.45s ease-in-out;
-            box-shadow: inset 3px 3px 6px 0 rgba(0, 0, 0, 1),
-                inset -2px -2px 4px 0 rgba(0, 0, 0, 0.667);
-            --bs-btn-border-width: 0;
-            animation-name: shine;
-            animation-duration: 260ms;
-            color: black;
-        }
-
-        @keyframes shine {
-            0% {
-                background: linear-gradient(30deg,
-                        hsl(260, 85%, 95%) 0%,
-                        hsl(0, 100%, 0%) 25%);
-            }
-
-            25% {
-                background: linear-gradient(30deg,
-                        hsl(0, 100%, 0%) 0%,
-                        hsl(260, 85%, 95%) 25%,
-                        hsl(0, 100%, 0%) 50%);
-            }
-
-            50% {
-                background: linear-gradient(30deg,
-                        hsl(0, 100%, 0%) 0%,
-                        hsl(260, 85%, 95%) 50%,
-                        hsl(0, 100%, 0%) 75%);
-            }
-
-            75% {
-                background: linear-gradient(30deg,
-                        hsl(0, 100%, 0%) 0%,
-                        hsl(260, 85%, 95%) 75%,
-                        hsl(0, 100%, 0%) 100%);
-            }
-
-            100% {
-                background: linear-gradient(30deg,
-                        hsl(0, 100%, 0%) 0%,
-                        hsl(260, 85%, 95%) 100%);
-            }
-        }
-
-        .moreinfo {
-            box-shadow: 0px 5px 10px 0 black;
-            position: relative;
-            z-index: 1;
-            transition: .8s;
-            overflow: hidden;
-        }
-
-        .moreinfo:hover {
-            color: #fff !important;
-            border-color: black;
-        }
-
-        .moreinfo:before {
-            background: black;
-            content: "";
-            height: 100%;
-            left: 50%;
-            opacity: 1;
-            position: absolute;
-            top: 50%;
-            transform: translateX(-50%) translateY(-50%) rotate(180deg);
-            transition: .8s;
-            width: 0;
-            z-index: -1;
-        }
-
-        .moreinfo:hover:before {
-            opacity: 1;
-            width: 100%;
-        }
-
-        .shadowvishal {
-            box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
-        }
-
-        .card-footer {
-            background-color: transparent;
-        }
-
-        .pcard {
-            box-shadow: 15px 15px 15px 0 black;
-            transition: transform 0.5s;
-        }
-
-        .pcard:hover {
-            transform: scale(1.065);
-        }
-
-        .einfo {
-            box-shadow: 0px 5px 10px 0 black;
-            background-image: linear-gradient(to left, transparent, transparent 50%, white 50%, white);
-            background-position: 100% 0;
-            background-size: 200% 100%;
-            transition: .8s;
-        }
-
-        .einfo:hover {
-            color: black;
-            border-color: white;
-            background-position: 0 0;
-            transition: .8s;
-        }
-
-        .ecard {
-            --bs-card-border-width: 0;
-            transition: transform 0.5s;
-            box-shadow: inset 15px 15px 30px 0 rgba(0, 0, 0, 1),
-                inset -12px -12px 24px 0 rgba(0, 0, 0, 0.667);
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .fa-3dicon {
-            filter: drop-shadow(5.5px 1px rgba(0, 0, 0, 1));
-        }
-
-        /* for typewriter effect */
-        .type {
-            color: #0000;
-            background:
-                linear-gradient(-90deg, white 5px, #0000 0) 10px 0,
-                linear-gradient(white 0 0) 0 0;
-            background-size: calc(var(--n)*1ch) 100%;
-            -webkit-background-clip: padding-box, text;
-            background-clip: padding-box, text;
-            background-repeat: no-repeat;
-            animation:
-                b .7s infinite steps(1),
-                t calc(var(--n)*.015s) steps(var(--n)) forwards;
-            animation-delay: 700ms;
-            animation-duration: 5s;
-        }
-
-        .navline {
-            position: relative;
-        }
-
-        .navline::after {
-            content: "";
-            width: 0;
-            height: 5px;
-            background: white;
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            transition: all 500ms;
-            margin-bottom: 5px;
-        }
-
-        .navline:hover {
-            color: #fff;
-        }
-
-        .navline:hover::after {
-            width: 100%;
-        }
-
-        /*Custom Cursor*/
-        [class^="cursor"] {
-            position: fixed;
-            top: 0;
-            left: 0;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            z-index: 9999;
-            pointer-events: none;
-        }
-
-        .cursor2 {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(300deg, black, white);
-            transition: .3s ease-out;
-            opacity: 0.7;
-            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .cursor1 {
-            width: 13px;
-            height: 13px;
-            background: rgba(0, 0, 0, 0.75);
-        }
-
-        .click {
-            opacity: 0.3;
-        }
-
-        * {
-            cursor: none;
-        }
-
-        a {
-            cursor: none !important;
-        }
-
-        .ribbon {
-            position: absolute;
-            left: -6px;
-            top: -6px;
-            z-index: 1;
-            overflow: hidden;
-            width: 75px;
-            height: 75px;
-
-        }
-
-        .ribbon span {
-            font-size: 9.5px;
-            font-weight: bold;
-            color: black;
-            text-transform: uppercase;
-            text-align: center;
-            line-height: 20px;
-            transform: rotate(-45deg);
-            -webkit-transform: rotate(-45deg);
-            width: 100px;
-            display: block;
-            background: white;
-            position: absolute;
-            top: 19px;
-            left: -21px;
-        }
-
-        .ribbon span::before {
-            content: "";
-            position: absolute;
-            left: 0px;
-            top: 100%;
-            z-index: -1;
-            border-left: 3px solid grey;
-            border-right: 3px solid transparent;
-            border-bottom: 3px solid transparent;
-            border-top: 3px solid grey;
-        }
-
-        .ribbon span::after {
-            content: "";
-            position: absolute;
-            right: 0px;
-            top: 100%;
-            z-index: -1;
-            border-left: 3px solid transparent;
-            border-right: 3px solid grey;
-            border-bottom: 3px solid transparent;
-            border-top: 3px solid grey;
-        }
-
-        .dropdown-menu {
-            --bs-dropdown-min-width: 0rem;
-        }
-
-        @media screen and (min-width: 768px) {
-            .dropdown:hover .dropdown-menu {
-                display: block;
-            }
-
-            .dropdown {
-                display: flex;
-                align-items: center;
-            }
-
-            .dropdown-menu {
-                position: absolute;
-                top: 100%;
-                left: 0;
-            }
-        }
-
-        .blurme {
-            filter: blur(300px);
-            animation: blur-animation 1s linear forwards;
-        }
-
-        @keyframes blur-animation {
-            from {
-                filter: blur(300px);
-            }
-
-            to {
-                filter: blur(0px);
-            }
-        }
-
-        .scrollToTopBtn {
-            border: none;
-            position: fixed;
-            bottom: 2vh;
-            right: 0.75vw;
-            z-index: 100;
-            opacity: 0;
-            transform: translateY(5vh);
-            transition: all .5s ease;
-            cursor: none !important;
-            background: transparent;
-            color: white;
-        }
-
-        .scrollToTopBtn:hover {
-            transform: translateY(-5px)
-        }
-
-        .showBtn {
-            opacity: 1;
-            transform: translateY(0)
-        }
-
-        .fa-3d {
-            filter: drop-shadow(3px 1px rgba(0, 0, 0, 0.3));
-        }
-
-        #about, body {
-            background-color: #212529;
-            background-image:
-                repeating-linear-gradient(-45deg, rgb(0, 0, 0) 10px, rgb(52, 52, 52) 30px, transparent 100px),
-                repeating-linear-gradient(45deg, rgb(0, 0, 0) 10px, rgb(52, 52, 52) 30px, transparent 100px);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-        }
-    </style>
+  @media(max-width:720px){
+    .files{grid-template-columns:1fr;}
+    .minifiles{grid-template-columns:1fr;}
+    .navlinks{display:none;}
+    .termbody{padding:26px 20px 32px;}
+  }
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation:none !important; transition:none !important;} .pulse-dot{opacity:1;} }
+</style>
 </head>
-
 <body>
-    <button class="scrollToTopBtn"><i class="fa-solid fa-plane-up fa-2x fa-3d"></i></button>
-    <div class="container-fluid blurme p-0">
-        <div class="cursor2"></div>
-        <div class="cursor1"></div>
-        <!-- navbar Section -->
-        <nav
-            class="navbar sticky-top flex-column navbar-expand-lg bg-danger animate__animated animate__slideInDown animate__delay-1s">
-            <div class="container-fluid">
-                <div class="navbar-brand d-flex align-items-center my-auto mx-auto">
-                    <img src="assets/images/vishal.webp" alt="Logo" width="60" height="60"
-                        class="shadowvishal rounded-circle">
-                    <a class="nav-link fw-bold ps-3 text-light font-monospace" href="#">Vishal Yadav</a>
-                </div>
-                <p class="centernav d-md-block" id="center-nav-text"></p>
-                <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon toggler"><i class="fas fa-bars"
-                            style="color:#fff; font-size:28px;"></i>
-                    </span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto text-center">
-                        <div class="dropdown d-flex flex-column align-items-center">
-                            <a class="text-light my-auto fw-bold me-md-2 dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false"><br><i
-                                    class="fa-solid fa-brush fa-2x"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark text-center">
-                                <li><a class="dropdown-item" style="background-color: #dc3545;"
-                                        id="convert-danger">red</a>
-                                </li>
-                                <li><a class="dropdown-item bg-info" id="convert-info">cyan</a></li>
-                                <li><a class="dropdown-item bg-warning" id="convert-warning">yellow</a></li>
-                                <li><a class="dropdown-item bg-success" id="convert-success">green</a></li>
-                                <li><a class="dropdown-item bg-primary" id="convert-primary">blue</a></li>
-                            </ul>
-                        </div>
-                        <li class="nav-item d-flex flex-column align-items-center">
-                            <a class="nav-link fw-bold navline" href="#about" id="about-link">About<br>
-                                <i class="fa-solid fa-user-tie fa-1x"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item d-flex flex-column align-items-center">
-                            <a class="nav-link fw-bold navline" href="#experience" id="resume-link">Experience<br>
-                                <i class="fa-solid fa-briefcase fa-1x"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item d-flex flex-column align-items-center">
-                            <a class="nav-link fw-bold navline" href="#projects" id="projects-link">Projects<br>
-                                <i class="fa-solid fa-sitemap fa-1x"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item d-flex flex-column align-items-center">
-                            <a class="nav-link fw-bold navline" href="#contact" id="contact-link">Contact<br>
-                                <i class="fa-solid fa-person-chalkboard fa-1x"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar" id="myBar"></div>
-            </div>
 
-        </nav>
-
-
-        <!-- About Section -->
-        <div class="p-5 text-bg-dark text-center" id="about">
-            <h2 class="display-5">Senior Software Engineer <i class="fa-solid fa-code"></i></h2>
-
-            <div class="text-center">
-                <span class="type" style="--n:295">
-                    👋 Welcome to my portfolio website! I am a Senior Software Engineer with 9+ years of experience
-                    owning backend systems end-to-end using Python, Django and AWS. I currently build Blender-based
-                    automation systems for drone shows and work on Generative AI integrations including RAG, LangChain
-                    and LLM APIs.
-                </span>
-            </div>
-
-            <div class="container text-center pt-3">
-                <div class="row">
-                    <div class="col">
-                        <h2 class="countyears text-light d-inline">1</h2>
-                        <h2 class="text-danger d-inline fw-bold">+</h2>
-                        <h6>Years of Experience</h6>
-                    </div>
-                    <div class="col">
-                        <h2 class="countskills text-light d-inline">1</h2>
-                        <h2 class="text-danger d-inline fw-bold">+</h2>
-                        <h6>Skills</h6>
-                    </div>
-                    <div class="col">
-                        <!-- <h2 class="countskills text-light d-inline"></h2> -->
-                        <h2 class="text-danger d-inline fw-bold"><i class="fa-solid fa-infinity"></i></h2>
-                        <h6>Tasks Completed</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center pt-4">
-                <a href="assets/images/Vishal_Yadav.pdf" target="_blank"
-                    class="btn btn-danger btn-lg my-3 downloadresume"><i class="fa-regular fa-address-card"></i>
-                    Download my resume</a>
-            </div>
-
-
-
-        </div>
-
-        <!-- Skills Section -->
-        <div class="p-5 text-bg-danger text-center">
-            <h2 class="text-dark" style="font-family: Arial Black, Arial, sans-serif;
-        ">Skills <i class="fa-solid fa-laptop-code"></i></h2>
-            <div class="col-md-10 mx-auto">
-                <div class="card bg-dark rounded-5" style="box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5), inset -10px -10px 5px rgba(0, 0, 0, 0.3), inset 10px 10px 5px rgba(80, 80, 80, 0.3) ;
-            ">
-                    <div class="card-body fw-bold">
-                        <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 8.5s;">#Python</span>
-                        <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 8.7s;">#Django</span>
-                        <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 8.9s;">#Django REST Framework</span>
-                        <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 8.9s;">#Bpy(Blender Python API)</span>
-                        <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 8.9s;">#GraphQL</span>
-                        <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 9.1s;">#Font Awesome</span>
-                        <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 9.3s;">#Cron Jobs</span>
-                        <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 9.5s;">#HTML</span>
-                        <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 9.7s;">#CSS</span>
-                        <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 9.9s;">#Selenium Web driver</span>
-                        <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 10.1s;">#Generative AI</span>
-                        <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 10.3s;">#Nginx</span>
-                        <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 10.5s;">#Gunicorn</span>
-                        <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 10.7s;">#Bootstrap</span>
-                        <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 10.9s;">#JSONWebToken(JWT)</span>
-                        <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 11.1s;">#PostgreSQL</span>
-                        <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 11.3s;">#RAG</span>
-                        <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 11.5s;">#LangChain</span>
-                        <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 11.7s;">#Socket Programming</span>
-                        <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 11.9s;">#MCP</span>
-                        <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 12.1s;">#SQLite</span>
-                        <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 12.3s;">#AWS Lambda</span>
-                        <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 12.5s;">#Docker</span>
-                        <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 12.7s;">#LLM Integration</span>
-                        <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 12.9s;">#AWS EC2</span>
-                        <span class="text-light animate__animated animate__fadeIn" style="animation-delay: 13.1s;">#AWS S3</span>
-                        <span class="text-danger animate__animated animate__fadeIn" style="animation-delay: 13.3s;">#GitLab/GitHub</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Experience Section -->
-        <div class="p-5 text-bg-dark text-center" id="experience">
-
-
-            <h2 class="text-light mb-4">Experience</h2>
-
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-                <div class="col-md-4 mx-auto">
-                    <div class="card ecard py-4 h-100 bg-danger rounded-5">
-                        <div class="card-body">
-                            <h6 class="card-title text-light fw-bold text-decoration-underline">SENIOR SOFTWARE ENGINEER</h6>
-                            <h6 class="card-title text-light font-monospace">Botlab Dynamics (IIT Delhi)</h6>
-                            <p class="card-title fst-italic" style="font-size: 80%;">March 2023 - Present</p>
-                            <p class="card-text text-dark" style="font-size: 90%;">• Own end-to-end technical delivery for the company's drone animation software, leading a team of three engineers.
-• Architected the image projection algorithm for drone systems, from concept to production rollout.
-• Drive the full lifecycle of the company's Blender plugin suite in Python (bpy).
-• Architected a collision-free drone transition and pathfinding system deployed on AWS EC2.
-• Integrated Generative AI capabilities including LLM API calls (OpenAI, Claude, Gemini) and Model Context Protocol (MCP).</p>
-                        </div>
-                        <div class="card-footer rounded-bottom-5">
-                            <a href="assets/images/Vishal_Resume.pdf" target="_blank" class="btn btn-dark einfo">More
-                                Info</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mx-auto">
-                    <div class="card ecard py-4 h-100 bg-danger rounded-5">
-                        <div class="card-body">
-                            <h6 class="card-title text-light fw-bold text-decoration-underline">PROJECT ASSISTANT</h6>
-                            <h6 class="card-title text-light font-monospace">CSIR-NPL</h6>
-                            <p class="card-title fst-italic" style="font-size: 80%;">August 2018 - March 2023</p>
-                            <p class="card-text text-dark" style="font-size: 90%;">Independently designed and built a Python-based socket application for SATRE TWSTFT modem data extraction, benchmarked against ISRO's software. Owned a Python GUI for real-time and stored data visualization, and automated monthly time-offset calculations synchronizing ISRO timing with IST. Also developed a web-based educational game for
-                                CSIR-JIGYASA by <b>Government of India</b>.</p>
-                        </div>
-                        <div class="card-footer rounded-bottom-5">
-                            <a href="assets/images/Vishal_Yadav.pdf" target="_blank" class="btn btn-dark einfo">More
-                                Info</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mx-auto">
-                    <div class="card ecard py-4 h-100 bg-danger rounded-5">
-                        <div class="card-body">
-                            <h6 class="card-title text-light fw-bold text-decoration-underline">JUNIOR SOFTWARE ENGINEER
-                            </h6>
-                            <h6 class="card-title text-light font-monospace">Sheetal Enterprises</h6>
-                            <p class="card-title fst-italic" style="font-size: 80%;">August 2017 - August 2018</p>
-                            <p class="card-text text-dark" style="font-size: 90%;">Developed and maintained various
-                                software
-                                for the company using python. Improved application performance by 13% through
-                                optimization and refactoring.</p>
-                        </div>
-                        <div class="card-footer rounded-bottom-5">
-                            <a href="assets/images/Vishal_Yadav.pdf" target="_blank" class="btn btn-dark einfo">More
-                                Info</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Projects Section -->
-        <div class="p-5 text-bg-danger text-center" id="projects">
-            <h2 class="text-dark mb-4" style="font-family: Arial Black, Arial, sans-serif;
-        ">Projects
-            </h2>
-
-            <div class="row row-cols-1 row-cols-md-4 g-4">
-                <div class="col">
-                    <div class="card pcard h-100 bg-dark rounded-5">
-                        <div class="ribbon"><span>Professional</span></div>
-                        <div class="card-body">
-                            <h6 class="card-title text-light">Time & Frequency Game</h6>
-                            <p class="card-text text-secondary" style="font-size: 80%;">This is a Web-Based Game
-                                built for CSIR-JIGYASA by Government of
-                                India.</p>
-                        </div>
-                        <div class="card-footer rounded-bottom-5">
-                            <a href="https://jigyasa-csir.in/npl/n21-t6-m1/" class="btn btn-light moreinfo">More
-                                Info</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card pcard h-100 bg-dark rounded-5">
-                        <div class="ribbon"><span>Personal</span></div>
-                        <div class="card-body">
-                            <h6 class="card-title text-light">Fully Responsive Portfolio</h6>
-                            <p class="card-text text-secondary" style="font-size: 80%;">This is a fully
-                                responsive website built
-                                using
-                                HTML, CSS,
-                                Javascript, Bootstrap & FontAwesome.</p>
-                        </div>
-                        <div class="card-footer rounded-bottom-5">
-                            <a href="https://github.com/raovishalyadav/Fully_Responsive_Portfolio"
-                                class="btn btn-light moreinfo">More Info</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card pcard h-100 bg-dark rounded-5">
-                        <div class="ribbon"><span>Professional</span></div>
-                        <div class="card-body">
-                            <h6 class="card-title text-light">TWSTFT GUI</h6>
-                            <p class="card-text text-secondary" style="font-size: 80%;">This is a Python based
-                                GUI build using PYQt5 to show the Real-time as well as
-                                Static offset data plot of the Two-Way Satellite Time and Frequency Transfer
-                                (TWSTFT) having functionalities like Play/Pause, calculating Standard Deviation,
-                                Clear Graph, Lock % and many more.</p>
-                        </div>
-                        <div class="card-footer rounded-bottom-5">
-                            <a href="https://github.com/raovishalyadav/TWSTFT_GUI" class="btn btn-light moreinfo">More
-                                Info</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card pcard h-100 bg-dark rounded-5">
-                        <div class="ribbon"><span>Professional</span></div>
-                        <div class="card-body">
-                            <h6 class="card-title text-light">NavIC RECEIVER Automation</h6>
-                            <p class="card-text text-secondary" style="font-size: 80%;">This is a Linux based
-                                shell script to Automatically download files from NAVIC(Navigation with Indian
-                                Constellation) Receiver via SCP and upload it to server via TCP daily at a
-                                specific time.</p>
-                        </div>
-                        <div class="card-footer rounded-bottom-5">
-                            <a href="https://github.com/raovishalyadav/NavIC_RECEIVER_Automation"
-                                class="btn btn-light moreinfo">More
-                                Info</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card pcard h-100 bg-dark rounded-5">
-                        <div class="ribbon"><span>Professional</span></div>
-                        <div class="card-body">
-                            <h6 class="card-title text-light">SATRE MODEM Daily Offset</h6>
-                            <p class="card-text text-secondary" style="font-size: 80%;">This is a Python based
-                                program to calculate the daily offset of the SATRE MODEM.</p>
-                        </div>
-                        <div class="card-footer rounded-bottom-5">
-                            <a href="https://github.com/raovishalyadav/SATRE_MODEM_Daily_Offset"
-                                class="btn btn-light moreinfo">More
-                                Info</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card pcard h-100 bg-dark rounded-5">
-                        <div class="ribbon"><span>Professional</span></div>
-                        <div class="card-body">
-                            <h6 class="card-title text-light">NMEA Converter</h6>
-                            <p class="card-text text-secondary" style="font-size: 80%;">This is a Python based
-                                program to convert GPS Receiver data to NMEA format.</p>
-                        </div>
-                        <div class="card-footer rounded-bottom-5">
-                            <a href="https://github.com/raovishalyadav/NMEA_Converter"
-                                class="btn btn-light moreinfo">More
-                                Info</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card pcard h-100 bg-dark rounded-5">
-                        <div class="ribbon"><span>Personal</span></div>
-                        <div class="card-body">
-                            <h6 class="card-title text-light">DRF Token Authentication</h6>
-                            <p class="card-text text-secondary" style="font-size: 80%;">This is a REST API built
-                                using Django REST framework (DRF) with DRF's Token Authentication.</p>
-                        </div>
-                        <div class="card-footer rounded-bottom-5">
-                            <a href="https://github.com/raovishalyadav/DRF_TokenAuthentication"
-                                class="btn btn-light moreinfo">More
-                                Info</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Contact Section -->
-        <div id="contact" class="p-5 text-light bg-dark text-center">
-            <h2 class="pb-3">
-                Contact <i class="fas fa-handshake"></i>
-            </h2>
-            <div class="row">
-                <div class="col-auto mx-auto">
-                    <h2 class="d-inline"><i class="fas fa-envelope text-danger fa-2x fa-3dicon"></i></h2>
-                    <h6> <a href="mailto:06vishalyada@gmail.com" style="color: gray">06vishalyadav@gmail.com</a>
-
-                    </h6>
-                </div>
-                <div class="col-auto mx-auto">
-                    <h2 class="d-inline"><i class="fas fa-mobile-alt text-danger fa-2x fa-3dicon"></i>
-                    </h2>
-                    <h6 style="color: gray"> +91 9582895161
-                    </h6>
-                </div>
-                <div class="col-auto mx-auto">
-                    <h2 class="d-inline"><i class="fab fa-github text-danger fa-2x fa-3dicon"></i>
-                    </h2>
-                    <h6> <a href="https://github.com/raovishalyadav" target="_blank"
-                            style="color: gray">@raovishalyadav</a>
-                    </h6>
-                </div>
-                <div class="col-auto mx-auto">
-                    <h2 class="d-inline"><i class="fab fa-linkedin text-danger fa-2x fa-3dicon"></i>
-                        <h6> <a href="https://linkedin.com/in/raovishalyadav" target="_blank"
-                                style="color: gray">@raovishalyadav</a>
-                        </h6>
-                </div>
-            </div>
-        </div>
-
-
-
-        <footer class="text-white p-3" style="background-color: rgb(71, 71, 71);">
-            <div class="container text-center lh-1">
-                <p class="fw-bold">Made with <i
-                        class="fa-solid fa-heart animate__animated animate__heartBeat animate__infinite"
-                        aria-labelledby="something" title="love" style="color: red;"></i>
-                    by
-                    Vishal</p>
-                <p class="fw-lighter" style="font-size: 80%;">Copyright (C) 2026 Vishal Yadav</p>
-            </div>
-        </footer>
-
+<nav>
+  <div class="wrap">
+    <div class="brand">
+      <i class="fa-solid fa-microchip" style="color:var(--amber); margin-right:9px;"></i>vishal.py
+      <span class="run-pill"><span class="pulse-dot"></span>RUNNING</span>
     </div>
-    <script>
-        //To dynamically add icon to center of the navbar on scroll
-        var mediumscreen = window.matchMedia("(min-width: 768px)");
-        if (mediumscreen.matches) {
-            const elements = ['about', 'experience', 'projects', 'contact'];
-            elements.forEach((id) => {
-                const element = document.querySelector(`#${id}`);
-                const centericon = document.querySelector('#center-nav-text');
-                const observer = new IntersectionObserver((entries) => {
-                    if (entries[0].isIntersecting && entries[0].intersectionRatio >= 0.7) {
-                        if (element.id == 'about') {
-                            centericon.innerHTML = '<i class="fa-solid fa-user-tie fa-4x"></i>'
-                        }
-                        if (element.id == 'experience') {
-                            centericon.innerHTML = '<i class="fa-solid fa-briefcase fa-4x"></i>'
-                        }
-                        if (element.id == 'projects') {
-                            centericon.innerHTML = '<i class="fa-solid fa-sitemap fa-4x"></i>'
-                        }
-                        if (element.id == 'contact') {
-                            centericon.innerHTML =
-                                '<i class="fa-solid fa-person-chalkboard fa-4x"></i>'
-                        }
-                    } else { }
-                }, {
-                    rootMargin: '0px',
-                    threshold: 0.7
-                });
-                observer.observe(element);
-            });
-        }
+    <div class="navlinks">
+      <a href="#stack">stack.py</a>
+      <a href="#experience">access_log</a>
+      <a href="#projects">case_files</a>
+      <a href="#contact">connect.py</a>
+    </div>
+  </div>
+</nav>
 
+<header class="hero">
+  <div class="wrap">
+    <div class="termwin">
+      <div class="termbar">
+        <div class="wt-tab">
+          <i class="fa-solid fa-terminal ticon"></i>
+          <span class="ttitle">Command Prompt</span>
+          <span class="tclose"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="wt-tabactions">
+          <span><i class="fa-solid fa-plus"></i></span>
+          <span class="wt-div"></span>
+          <span><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="wt-winctrls">
+          <span><i class="fa-solid fa-minus"></i></span>
+          <span><i class="fa-regular fa-square"></i></span>
+          <span class="wclose" style="font-size:14px;"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+      </div>
+      <div class="termbody">
+        <div class="cmdboot">
+          Microsoft Windows [Version 10.0.26200.9168]<br>
+          (c) Microsoft Corporation. All rights reserved.
+        </div>
+        <div class="prompt"><span class="sym">C:\vishal&gt;</span> whoami</div>
+        <h1 class="headline">
+          <span class="k">SENIOR SOFTWARE ENGINEER</span> · 9+ YRS PYTHON<br>
+          Backend systems, drone automation, <span class="s">Generative AI</span><span class="cursor"></span>
+        </h1>
+        <p class="sub">I build and own production Python systems end-to-end — from Django/DRF backends and AWS infrastructure to Blender-based drone automation at BotLab Dynamics, with current work integrating LLM APIs, RAG pipelines, and MCP into existing tooling.</p>
+        <div class="status-row">
+          <span class="status open"><span class="pip"></span>OPEN TO OPPORTUNITIES</span>
+          <span class="status"><span class="pip"></span>DELHI NCR / REMOTE</span>
+          <span class="status"><span class="pip"></span>NOTICE: 2 MONTHS</span>
+        </div>
+        <div class="cta-row">
+          <a href="#" class="btn btn-primary">./download_resume.py</a>
+          <a href="#contact" class="btn btn-ghost">./connect.py</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
-        //For the progress bar under navbar
-        window.onscroll = function () {
-            myFunction()
-        };
+<section id="stack">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="prompt"><span class="sym">C:\vishal&gt;</span> type stack.py</div>
+      <h2>What I build with</h2>
+    </div>
+    <div class="codeblock">
+<span class="c-cmt"># backend</span><br>
+<span class="c-kw">from</span> <span class="c-mod">backend</span> <span class="c-kw">import</span> <span class="c-cls">Python, Django, DjangoRESTFramework, GraphQL, SocketProgramming</span><br><br>
+<span class="c-cmt"># generative ai</span><br>
+<span class="c-kw">from</span> <span class="c-mod">genai</span> <span class="c-kw">import</span> <span class="c-cls">LLM_APIs, RAG, LangChain, VectorEmbeddings, MCP</span><br><br>
+<span class="c-cmt"># cloud &amp; infra</span><br>
+<span class="c-kw">from</span> <span class="c-mod">infra</span> <span class="c-kw">import</span> <span class="c-cls">AWS_EC2, AWS_Lambda, AWS_S3, Docker, Gunicorn, Nginx</span><br><br>
+<span class="c-cmt"># data &amp; auth</span><br>
+<span class="c-kw">from</span> <span class="c-mod">data</span> <span class="c-kw">import</span> <span class="c-cls">PostgreSQL, SQLite, JWT, OAuth2</span><br><br>
+<span class="c-cmt"># tooling</span><br>
+<span class="c-kw">from</span> <span class="c-mod">tools</span> <span class="c-kw">import</span> <span class="c-cls">Blender_bpy, Selenium, ShellScripting, CronJobs</span>
+    </div>
+  </div>
+</section>
 
-        function myFunction() {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            var scrolled = (winScroll / height) * 100;
-            document.getElementById("myBar").style.width = scrolled + "%";
-        }
+<section class="alt" id="experience">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="prompt"><span class="sym">C:\vishal&gt;</span> more access_log.txt</div>
+      <h2>Where I've owned things</h2>
+    </div>
 
+    <div class="logentry">
+      <div class="logline">[2023-03-01] <span class="grant">ACCESS GRANTED</span> · role: senior_software_engineer <span class="live">LIVE</span></div>
+      <h3>Senior Software Engineer</h3>
+      <span class="org">BotLab Dynamics, IIT Delhi</span>
+      <ul>
+        <li>Own end-to-end delivery of the drone animation software, leading a team of three engineers.</li>
+        <li>Architected the image projection algorithm and precision autonomous landing system, now in production.</li>
+        <li>Built the collision-free drone transition and pathfinding system deployed on AWS EC2.</li>
+        <li>Integrated Generative AI — LLM APIs and Model Context Protocol — into the Blender tooling.</li>
+      </ul>
+    </div>
 
-        // To animate the experience counter
-        function runOnce() {
-            const countElement = document.querySelector('.countyears');
+    <div class="logentry">
+      <div class="logline">[2018-08-01] <span class="grant">ACCESS GRANTED</span> · role: project_assistant → [2023-03-01] SESSION CLOSED</div>
+      <h3>Project Assistant</h3>
+      <span class="org">CSIR-National Physical Laboratory, Delhi</span>
+      <ul>
+        <li>Independently built a Python socket application extracting SATRE TWSTFT modem data, benchmarked against ISRO's software.</li>
+        <li>Owned a real-time GUI visualizing time-offset, standard deviation, and lock percentage.</li>
+        <li>Automated monthly synchronization of ISRO timing with IST.</li>
+      </ul>
+    </div>
 
-            function increment() {
-                let countyears = parseInt(countElement.innerHTML);
-                countyears++;
-                countElement.innerHTML = countyears;
-                if (countyears === 9) {
-                    clearInterval(intervalId);
-                }
-            }
-            const intervalId = setInterval(increment, 200);
-        }
-        setTimeout(runOnce, 5000);
+    <div class="logentry">
+      <div class="logline">[2017-08-01] <span class="grant">ACCESS GRANTED</span> · role: junior_software_engineer → [2018-08-01] SESSION CLOSED</div>
+      <h3>Junior Software Engineer</h3>
+      <span class="org">Sheetal Enterprises</span>
+      <ul>
+        <li>Developed and maintained Python applications, improving performance by 13% through optimization.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
+<section id="projects">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="prompt"><span class="sym">C:\vishal&gt;</span> dir case_files</div>
+      <h2>Selected work</h2>
+    </div>
 
-        // To animate the experience counter
-        function runOnce1() {
-            const countElement = document.querySelector('.countskills');
+    <div class="files">
+      <div class="file">
+        <div class="fname"><i class="fa-regular fa-file-code"></i> drone_formation_engine.py</div>
+        <h3>Drone Formation &amp; Animation Engine</h3>
+        <p>Python/bpy system for collision-free transitions, precision landings, and full animation sequencing — deployed at scale on AWS EC2.</p>
+        <a href="#" class="more">./view_more</a>
+      </div>
+      <div class="file">
+        <div class="fname"><i class="fa-regular fa-file-code"></i> twstft_gui.py</div>
+        <h3>TWSTFT Real-Time GUI</h3>
+        <p>PyQt5 application visualizing real-time satellite time-transfer data for ISRO/IST synchronization.</p>
+        <a href="https://github.com/raovishalyadav/TWSTFT_GUI" class="more">./view_more</a>
+      </div>
+    </div>
 
-            function increment1() {
-                let countskills = parseInt(countElement.innerHTML);
-                countskills++;
-                countElement.innerHTML = countskills;
-                if (countskills === 20) {
-                    clearInterval(intervalId1);
-                }
-            }
-            const intervalId1 = setInterval(increment1, 100);
-        }
-        setTimeout(runOnce1, 6500);
+    <div class="minifiles">
+      <div class="minifile"><div class="fname">navic_automation.sh</div><p>Linux shell automation for daily NavIC/SATRE data retrieval via SCP.</p></div>
+      <div class="minifile"><div class="fname">satre_offset.py</div><p>Calculates daily SATRE modem offset.</p></div>
+      <div class="minifile"><div class="fname">drf_token_auth.py</div><p>REST API with DRF token authentication.</p></div>
+    </div>
+  </div>
+</section>
 
-
-        //To add particular clicked nav item's icon to the center of navbar
-        document.addEventListener('DOMContentLoaded', function () {
-            const navLinks = document.querySelectorAll('.nav-item');
-            const navbar = document.querySelector('.navbar');
-            const navbarHeight = navbar.offsetHeight;
-            var mq = window.matchMedia("(min-width: 768px)");
-            let element = document.getElementById('center-nav-text');
-            if (mq.matches) {
-                element.innerHTML = '<i class="fa-solid fa-user-tie fa-4x"></i>';
-            }
-            navLinks.forEach(link => {
-                link.addEventListener('click', e => {
-                    e.preventDefault();
-                    const id = link.firstElementChild.getAttribute('href');
-                    const targetElement = document.querySelector(id);
-                    if (mq.matches) {
-                        const iconElement = link.querySelector('i');
-                        const iconName = iconElement.classList[
-                            1]; // The second class in the class list is the icon name
-                        element.innerHTML = '<i class="fa-solid ' + iconName +
-                            ' fa-4x"></i>';
-                    }
-                    window.scrollTo({
-                        top: targetElement.offsetTop - navbarHeight,
-                        behavior: 'smooth',
-                    });
-                });
-            });
-        });
-
-
-        // To change color on theme selected
-        const findclass = document.querySelectorAll(
-            '.text-danger,.bg-danger,.text-bg-danger,.btn-danger');
-        findclass.forEach(element => {
-            if (element.classList.contains('text-danger')) {
-                element.classList.add('textclass');
-            }
-            if (element.classList.contains('bg-danger')) {
-                element.classList.add('bgclass');
-            }
-            if (element.classList.contains('text-bg-danger')) {
-                element.classList.add('textbgclass');
-            }
-            if (element.classList.contains('btn-danger')) {
-                element.classList.add('btnclass');
-            }
-        });
-        document.querySelectorAll('.dropdown-item').forEach(item => {
-            item.addEventListener('click', event => {
-                colors = event.target.id.split('-')[1];
-
-                const addclass = document.querySelectorAll(
-                    '.textclass,.bgclass,.textbgclass,.btnclass');
-                addclass.forEach(function (currentElement) {
-                    if (currentElement.classList.contains('textclass')) {
-                        let className = currentElement.className;
-                        let textClass = className.substring(className.indexOf('text-') + 5)
-                            .split(' ')[0];
-                        currentElement.classList.replace('text-' + textClass, 'text-' + colors);
-                    }
-                    if (currentElement.classList.contains('bgclass')) {
-                        let className = currentElement.className;
-                        let textClass = className.substring(className.indexOf('bg-') + 3).split(
-                            ' ')[0];
-                        currentElement.classList.replace('bg-' + textClass, 'bg-' + colors);
-                    }
-                    if (currentElement.classList.contains('textbgclass')) {
-                        let className = currentElement.className;
-                        let textClass = className.substring(className.indexOf('text-bg-') + 8)
-                            .split(' ')[0];
-                        currentElement.classList.replace('text-bg-' + textClass, 'text-bg-' +
-                            colors);
-                    }
-                    if (currentElement.classList.contains('btnclass')) {
-                        let className = currentElement.className;
-                        let textClass = className.substring(className.indexOf('btn-') + 4)
-                            .split(' ')[0];
-                        currentElement.classList.replace('btn-' + textClass, 'btn-' + colors);
-                    }
-                });
-            });
-        });
-
-        // Check if the device is a mobile device.
-        if (/Mobi/.test(navigator.userAgent)) {
-            // Mobile device. Set the cursor to the default style.
-            document.body.style.cursor = 'default';
-            document.querySelector(".cursor1").style.display = "none";
-            document.querySelector(".cursor2").style.display = "none";
-
-
-        } else {
-            // Non-mobile device.
-            const cursora = document.querySelector(".cursor1");
-            const cursorb = document.querySelector(".cursor2");
-            document.addEventListener("mousemove", e => {
-                cursora.style.top = e.pageY + "px";
-                cursora.style.left = e.pageX + "px";
-
-                cursorb.style.top = e.pageY + "px";
-                cursorb.style.left = e.pageX + "px";
-            })
-
-            document.addEventListener("mousedown", () => {
-                cursorb.classList.add("click");
-            });
-
-            document.addEventListener("mouseup", () => {
-                cursorb.classList.remove("click");
-            });
-        }
-
-        var button = document.querySelector('.toggler');
-        button.addEventListener('click', function () {
-            var icon = button.querySelector('i');
-            if (icon.classList.contains('fa-bars')) {
-                icon.classList.remove('fas');
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-solid');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-solid');
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fas');
-                icon.classList.add('fa-bars');
-            }
-        });
-
-
-        // Scroll to top button
-        var scrollToTopBtn = document.querySelector(".scrollToTopBtn")
-        var rootElement = document.documentElement
-
-        function handleScroll() {
-            var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight
-            if ((rootElement.scrollTop / scrollTotal) > 0.15) {
-                scrollToTopBtn.classList.add("showBtn")
-            } else {
-                scrollToTopBtn.classList.remove("showBtn")
-            }
-        }
-
-        function scrollToTop() {
-            rootElement.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            })
-        }
-        scrollToTopBtn.addEventListener("click", scrollToTop)
-        document.addEventListener("scroll", handleScroll)
-    </script>
-
-
+<footer class="alt" id="contact">
+  <div class="wrap">
+    <div class="prompt"><span class="sym">C:\vishal&gt;</span> connect.py</div>
+    <h2>Open a connection</h2>
+    <p class="sub" style="color:var(--muted); max-width:50ch;">Open to senior backend and Python roles.</p>
+    <div class="contact-links">
+      <a href="mailto:06vishalyadav@gmail.com"><i class="fa-regular fa-envelope"></i> 06vishalyadav@gmail.com</a>
+      <a href="tel:+919582895161"><i class="fa-solid fa-mobile-alt"></i> +91 9582895161</a>
+      <a href="https://github.com/raovishalyadav" target="_blank"><i class="fa-brands fa-github"></i> raovishalyadav</a>
+      <a href="https://linkedin.com/in/raovishalyadav" target="_blank"><i class="fa-brands fa-linkedin"></i> raovishalyadav</a>
+    </div>
+    <div class="copyright">© 2026 Vishal Yadav — connection closed.</div>
+  </div>
+</footer>
 
 </body>
-
 </html>
