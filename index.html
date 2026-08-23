@@ -145,8 +145,8 @@
   .file h3{font-size:16.5px; color:var(--text); margin-bottom:8px; font-weight:600; font-family:'IBM Plex Sans';}
   .file p{font-size:13.5px; color:var(--muted); margin-bottom:14px;}
   .file a.more{font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--cyan);}
-  .minifiles{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px;}
-  .minifile{border:1px solid var(--hair); border-radius:6px; padding:16px; transition:border-color .2s;}
+  .minifiles{display:grid; grid-template-columns:repeat(2, 1fr); gap:14px;}
+  .minifile{display:block; border:1px solid var(--hair); border-radius:6px; padding:16px; transition:border-color .2s;}
   .minifile:hover{border-color:var(--amber);}
   .minifile .fname{font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--amber); margin-bottom:8px;}
   .minifile p{font-size:12px; color:var(--muted);}
@@ -304,23 +304,24 @@
 
     <div class="files">
       <div class="file">
-        <div class="fname"><i class="fa-regular fa-file-code"></i> drone_formation_engine.py</div>
-        <h3>Drone Formation &amp; Animation Engine</h3>
-        <p>Python/bpy system for collision-free transitions, precision landings, and full animation sequencing — deployed at scale on AWS EC2.</p>
-        <a href="#" class="more">./view_more</a>
-      </div>
-      <div class="file">
         <div class="fname"><i class="fa-regular fa-file-code"></i> twstft_gui.py</div>
         <h3>TWSTFT Real-Time GUI</h3>
         <p>PyQt5 application visualizing real-time satellite time-transfer data for ISRO/IST synchronization.</p>
-        <a href="https://github.com/raovishalyadav/TWSTFT_GUI" class="more">./view_more</a>
+        <a href="https://github.com/raovishalyadav/TWSTFT_GUI" class="more" target="_blank">./view_more</a>
+      </div>
+      <div class="file">
+        <div class="fname"><i class="fa-regular fa-file-code"></i> time_frequency_game</div>
+        <h3>Time &amp; Frequency Game</h3>
+        <p>Web-based educational game built for CSIR-JIGYASA, hosted on a Government of India portal.</p>
+        <a href="https://github.com/raovishalyadav/Time_and_Frequency_Game" class="more" target="_blank">./view_more</a>
       </div>
     </div>
 
     <div class="minifiles">
-      <div class="minifile"><div class="fname">navic_automation.sh</div><p>Linux shell automation for daily NavIC/SATRE data retrieval via SCP.</p></div>
-      <div class="minifile"><div class="fname">satre_offset.py</div><p>Calculates daily SATRE modem offset.</p></div>
-      <div class="minifile"><div class="fname">drf_token_auth.py</div><p>REST API with DRF token authentication.</p></div>
+      <a class="minifile" href="https://github.com/raovishalyadav/NavIC_RECEIVER_Automation" target="_blank"><div class="fname">navic_automation.sh</div><p>Linux shell automation for daily NavIC/SATRE data retrieval via SCP.</p></a>
+      <a class="minifile" href="https://github.com/raovishalyadav/SATRE_MODEM_Daily_Offset" target="_blank"><div class="fname">satre_offset.py</div><p>Calculates daily SATRE modem offset.</p></a>
+      <a class="minifile" href="https://github.com/raovishalyadav/DRF_TokenAuthentication" target="_blank"><div class="fname">drf_token_auth.py</div><p>REST API with DRF token authentication.</p></a>
+      <a class="minifile" href="https://github.com/raovishalyadav/NMEA_Converter" target="_blank"><div class="fname">nmea_converter.py</div><p>Converts GPS receiver data to NMEA format.</p></a>
     </div>
   </div>
 </section>
