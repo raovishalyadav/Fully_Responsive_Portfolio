@@ -151,8 +151,13 @@
   .minifile .fname{font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--amber); margin-bottom:8px;}
   .minifile p{font-size:12px; color:var(--muted);}
 
-  /* CONTACT */
-  footer{padding:70px 0 40px; text-align:center;}
+  /* CONTACT — deliberate full-screen anchor */
+  footer{
+    min-height:calc(100vh - 73px);
+    padding:70px 0 40px;
+    text-align:center;
+    scroll-margin-top:73px;
+  }
   /* footer .prompt{justify-content:center; display:flex;} */
   footer .prompt{text-align: center;}
   footer h2{font-family:'JetBrains Mono', monospace; font-size:22px; margin:14px 0 12px; color:var(--text);}
@@ -160,6 +165,29 @@
   .contact-links{display:flex; justify-content:center; gap:28px; flex-wrap:wrap; margin-bottom:44px;}
   .contact-links a{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--muted); display:flex; align-items:center; gap:8px;}
   .contact-links a:hover{color:var(--cyan);}
+
+  .connection-status{
+    max-width:760px;
+    margin:0 auto 34px;
+    padding:13px 16px;
+    border:1px solid var(--hair);
+    border-radius:4px;
+    background:var(--panel2);
+    display:flex;
+    justify-content:center;
+    gap:24px;
+    flex-wrap:wrap;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px;
+    color:var(--muted);
+    text-align:left;
+  }
+  .connection-status b{
+    color:var(--amber);
+    font-weight:500;
+    margin-right:5px;
+  }
+
   .copyright{font-family:'JetBrains Mono', monospace; font-size:10.5px; color:var(--muted); opacity:0.6;}
 
   @media(max-width:720px){
@@ -167,6 +195,8 @@
     .minifiles{grid-template-columns:1fr;}
     .navlinks{display:none;}
     .termbody{padding:26px 20px 32px;}
+    footer{min-height:calc(100vh - 65px); scroll-margin-top:65px; padding-top:55px;}
+    .connection-status{gap:10px 18px; justify-content:flex-start;}
   }
   @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation:none !important; transition:none !important;} .pulse-dot{opacity:1;} }
 </style>
@@ -331,7 +361,14 @@
     <div class="prompt"><span class="sym">C:\vishal&gt;</span> python connect.py</div>
     <h2>Open a connection</h2>
     <p class="sub" style="color:var(--muted); max-width:50ch;">Open to senior backend and Python roles.</p>
-    <div class="contact-links">
+
+     <div class="connection-status">
+       <span><b>STATUS</b> connection_ready</span>
+       <span><b>CHANNEL</b> backend · python · ai</span>
+       <span><b>MODE</b> remote / Delhi NCR</span>
+     </div>
+
+     <div class="contact-links">
       <a href="mailto:06vishalyadav@gmail.com"><i class="fa-regular fa-envelope"></i> 06vishalyadav@gmail.com</a>
       <a href="tel:+919582895161"><i class="fa-solid fa-mobile-alt"></i> +91 9582895161</a>
       <a href="https://github.com/raovishalyadav" target="_blank"><i class="fa-brands fa-github"></i> raovishalyadav</a>
