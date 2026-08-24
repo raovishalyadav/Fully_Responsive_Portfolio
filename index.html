@@ -45,6 +45,12 @@
   nav{position:sticky; top:0; z-index:50; background:rgba(10,13,16,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--hair);}
   nav .wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 28px;}
   .brand{font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--muted); display:flex; align-items:center;}
+  .brand-avatar{
+    width:22px; height:22px; border-radius:50%;
+    object-fit:cover; margin-right:9px;
+    border:1px solid var(--hair);
+    vertical-align:middle;
+  }
   .brand b{color:var(--cyan); font-weight:600;}
   .brand .pid{color:var(--hair); margin-left:14px; font-size:11px;}
   .brand .run-pill{
@@ -159,7 +165,6 @@
     text-align:center;
     scroll-margin-top:73px;
   }
-  /* footer .prompt{justify-content:center; display:flex;} */
   footer .prompt{text-align: center;}
   footer h2{font-family:'JetBrains Mono', monospace; font-size:22px; margin:14px 0 12px; color:var(--text);}
   footer p.sub{margin:0 auto 32px;}
@@ -207,7 +212,7 @@
 <nav>
   <div class="wrap">
     <div class="brand">
-      <i class="fa-solid fa-microchip" style="color:var(--amber); margin-right:9px;"></i>vishal.py
+      <img class="brand-avatar" src="assets/images/vishal.png" alt="Vishal Yadav">vishal.py
       <span class="run-pill"><span class="pulse-dot"></span>ACTIVE</span>
     </div>
     <div class="navlinks">
