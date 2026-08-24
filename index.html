@@ -94,42 +94,116 @@
   .cmdboot{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--muted); margin-bottom:24px; line-height:1.7;}
   .prompt{font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--cyan); margin-bottom:6px;}
   .prompt .sym{color:var(--muted);}
-  .cam-pip{
-    position:absolute; top:129px; right:63px;
-    width:174px; z-index:5;
+  /* PIP PHOTO & HUD ACCENTS */
+  .cam-pip {
+    position: absolute;
+    top: 129px;
+    right: 63px;
+    width: 174px;
+    z-index: 5;
   }
-  .cam-pip .pip-frame{
-    width:174px; height:174px; border-radius:6px;
-    border:2px solid var(--hair); background:var(--bg);
-    overflow:hidden; position:relative;
+  .cam-pip .pip-frame {
+    width: 174px;
+    height: 174px;
+    border-radius: 6px;
+    border: 2px solid var(--hair);
+    background: var(--bg);
+    overflow: hidden;
+    position: relative;
   }
-  .cam-pip img.pip-photo{width:100%; height:100%; object-fit:cover; display:block;}
-  .cam-pip .pip-scan{
-    position:absolute; inset:0;
-    background:repeating-linear-gradient(0deg, rgba(79,216,224,0.05) 0px, rgba(79,216,224,0.05) 1px, transparent 1px, transparent 3px);
-    pointer-events:none;
+  .cam-pip img.pip-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
-  .cam-pip .pip-tag{
-    position:absolute; bottom:7px; left:7px;
-    display:flex; align-items:center; gap:5px;
-    font-family:'JetBrains Mono', monospace; font-size:9px; letter-spacing:0.04em;
-    color:#28C840; background:rgba(10,13,16,0.75); padding:3px 7px; border-radius:2px;
+  .cam-pip .pip-scan {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(79, 216, 224, 0.05) 0px,
+      rgba(79, 216, 224, 0.05) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    pointer-events: none;
   }
-  .cam-pip .pip-dot{width:6px;height:6px;border-radius:50%;background:#28C840;animation:pulse 1.6s ease-in-out infinite;}
-  .cam-pip .pip-corner{
-    position:absolute; top:0; left:0; width:18px; height:18px;
-    border-top:2px solid var(--cyan); border-left:2px solid var(--cyan); opacity:0.6;
+  .cam-pip .pip-tag {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.04em;
+    color: #28c840;
+    background: rgba(10, 13, 16, 0.82);
+    padding: 3px 8px;
+    border-radius: 2px;
+    border: 1px solid rgba(40, 200, 64, 0.25);
+    z-index: 2;
   }
-  .cam-pip .pip-corner.br{top:auto;left:auto;bottom:0;right:0;border-top:none;border-left:none;border-bottom:2px solid var(--cyan);border-right:2px solid var(--cyan);}
-  h1.headline{
-    font-family:'JetBrains Mono', monospace; font-weight:600;
-    font-size:clamp(22px, 3.6vw, 32px); color:var(--text); margin:14px 0 18px; line-height:1.5;
-    max-width:76%;
+  .cam-pip .pip-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #28c840;
+    animation: pulse 1.6s ease-in-out infinite;
   }
-  @media(max-width:600px){
-    .cam-pip{position:static; margin-bottom:18px; width:88px;}
-    .cam-pip .pip-frame{width:88px;height:88px;}
-    h1.headline{max-width:100%;}
+  .cam-pip .pip-corner {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 24px;
+    height: 24px;
+    border-top: 2px solid var(--cyan);
+    border-left: 2px solid var(--cyan);
+    opacity: 0.75;
+    z-index: 2;
+  }
+  .cam-pip .pip-corner.br {
+    top: auto;
+    left: auto;
+    bottom: -1px;
+    right: -1px;
+    border-top: none;
+    border-left: none;
+    border-bottom: 2px solid var(--cyan);
+    border-right: 2px solid var(--cyan);
+  }
+
+  /* HEADLINE SPACING */
+  h1.headline {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: clamp(22px, 3.6vw, 32px);
+    color: var(--text);
+    margin: 14px 0 18px;
+    line-height: 1.5;
+    max-width: 66%; /* Prevents text colliding with the 174px box */
+  }
+
+  /* RESPONSIVE SYNC */
+  @media (max-width: 768px) {
+    .cam-pip {
+      position: static;
+      margin-bottom: 20px;
+      width: 120px;
+    }
+    .cam-pip .pip-frame {
+      width: 120px;
+      height: 120px;
+    }
+    .cam-pip .pip-corner {
+      width: 16px;
+      height: 16px;
+    }
+    h1.headline {
+      max-width: 100%;
+    }
   }
   h1.headline .k{color:var(--amber);}
   h1.headline .s{color:var(--cyan);}
