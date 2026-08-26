@@ -69,7 +69,7 @@
   .navtoggle{display:none; background:none; border:1px solid var(--hair); border-radius:3px; width:36px; height:32px; align-items:center; justify-content:center; color:var(--text); font-size:14px; flex-shrink:0;}
 
   /* HERO — TERMINAL WINDOW */
-  header.hero{padding:80px 0 60px;}
+  header.hero{padding:40px 0 60px;}
   .termwin{
     background:var(--panel); border:1px solid var(--hair); border-radius:6px; overflow:hidden;
   }
@@ -104,10 +104,10 @@
     --pipgap: 34px;
     position: absolute;
     top: 63px;
-    /* .termbody has 32px right padding; "right" here is measured from
-       its padding box, so add that back in to get a true 34px visual
-       gap from the visible content edge (matches the headline's gap). */
-    right: calc(32px + var(--pipgap));
+    /* "right" is measured from .termbody's own edge (its padding box),
+       which is also where the window border sits — so this value IS
+       the visual gap from the photo to the window border. */
+    right: var(--pipgap);
     width: var(--pipw);
     z-index: 5;
   }
@@ -188,8 +188,10 @@
     color: var(--text);
     margin: 14px 0 18px;
     line-height: 1.5;
-    /* Reserve photo width + equal gap on both sides of the photo */
-    max-width: calc(100% - 174px - (2 * 34px));
+    /* h1's "100%" is termbody's content width (inside its 32px padding).
+       The photo's "right" gap is measured from termbody's outer edge instead,
+       so add that 32px padding back in to line the two gaps up exactly. */
+    max-width: calc(100% + 32px - 174px - (2 * 34px));
   }
 
   /* RESPONSIVE SYNC */
@@ -235,7 +237,7 @@
   .btn-ghost:hover{border-color:var(--amber); color:var(--amber);}
 
   /* SECTIONS */
-  section{padding:64px 0; scroll-margin-top:var(--navh, 73px);}
+  section{padding:32px 0 64px; scroll-margin-top:var(--navh, 73px);}
   header.hero{scroll-margin-top:var(--navh, 73px);}
   section.alt{background:var(--panel);}
   .sechead{margin-bottom:30px;}
@@ -345,8 +347,8 @@
     .termbody{padding:26px 20px 32px;}
     footer{min-height:calc(100vh - var(--navh, 65px)); scroll-margin-top:var(--navh, 65px); padding:24px 0;}
     .connection-status{gap:10px 18px; justify-content:flex-start;}
-    header.hero{padding:48px 0 40px; scroll-margin-top:var(--navh, 65px);}
-    section{padding:48px 0; scroll-margin-top:var(--navh, 65px);}
+    header.hero{padding:24px 0 40px; scroll-margin-top:var(--navh, 65px);}
+    section{padding:24px 0 48px; scroll-margin-top:var(--navh, 65px);}
   }
 
   /* SMALL PHONES */
