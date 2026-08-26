@@ -100,15 +100,20 @@
   .prompt .sym{color:var(--muted);}
   /* PIP PHOTO & HUD ACCENTS */
   .cam-pip {
+    --pipw: 174px;
+    --pipgap: 34px;
     position: absolute;
     top: 63px;
-    right: 89px;
-    width: 174px;
+    /* .termbody has 32px right padding; "right" here is measured from
+       its padding box, so add that back in to get a true 34px visual
+       gap from the visible content edge (matches the headline's gap). */
+    right: calc(32px + var(--pipgap));
+    width: var(--pipw);
     z-index: 5;
   }
   .cam-pip .pip-frame {
-    width: 174px;
-    height: 174px;
+    width: var(--pipw);
+    height: var(--pipw);
     border-radius: 6px;
     border: 2px solid var(--hair);
     background: var(--bg);
@@ -183,7 +188,8 @@
     color: var(--text);
     margin: 14px 0 18px;
     line-height: 1.5;
-    max-width: 66%; /* Prevents text colliding with the 174px box */
+    /* Reserve photo width + equal gap on both sides of the photo */
+    max-width: calc(100% - 174px - (2 * 34px));
   }
 
   /* RESPONSIVE SYNC */
@@ -198,8 +204,15 @@
       height: 120px;
     }
     .cam-pip .pip-corner {
-      width: 39px;
-      height: 39px;
+      width: 28px;
+      height: 28px;
+      border-width: 3px;
+    }
+    .cam-pip .pip-tag {
+      top: 6px;
+      right: 6px;
+      font-size: 8.5px;
+      padding: 2px 6px;
     }
     h1.headline {
       max-width: 100%;
@@ -354,6 +367,8 @@
     .termbody{padding:20px 16px 26px;}
     .cam-pip{width:96px;}
     .cam-pip .pip-frame{width:96px; height:96px;}
+    .cam-pip .pip-corner{width:20px; height:20px; border-width:2.5px;}
+    .cam-pip .pip-tag{top:5px; right:5px; font-size:7.5px; padding:1.5px 5px; gap:3px;}
     h1.headline{font-size:19px; line-height:1.45;}
     p.sub{font-size:13.5px;}
     .status{font-size:10px; padding:4px 8px;}
