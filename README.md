@@ -6,12 +6,6 @@
 Built with HTML, CSS & JavaScript — no frameworks, no build step.
 
 [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen?style=flat-square)](https://raovishalyadav.github.io/Fully_Responsive_Portfolio/)
-[![GitHub Pages](https://img.shields.io/badge/deployed-GitHub%20Pages-222?style=flat-square&logo=github)](https://raovishalyadav.github.io/Fully_Responsive_Portfolio/)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-
-**[View Live Site →](https://raovishalyadav.github.io/Fully_Responsive_Portfolio/)**
 
 </div>
 
